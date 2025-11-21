@@ -7,7 +7,7 @@
 
 | Task ID | Task Name | Status | Priority | Estimated Time |
 |---------|-----------|--------|----------|----------------|
-| T001 | Project Setup & Structure | ⬜ Pending | High | 1h |
+| T001 | Project Setup & Structure | ✅ Completed | High | 1h |
 | T002 | Design System & CSS Variables | ⬜ Pending | High | 2h |
 | T003 | Global Components (Header/Footer) | ⬜ Pending | High | 3h |
 | T004 | Home Page - Hero Section | ⬜ Pending | High | 3h |
