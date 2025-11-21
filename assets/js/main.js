@@ -4,6 +4,30 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Lenis Smooth Scroll (temporarily disabled for testing)
+    // const lenis = new Lenis({
+    //     duration: 1.2,
+    //     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    //     orientation: 'vertical',
+    //     smoothWheel: true
+    // });
+
+    // function raf(time) {
+    //     lenis.raf(time);
+    //     requestAnimationFrame(raf);
+    // }
+    // requestAnimationFrame(raf);
+
+    // GSAP Reveal Animations
+    gsap.from('.reveal-text', {
+        y: 20,
+        opacity: 0,
+        duration: 1.5,
+        stagger: 0.2,
+        ease: 'power4.out',
+        delay: 0.5
+    });
+    
     // Initialize AOS
     AOS.init({
         duration: 800,
@@ -73,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (backToTop) {
         backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            lenis.scrollTo(0);
         });
     }
     

@@ -75,18 +75,22 @@
     <main>
         <!-- Hero Section -->
         <section class="hero" id="home">
-            <div id="particles-js" class="hero__particles"></div>
+            <canvas id="hero-canvas" class="hero__canvas"></canvas>
             <div class="hero__content container">
-                <h1 class="hero__title" id="heroTitle" data-text="Pioneering AI-Driven Synthetic Biology"></h1>
-                <p class="hero__subtitle" data-aos="fade-up" data-aos-delay="200">
-                    Creating next-generation bioactive ingredients and medical materials through intelligent innovation
+                <div class="hero__badge">/// SYNTHETIC BIOLOGY + AI</div>
+                <h1 class="hero__title">
+                    Bridging Biology<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">and Everyday Life.</span>
+                </h1>
+                <p class="hero__subtitle">
+                    Pioneering AI-integrated platforms to create next-generation bioactive ingredients and medical materials. From In-Silico prediction to commercial scale.
                 </p>
-                <div class="hero__cta" data-aos="fade-up" data-aos-delay="400">
+                <div class="hero__cta">
                     <a href="platform.html" class="btn btn-primary">Explore Our Platform</a>
                     <a href="contact.html" class="btn btn-secondary">Contact Us</a>
                 </div>
             </div>
-            <div class="hero__scroll" data-aos="fade-in" data-aos-delay="600">
+            <div class="hero__scroll">
                 <span>Scroll to explore</span>
                 <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
@@ -287,8 +291,8 @@
         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg>
     </button>
     
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
     
     <!-- GSAP Animation Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -299,8 +303,8 @@
     
     <!-- Custom Scripts -->
     <script src="assets/js/cursor.js"></script>
+    <script src="assets/js/canvas-particles.js"></script>
     <script src="assets/js/utils.js"></script>
-    <script src="assets/js/particles-config.js"></script>
     <script src="assets/js/hero-animations.js"></script>
     <script src="assets/js/animations.js"></script>
     <script src="assets/js/main.js"></script>
