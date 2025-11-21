@@ -68,15 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(typeWriter, 500);
     }
     
-    // Initialize AOS
-    AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true,
-        offset: 100
-    });
-    
-    // Header scroll effect (refer-index.html style)
+    // Header scroll effect
     const header = document.getElementById('header');
     let lastScroll = 0;
     
@@ -137,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (backToTop) {
         backToTop.addEventListener('click', () => {
-            lenis.scrollTo(0);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
     
@@ -147,5 +139,23 @@ document.addEventListener('DOMContentLoaded', function() {
         if (link.getAttribute('href') === currentPage) {
             link.classList.add('active');
         }
+    });
+    
+    // Scroll reveal animations
+    gsap.registerPlugin(ScrollTrigger);
+    
+    const sections = document.querySelectorAll('.section, .section-overview, .section-platform, .section-solutions, .section-mission, .section-cta');
+    sections.forEach(section => {
+        gsap.from(section, {
+            y: 60,
+            opacity: 0,
+            duration: 1.2,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: section,
+                start: 'top 75%',
+                toggleActions: 'play none none none'
+            }
+        });
     });
 });
