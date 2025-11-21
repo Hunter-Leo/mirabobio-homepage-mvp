@@ -144,6 +144,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Scroll reveal animations
     gsap.registerPlugin(ScrollTrigger);
     
+    // Platform cards animation
+    const platformCards = document.querySelectorAll('.platform-card');
+    platformCards.forEach((card) => {
+        gsap.from(card, {
+            scrollTrigger: {
+                trigger: card,
+                start: 'top bottom-=100'
+            },
+            y: 100,
+            opacity: 0,
+            duration: 1,
+            ease: 'power2.out'
+        });
+    });
+    
+    // General sections animation
     const sections = document.querySelectorAll('.section, .section-overview, .section-platform, .section-solutions, .section-mission, .section-cta');
     sections.forEach(section => {
         gsap.from(section, {
