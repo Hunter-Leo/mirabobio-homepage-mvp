@@ -1,2 +1,50 @@
 /* MIRABO Biotechnology - Responsive Styles */
-/* Responsive overrides will be added in T012 */
+
+/* ========================================
+   MOBILE (0-639px)
+   ======================================== */
+@media (max-width: 639px) {
+  :root {
+    --text-hero: 3rem;
+    --text-h1: 2.5rem;
+    --text-h2: 2rem;
+    --text-h3: 1.5rem;
+    --text-h4: 1.25rem;
+    --text-body: 1rem;
+    --space-24: 3rem;
+  }
+  
+  .container {
+    padding: 0 var(--space-4);
+  }
+  
+  section {
+    padding: var(--space-16) 0;
+  }
+  
+  .btn {
+    padding: var(--space-3) var(--space-6);
+    font-size: 1rem;
+  }
+}
+
+/* ========================================
+   TABLET (640px-1023px)
+   ======================================== */
+@media (min-width: 640px) and (max-width: 1023px) {
+  :root {
+    --text-hero: 4rem;
+    --text-h1: 3.5rem;
+    --text-h2: 2.5rem;
+    --text-h3: 2rem;
+  }
+}
+
+/* ========================================
+   DESKTOP (1024px+)
+   ======================================== */
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--space-8);
+  }
+}

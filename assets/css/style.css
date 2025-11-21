@@ -1,2 +1,213 @@
 /* MIRABO Biotechnology - Main Stylesheet */
-/* Design System & CSS Variables will be added in T002 */
+
+/* ========================================
+   1. CSS VARIABLES
+   ======================================== */
+:root {
+  /* Primary Colors */
+  --deep-space-blue: #001F54;
+  --electric-blue: #0066FF;
+  --cyber-cyan: #00D9FF;
+  --neon-green: #00FF88;
+  --bio-green: #32CD32;
+  --quantum-purple: #8B5CF6;
+  
+  /* Background Colors */
+  --bg-primary: #0F172A;
+  --bg-secondary: #1E293B;
+  --bg-section-dark: #0A0E1A;
+  --bg-section-light: #F8FAFC;
+  --bg-glass: rgba(15, 23, 42, 0.7);
+  
+  /* Text Colors */
+  --text-primary: #F1F5F9;
+  --text-secondary: #94A3B8;
+  --text-accent: #00D9FF;
+  --text-dark: #0F172A;
+  
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, #001F54 0%, #0F172A 50%, #1E1B4B 100%);
+  --gradient-mesh: radial-gradient(circle at 20% 50%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
+                   radial-gradient(circle at 80% 80%, rgba(50, 205, 50, 0.1) 0%, transparent 50%);
+  --gradient-card: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+  
+  /* Typography */
+  --font-primary: 'Inter', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --text-hero: 6rem;
+  --text-h1: 4.5rem;
+  --text-h2: 3rem;
+  --text-h3: 2.25rem;
+  --text-h4: 1.5rem;
+  --text-body: 1.125rem;
+  --text-small: 0.875rem;
+  
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 20px rgba(0, 217, 255, 0.3);
+  --shadow-glow-green: 0 0 20px rgba(0, 255, 136, 0.3);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.4s ease;
+}
+
+/* ========================================
+   2. RESET & BASE
+   ======================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--text-body);
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   3. TYPOGRAPHY
+   ======================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--font-bold);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-4);
+}
+
+h1 { font-size: var(--text-h1); }
+h2 { font-size: var(--text-h2); }
+h3 { font-size: var(--text-h3); }
+h4 { font-size: var(--text-h4); }
+
+p {
+  margin-bottom: var(--space-4);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--text-accent);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--neon-green);
+}
+
+/* ========================================
+   4. LAYOUT
+   ======================================== */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+section {
+  padding: var(--space-24) 0;
+}
+
+/* ========================================
+   5. BUTTONS
+   ======================================== */
+.btn {
+  display: inline-block;
+  padding: var(--space-4) var(--space-8);
+  font-family: var(--font-display);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-body);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: var(--electric-blue);
+  color: white;
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 102, 255, 0.5);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border-color: var(--cyber-cyan);
+}
+
+.btn-secondary:hover {
+  background: var(--cyber-cyan);
+  color: var(--text-dark);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   6. CARDS
+   ======================================== */
+.card {
+  background: var(--gradient-card);
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  border-radius: 16px;
+  padding: var(--space-8);
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--cyber-cyan);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ========================================
+   7. UTILITIES
+   ======================================== */
+.text-center { text-align: center; }
+.text-gradient {
+  background: linear-gradient(90deg, var(--cyber-cyan), var(--neon-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow { box-shadow: var(--shadow-glow); }
+.glow-green { box-shadow: var(--shadow-glow-green); }
