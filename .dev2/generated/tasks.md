@@ -13,6 +13,7 @@
 | T004 | Home Page - Hero Section | ✅ Updated | High | 3h |
 | T005 | Home Page - Content Sections | ✅ Updated | High | 4h |
 | **T-UPDATE** | **Update Completed Tasks to refer-index.html Style** | **✅ Completed** | **Critical** | **6h** |
+| **T005B** | **Homepage Visual Enhancement - Icons & Effects** | **✅ Completed** | **High** | **3h** |
 | T006 | About Page | ⬜ Pending | Medium | 4h |
 | T007 | Platform Page - Structure | ⬜ Pending | High | 3h |
 | T008 | Platform Page - Three Platforms | ⬜ Pending | High | 5h |
@@ -348,6 +349,303 @@ git commit -m "refactor: update to refer-index.html design style
 
 All Playwright tests passing
 Screenshots: .cache/update-*.png"
+```
+
+---
+
+### T005B: Homepage Visual Enhancement - Icons & Effects
+**Status:** ✅ Completed  
+**Priority:** High  
+**Estimated Time:** 3 hours  
+**Dependencies:** T-UPDATE (Completed)
+
+#### Description
+Enhance the homepage with award-winning visual elements inspired by refer-index.html. Add abstract geometric graphics, animated data visualizations, decorative icons, and tech-style visual effects to each section. The goal is to create a more immersive, high-tech aesthetic that matches Awwwards-level design standards.
+
+#### Reference Files
+- **PRIMARY:** `refer-index.html` (lines 200-400 - technology cards with visual elements)
+- Current: `index.html` (all sections)
+- `.dev2/generated/homepage-content-design.md`
+
+#### Current Homepage Structure Analysis
+1. **Hero Section** - Has canvas particles ✅ (good)
+2. **Company Overview** - Basic SVG icons (needs enhancement)
+3. **MiRAiQ Platform Cards** - Basic SVG icons (needs abstract visuals)
+4. **Industries Section** - Photos + basic icons (good)
+5. **Mission Section** - Basic SVG icons (needs enhancement)
+
+#### Visual Enhancement Strategy
+
+##### ENHANCEMENT 1: Platform Cards Abstract Visuals (1.5h)
+
+**PRISM Card - Add Rotating Geometric System:**
+```html
+<div class="order-1 md:order-2 flex justify-center">
+    <div class="w-64 h-64 relative">
+        <!-- Outer rotating ring -->
+        <div class="absolute inset-0 border border-mirabo-blue/30 rounded-full animate-[spin_10s_linear_infinite]"></div>
+        <!-- Inner counter-rotating ring -->
+        <div class="absolute inset-4 border border-dashed border-mirabo-green/50 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+        <!-- Center glow effect -->
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-32 h-32 bg-mirabo-blue blur-xl opacity-50 rounded-full"></div>
+        </div>
+        <!-- Data points -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div class="w-3 h-3 bg-mirabo-lightBlue rounded-full animate-pulse"></div>
+        </div>
+    </div>
+</div>
+```
+
+**ORION Card - Add Code/Sequence Visualization:**
+```html
+<div class="order-1 md:order-2 flex justify-center">
+    <div class="w-full h-48 bg-gradient-to-r from-transparent via-purple-500/10 to-transparent border-t border-b border-purple-500/20 flex items-center justify-center relative overflow-hidden">
+        <!-- Animated code text -->
+        <div class="font-mono text-purple-400 text-xs animate-pulse">
+            [ SEQUENCE OPTIMIZATION RUNNING ]
+        </div>
+        <!-- Scanning line effect -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/20 to-transparent h-1 animate-[scan_2s_ease-in-out_infinite]"></div>
+    </div>
+</div>
+```
+
+**IGNIS Card - Add Animated Bar Chart:**
+```html
+<div class="order-1 md:order-2 flex justify-center">
+    <div class="relative w-full h-full flex items-center justify-center">
+        <div class="grid grid-cols-6 gap-2">
+            <div class="w-3 h-8 bg-mirabo-green/20 rounded-sm animate-pulse"></div>
+            <div class="w-3 h-12 bg-mirabo-green/40 rounded-sm animate-pulse" style="animation-delay: 0.1s"></div>
+            <div class="w-3 h-16 bg-mirabo-green/60 rounded-sm animate-pulse" style="animation-delay: 0.2s"></div>
+            <div class="w-3 h-24 bg-mirabo-green rounded-sm animate-pulse" style="animation-delay: 0.3s"></div>
+            <div class="w-3 h-14 bg-mirabo-green/50 rounded-sm animate-pulse" style="animation-delay: 0.4s"></div>
+            <div class="w-3 h-6 bg-mirabo-green/20 rounded-sm animate-pulse" style="animation-delay: 0.5s"></div>
+        </div>
+    </div>
+</div>
+```
+
+**Add CSS Animations:**
+```css
+/* Add to style.css */
+@keyframes scan {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(200px); }
+}
+
+/* Reverse spin for counter-rotation */
+@keyframes spin-reverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+```
+
+##### ENHANCEMENT 2: Company Overview Section (0.5h)
+
+**Add Decorative Step Labels:**
+```html
+<div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+    <!-- Add badge label -->
+    <div class="inline-block px-3 py-1 bg-mirabo-blue/20 text-mirabo-lightBlue rounded-full text-xs mb-4 border border-mirabo-blue/50">
+        STEP 01
+    </div>
+    <div class="stat-icon">
+        <!-- existing SVG -->
+    </div>
+    <h3 class="stat-title">AI-Driven Platform</h3>
+    <p class="stat-desc">Advanced machine learning algorithms accelerate biologics development</p>
+    
+    <!-- Add feature bullets with animated dots -->
+    <ul class="space-y-2 text-sm text-gray-400 mt-4">
+        <li class="flex items-center gap-3">
+            <span class="w-2 h-2 bg-mirabo-green rounded-full animate-pulse"></span>
+            Deep Learning Models
+        </li>
+        <li class="flex items-center gap-3">
+            <span class="w-2 h-2 bg-mirabo-green rounded-full animate-pulse" style="animation-delay: 0.2s"></span>
+            Predictive Analytics
+        </li>
+    </ul>
+</div>
+```
+
+##### ENHANCEMENT 3: Mission Section Enhancement (0.5h)
+
+**Add Decorative Icon Above Title:**
+```html
+<section class="section section-mission py-32 bg-gray-100 text-gray-900 transition-colors duration-700">
+    <div class="container">
+        <!-- Add centered decorative icon -->
+        <div class="text-center mb-12">
+            <svg class="w-12 h-12 mx-auto text-mirabo-blue" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/>
+            </svg>
+        </div>
+        
+        <div class="mission-grid">
+            <!-- existing cards with enhanced styling -->
+        </div>
+    </div>
+</section>
+```
+
+##### ENHANCEMENT 4: Add Connecting Visual Elements (0.5h)
+
+**Add Vertical Gradient Line Between Platform Cards:**
+```html
+<div class="platform-cards relative">
+    <!-- Add connecting line -->
+    <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-mirabo-blue to-transparent -translate-x-1/2 hidden md:block"></div>
+    
+    <!-- existing cards -->
+</div>
+```
+
+**Add Floating Data Points Animation:**
+```css
+/* Add floating particles around sections */
+.section-platform::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--mirabo-green);
+    border-radius: 50%;
+    top: 20%;
+    left: 10%;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-20px) translateX(10px); }
+    50% { transform: translateY(-40px) translateX(-10px); }
+    75% { transform: translateY(-20px) translateX(10px); }
+}
+```
+
+#### Implementation Checklist
+
+**Platform Cards Visuals:**
+- [x] PRISM: Add rotating geometric rings with center glow
+- [x] ORION: Add code sequence visualization with scan effect
+- [x] IGNIS: Add animated bar chart visualization
+- [x] Refactor to vertical stacked layout (60/40 ratio)
+- [x] Add step badges (STEP 01, STEP 02, STEP 03)
+
+**Mission Section:**
+- [x] Create separate SVG icon files (120px)
+- [x] Add icon glow effects
+- [x] Add gradient bars at card bottom
+- [x] Redesign with better spacing and typography
+
+**Industries Section:**
+- [x] Change to dark background (#05080F)
+- [x] Remove icons, keep images only
+- [x] Align text to bottom with consistent height
+
+**CSS Animations:**
+- [ ] Add scan animation keyframe
+- [ ] Add float animation for decorative elements
+- [ ] Add reverse spin animation
+- [ ] Ensure all animations are 60fps
+
+**Visual Polish:**
+- [ ] Add floating data points around sections
+- [ ] Add subtle gradient overlays
+- [ ] Ensure consistent spacing
+- [ ] Test all animations on mobile
+
+#### Validation with Playwright
+
+```javascript
+// Use browser_run_code tool:
+
+// 1. Full page desktop view
+await page.goto('http://localhost:8000');
+await page.waitForLoadState('networkidle');
+await page.screenshot({ 
+    path: '.cache/visual-enhancement-desktop-full.png',
+    fullPage: true
+});
+
+// 2. Platform cards close-up
+await page.evaluate(() => {
+    document.querySelector('.section-platform').scrollIntoView({ behavior: 'smooth' });
+});
+await page.waitForTimeout(1000);
+await page.screenshot({ 
+    path: '.cache/visual-platform-cards.png'
+});
+
+// 3. PRISM card animation
+const prismCard = await page.locator('.platform-card--prism').first();
+await prismCard.scrollIntoViewIfNeeded();
+await page.waitForTimeout(500);
+await page.screenshot({ 
+    path: '.cache/visual-prism-detail.png'
+});
+
+// 4. Company overview section
+await page.evaluate(() => {
+    document.querySelector('.section-overview').scrollIntoView({ behavior: 'smooth' });
+});
+await page.waitForTimeout(500);
+await page.screenshot({ 
+    path: '.cache/visual-overview-enhanced.png'
+});
+
+// 5. Mission section
+await page.evaluate(() => {
+    document.querySelector('.section-mission').scrollIntoView({ behavior: 'smooth' });
+});
+await page.waitForTimeout(500);
+await page.screenshot({ 
+    path: '.cache/visual-mission-enhanced.png'
+});
+
+// 6. Mobile view
+await page.setViewportSize({ width: 375, height: 667 });
+await page.goto('http://localhost:8000');
+await page.waitForLoadState('networkidle');
+await page.screenshot({ 
+    path: '.cache/visual-enhancement-mobile.png',
+    fullPage: true
+});
+```
+
+#### Acceptance Criteria
+- [ ] All platform cards have unique abstract visualizations
+- [ ] Animations are smooth (60fps) and meaningful
+- [ ] Visual elements match refer-index.html quality level
+- [ ] Design feels more immersive and high-tech
+- [ ] All elements are responsive on mobile
+- [ ] No performance degradation
+- [ ] Playwright screenshots show enhanced visuals
+- [ ] Code is clean and well-commented
+- [ ] Consistent with overall design system
+
+#### Git Commit
+```bash
+git add .
+git commit -m "feat: enhance homepage with award-winning visual elements
+
+- Add rotating geometric system to PRISM card
+- Add code sequence visualization to ORION card  
+- Add animated bar chart to IGNIS card
+- Add step badges and feature bullets to overview cards
+- Add decorative icon to mission section
+- Add vertical gradient connecting line between platform cards
+- Add floating data point animations
+- Add scan and float CSS animations
+- Enhance overall visual hierarchy and tech aesthetic
+
+All animations 60fps, fully responsive
+Screenshots: .cache/visual-*.png"
 ```
 
 ---
