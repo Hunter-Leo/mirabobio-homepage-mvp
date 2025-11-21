@@ -1950,3 +1950,356 @@ section {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ============================================
+   SOLUTIONS PAGE STYLES
+   ============================================ */
+
+/* Breadcrumb - 已移除，不再使用 */
+
+/* Solution Card Section */
+.solution-card-section {
+  padding: 4rem 0;
+}
+
+.solution-card {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.solution-card--healthcare {
+  grid-template-columns: 40% 60%;
+}
+
+/* Solution Card Image */
+.solution-card__image {
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
+}
+
+.solution-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.solution-card:hover .solution-card__image img {
+  transform: scale(1.1);
+}
+
+.solution-card__image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 59, 163, 0.3), rgba(50, 205, 50, 0.2));
+  z-index: 1;
+}
+
+/* Solution Card Content */
+.solution-card__content {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Solution Icon */
+.solution-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1.5rem;
+  color: var(--mirabo-green);
+  filter: drop-shadow(0 0 12px rgba(50, 205, 50, 0.5));
+}
+
+.solution-icon--cyan {
+  color: #00D9FF;
+  filter: drop-shadow(0 0 12px rgba(0, 217, 255, 0.5));
+}
+
+/* Solution Title */
+.solution-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+/* Solution Description */
+.solution-description {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Benefits Section */
+.solution-benefits {
+  margin-bottom: 2rem;
+}
+
+.benefits-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--mirabo-lightBlue);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.benefits-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.benefits-list li::before {
+  content: '✓';
+  color: var(--mirabo-green);
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+/* Features Section */
+.solution-features {
+  margin-bottom: 2rem;
+}
+
+.features-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--mirabo-lightBlue);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.features-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+}
+
+.features-list li::before {
+  content: '•';
+  color: var(--mirabo-green);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* Custom Solutions Section */
+.section-custom-solutions {
+  background: var(--mirabo-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-custom-solutions::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 59, 163, 0.15), transparent);
+  border-radius: 50%;
+  top: -200px;
+  right: -200px;
+  pointer-events: none;
+}
+
+/* Partnership Steps */
+.partnership-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.partnership-step {
+  padding: 2.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.partnership-step:hover {
+  transform: translateX(8px);
+  box-shadow: 0 8px 32px rgba(0, 59, 163, 0.3);
+}
+
+.step-number {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.05);
+  font-family: var(--font-display);
+}
+
+.step-icon {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  color: var(--mirabo-lightBlue);
+  filter: drop-shadow(0 0 12px rgba(75, 141, 255, 0.5));
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
+
+.step-description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Case Studies Section */
+.section-case-studies {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--mirabo-dark);
+  position: relative;
+}
+
+.section-case-studies::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 59, 163, 0.1), transparent);
+  border-radius: 50%;
+  top: -300px;
+  left: -300px;
+  pointer-events: none;
+}
+
+.case-studies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.case-study-card {
+  padding: 3rem;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.case-study-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 59, 163, 0.3);
+}
+
+.case-study-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 2rem;
+  color: var(--mirabo-lightBlue);
+  filter: drop-shadow(0 0 12px rgba(75, 141, 255, 0.5));
+}
+
+.case-study-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.case-study-description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .solution-card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  
+  .solution-card--healthcare {
+    grid-template-columns: 1fr;
+  }
+  
+  .solution-card__image {
+    min-height: 400px;
+  }
+  
+  .partnership-steps {
+    grid-template-columns: 1fr;
+  }
+  
+  .case-studies-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .solution-title {
+    font-size: 2rem;
+  }
+  
+  .solution-card__content {
+    padding: 2rem;
+  }
+  
+  .solution-card__image {
+    min-height: 300px;
+  }
+  
+  .partnership-step {
+    padding: 2rem;
+  }
+  
+  .step-number {
+    font-size: 2rem;
+  }
+}
