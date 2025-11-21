@@ -212,12 +212,13 @@ section {
   right: 0;
   height: 80px;
   z-index: 1000;
-  transition: all var(--transition-base);
+  transition: transform var(--transition-base), background var(--transition-base);
 }
 
 .header.scrolled {
-  background: rgba(15, 23, 42, 0.9);
-  backdrop-filter: blur(10px);
+  background: rgba(5, 8, 15, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -233,7 +234,7 @@ section {
 }
 
 .nav__logo:hover img {
-  filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.5));
+  filter: brightness(0) saturate(100%) invert(64%) sepia(98%) saturate(1352%) hue-rotate(73deg) brightness(119%) contrast(119%);
 }
 
 .nav__links {
@@ -256,7 +257,7 @@ section {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--cyber-cyan);
+  background: var(--mirabo-green);
   transition: width var(--transition-base);
 }
 
@@ -521,8 +522,10 @@ section {
 .hero__scroll {
   position: absolute;
   bottom: var(--space-12);
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -532,7 +535,7 @@ section {
   z-index: 2;
   animation: float 3s ease-in-out infinite;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: color var(--transition-base);
 }
 
 .hero__scroll:hover {

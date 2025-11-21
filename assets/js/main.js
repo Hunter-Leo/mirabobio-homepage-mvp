@@ -12,14 +12,28 @@ document.addEventListener('DOMContentLoaded', function() {
         offset: 100
     });
     
-    // Header scroll effect
+    // Header scroll effect (refer-index.html style)
     const header = document.getElementById('header');
+    let lastScroll = 0;
+    
     window.addEventListener('scroll', throttle(() => {
-        if (window.scrollY > 50) {
+        const currentScroll = window.pageYOffset;
+        
+        // Hide on scroll down, show on scroll up
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            header.style.transform = 'translateY(-100%)';
+        } else {
+            header.style.transform = 'translateY(0)';
+        }
+        
+        // Add backdrop blur when scrolled
+        if (currentScroll > 50) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
+        
+        lastScroll = currentScroll;
     }, 100));
     
     // Mobile menu toggle
