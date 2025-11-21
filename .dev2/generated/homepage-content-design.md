@@ -40,46 +40,198 @@ Create an award-winning, high-tech website for MIRABO Biotechnology that showcas
 
 ---
 
+## 🎯 Core Design Style (Based on refer-index.html)
+
+### Visual Aesthetic
+**"Dark Tech + Bio Neon + Glassmorphism"**
+
+1. **Deep Space Background**
+   - Ultra-dark base: `#05080F` (Deep Space Black)
+   - Secondary dark: `#0F141E` (Surface Dark)
+   - Creates immersive, futuristic atmosphere
+
+2. **Custom Cursor System**
+   - Green dot cursor (8px, #32CD32)
+   - Animated outline ring (40px, rgba(50, 205, 50, 0.5))
+   - Expands on hover (60px) with background fill
+   - Adds premium, interactive feel
+
+3. **Noise Texture Overlay**
+   - SVG fractal noise filter
+   - 30% opacity with mix-blend-overlay
+   - Adds organic, analog warmth to digital design
+   - Fixed position covering entire viewport
+
+4. **Glassmorphism Cards**
+   - Background: rgba(15, 20, 30, 0.6)
+   - Backdrop-filter: blur(12px)
+   - Border: 1px solid rgba(255, 255, 255, 0.05)
+   - Creates floating, translucent effect
+
+5. **Sticky Scroll Cards**
+   - Technology platform cards stack on scroll
+   - Each card sticks at different top positions (top-32, top-36, top-40)
+   - Creates layered, depth effect
+   - Different shadow colors per card (blue, purple, green)
+
+6. **Canvas Particle Network**
+   - 60 particles (30 on mobile) in blue/green
+   - Connects particles within 150px distance
+   - Simulates biological network/neural connections
+   - Subtle movement (0.5px/frame)
+
+7. **Smooth Scroll (Lenis)**
+   - Duration: 1.2s
+   - Easing: exponential decay
+   - Creates buttery-smooth scrolling experience
+   - Industry-standard for award-winning sites
+
+8. **Light/Dark Mode Switch**
+   - Mission section switches to light mode (bg-gray-100)
+   - Text changes to dark (text-mirabo-dark)
+   - Creates visual break and emphasis
+
+---
+
 ## 🌈 Enhanced Color System
 
-### Primary Colors
+### Primary Colors (Updated from refer-index.html)
 ```css
---deep-space-blue: #001F54      /* Main brand color - deeper tech blue */
+--mirabo-blue: #003BA3           /* Brand primary */
+--mirabo-lightBlue: #4B8DFF      /* Brand secondary */
+--mirabo-green: #32CD32          /* Logo green - life & biotech */
+--mirabo-dark: #05080F           /* Deep space black - main bg */
+--mirabo-surface: #0F141E        /* Surface dark - sections */
+
+--deep-space-blue: #001F54       /* Accent blue */
 --electric-blue: #0066FF         /* High-energy accent */
 --cyber-cyan: #00D9FF            /* Cyber accent */
 --neon-green: #00FF88            /* Neon highlight */
---bio-green: #32CD32             /* Logo green - life & biotech */
 --quantum-purple: #8B5CF6        /* AI & innovation */
 ```
 
 ### Background Colors
 ```css
---bg-primary: #0F172A           /* Dark Matter - main background */
---bg-secondary: #1E293B         /* Secondary dark */
---bg-section-dark: #0A0E1A      /* Ultra dark for hero */
---bg-section-light: #F8FAFC     /* Light contrast sections */
---bg-glass: rgba(15, 23, 42, 0.7)  /* Glassmorphism */
+--bg-primary: #05080F            /* Deep space - main background */
+--bg-secondary: #0F141E          /* Secondary dark surface */
+--bg-section-dark: #0A0E1A       /* Ultra dark for hero */
+--bg-section-light: #F8FAFC      /* Light contrast sections */
+--bg-glass: rgba(15, 20, 30, 0.6)  /* Glassmorphism */
 ```
 
 ### Gradients
 ```css
---gradient-hero: linear-gradient(135deg, #001F54 0%, #0F172A 50%, #1E1B4B 100%);
+--gradient-hero: linear-gradient(135deg, #001F54 0%, #05080F 50%, #0F141E 100%);
 --gradient-mesh: radial-gradient(circle at 20% 50%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
                  radial-gradient(circle at 80% 80%, rgba(50, 205, 50, 0.1) 0%, transparent 50%);
 --gradient-card: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+--gradient-button: linear-gradient(135deg, #0066FF 0%, #00D9FF 100%);
 ```
 
 ### Text Colors
 ```css
---text-primary: #F1F5F9         /* Main text on dark */
---text-secondary: #94A3B8       /* Secondary text */
---text-accent: #00D9FF          /* Highlighted text */
---text-dark: #0F172A            /* Text on light backgrounds */
+--text-primary: #F1F5F9          /* Main text on dark */
+--text-secondary: #94A3B8        /* Secondary text */
+--text-accent: #00D9FF           /* Highlighted text */
+--text-dark: #0F172A             /* Text on light backgrounds */
+--text-green: #32CD32            /* Green accent text */
 ```
 
 ---
 
 ## 🎯 Visual Elements System
+
+### Core Interactive Elements (from refer-index.html)
+
+#### 1. Custom Cursor System
+```css
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #32CD32;
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(50, 205, 50, 0.5);
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+/* On hover */
+.cursor-outline:hover {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(50, 205, 50, 0.1);
+}
+```
+
+#### 2. Noise Texture Overlay
+```css
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml,...'); /* Fractal noise */
+  opacity: 0.3;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 50;
+}
+```
+
+#### 3. Glassmorphism Cards
+```css
+.glass-panel {
+  background: rgba(15, 20, 30, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1.5rem;
+}
+```
+
+#### 4. Canvas Particle Network
+```javascript
+// Bio network simulation
+class Particle {
+  constructor() {
+    this.x = Math.random() * width;
+    this.y = Math.random() * height;
+    this.vx = (Math.random() - 0.5) * 0.5;
+    this.vy = (Math.random() - 0.5) * 0.5;
+    this.size = Math.random() * 2 + 1;
+    this.color = Math.random() > 0.9 ? '#32CD32' : '#4B8DFF';
+  }
+}
+
+// Draw connections between particles within 150px
+```
+
+#### 5. Sticky Scroll Cards
+```css
+.tech-card {
+  position: sticky;
+  top: 8rem; /* 32 * 0.25rem */
+}
+
+.tech-card:nth-child(2) {
+  top: 9rem; /* 36 * 0.25rem */
+}
+
+.tech-card:nth-child(3) {
+  top: 10rem; /* 40 * 0.25rem */
+}
+```
 
 ### Biotech Elements
 - DNA double helix animated lines
@@ -87,6 +239,7 @@ Create an award-winning, high-tech website for MIRABO Biotechnology that showcas
 - Protein folding visualizations
 - Cell division effects
 - Microscopic imagery
+- Bio network connections (canvas)
 
 ### AI Tech Elements
 - Neural network connection lines

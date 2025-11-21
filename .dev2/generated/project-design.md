@@ -54,9 +54,10 @@ Custom CSS     - Brand-specific styles, animations
 
 ### Animation Libraries
 ```
-AOS            - Animate On Scroll (v2.3.1+)
+Lenis          - Smooth scroll library (v1.0.29+) ⭐ NEW
 GSAP           - GreenSock Animation Platform (v3.12+)
-Particles.js   - Particle background effects (v2.0+)
+ScrollTrigger  - GSAP scroll-based animations
+Particles.js   - Particle background effects (v2.0+) [Optional: Can use Canvas]
 ```
 
 ### Icon & Font Libraries
@@ -312,32 +313,38 @@ function isInViewport(element) { ... }
 
 ## 🎨 Design System
 
-### Color Palette
+### Color Palette (Updated from refer-index.html)
 ```css
 :root {
   /* Primary Colors */
+  --mirabo-blue: #003BA3;
+  --mirabo-lightBlue: #4B8DFF;
+  --mirabo-green: #32CD32;
+  --mirabo-dark: #05080F;
+  --mirabo-surface: #0F141E;
+  
   --deep-space-blue: #001F54;
   --electric-blue: #0066FF;
   --cyber-cyan: #00D9FF;
   --neon-green: #00FF88;
-  --bio-green: #32CD32;
   --quantum-purple: #8B5CF6;
   
   /* Background Colors */
-  --bg-primary: #0F172A;
-  --bg-secondary: #1E293B;
+  --bg-primary: #05080F;
+  --bg-secondary: #0F141E;
   --bg-section-dark: #0A0E1A;
   --bg-section-light: #F8FAFC;
-  --bg-glass: rgba(15, 23, 42, 0.7);
+  --bg-glass: rgba(15, 20, 30, 0.6);
   
   /* Text Colors */
   --text-primary: #F1F5F9;
   --text-secondary: #94A3B8;
   --text-accent: #00D9FF;
   --text-dark: #0F172A;
+  --text-green: #32CD32;
   
   /* Gradients */
-  --gradient-hero: linear-gradient(135deg, #001F54 0%, #0F172A 50%, #1E1B4B 100%);
+  --gradient-hero: linear-gradient(135deg, #001F54 0%, #05080F 50%, #0F141E 100%);
   --gradient-card: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
   --gradient-button: linear-gradient(135deg, #0066FF 0%, #00D9FF 100%);
 }
@@ -781,22 +788,16 @@ git push origin main
 ```html
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
-
-<!-- AOS CSS -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 ```
 
 ### JavaScript Libraries
 ```html
-<!-- AOS JS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
 <!-- GSAP -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-<!-- Particles.js -->
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<!-- Lenis Smooth Scroll ⭐ NEW -->
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
 ```
 
 ### Fonts
@@ -804,13 +805,7 @@ git push origin main
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-```
-
-### Icons
-```html
-<!-- Lucide Icons -->
-<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
 ```
 
 ---

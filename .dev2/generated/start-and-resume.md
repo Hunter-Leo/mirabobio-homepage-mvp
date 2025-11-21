@@ -177,11 +177,14 @@ git pull origin develop
 
 **These requirements are MANDATORY and must be strictly followed:**
 
-1. **High-Tech Aesthetic**
-   - The website MUST reflect a high-technology company
-   - Use dark theme with neon accents
-   - Implement futuristic visual effects
-   - Create immersive, cutting-edge experience
+1. **High-Tech Aesthetic (refer-index.html Style)**
+   - Deep space dark background (#05080F)
+   - Custom cursor system (green dot + outline ring)
+   - Noise texture overlay (30% opacity, mix-blend-overlay)
+   - Glassmorphism cards (backdrop-filter: blur(12px))
+   - Canvas particle network animation
+   - Lenis smooth scroll (1.2s duration)
+   - Sticky scroll cards with layering effect
 
 2. **Award-Winning Design**
    - Design quality MUST be at Awwwards Site of the Day level
@@ -197,10 +200,10 @@ git pull origin develop
 4. **Brand Consistency**
    - Use official logo from `materials/mirabobio-logo-static.svg`
    - Follow brand color palette exactly:
-     - Primary: Deep Space Blue (#001F54)
-     - Secondary: Electric Blue (#0066FF)
-     - Accent: Cyber Cyan (#00D9FF)
-     - Bio: Neon Green (#00FF88) / Bio Green (#32CD32)
+     - Primary: Mirabo Blue (#003BA3)
+     - Secondary: Light Blue (#4B8DFF)
+     - Accent: Bio Green (#32CD32)
+     - Background: Deep Space (#05080F)
    - Maintain consistent visual language
 
 ---
@@ -209,15 +212,46 @@ git pull origin develop
 
 #### Color Usage
 ```css
-/* MUST use these exact colors */
---deep-space-blue: #001F54;
---electric-blue: #0066FF;
---cyber-cyan: #00D9FF;
---neon-green: #00FF88;
---bio-green: #32CD32;
---bg-primary: #0F172A;
+/* MUST use these exact colors (from refer-index.html) */
+--mirabo-blue: #003BA3;
+--mirabo-lightBlue: #4B8DFF;
+--mirabo-green: #32CD32;
+--mirabo-dark: #05080F;
+--mirabo-surface: #0F141E;
 --text-primary: #F1F5F9;
 ```
+
+#### Core Interactive Elements (MUST IMPLEMENT)
+1. **Custom Cursor System**
+   - Green dot (8px) following mouse
+   - Outline ring (40px) with smooth animation
+   - Expands to 60px on hover with background fill
+
+2. **Noise Texture Overlay**
+   - Fixed position covering viewport
+   - SVG fractal noise filter
+   - 30% opacity with mix-blend-overlay
+
+3. **Glassmorphism Cards**
+   - Background: rgba(15, 20, 30, 0.6)
+   - Backdrop-filter: blur(12px)
+   - Border: 1px solid rgba(255, 255, 255, 0.05)
+
+4. **Canvas Particle Network**
+   - 60 particles (30 on mobile)
+   - Blue (#4B8DFF) and green (#32CD32) colors
+   - Connect particles within 150px
+   - Smooth movement animation
+
+5. **Lenis Smooth Scroll**
+   - Duration: 1.2s
+   - Easing: exponential decay
+   - Buttery-smooth scrolling
+
+6. **Sticky Scroll Cards**
+   - Technology cards stack on scroll
+   - Different top positions (8rem, 9rem, 10rem)
+   - Creates layered depth effect
 
 #### Typography Rules
 - **Display Font:** Space Grotesk (headlines)
@@ -671,103 +705,167 @@ Started: 2025-01-20 10:00
 **⚠️ CRITICAL REQUIREMENT:**
 After completing each page or functional module, you MUST use Playwright to validate that the implementation matches the design document.
 
+**⚠️ SCREENSHOT REQUIREMENT:**
+When taking screenshots with Playwright, you MUST use the `browser_run_code` tool to save screenshots to the `.cache/` directory in the current project, then view the screenshots to verify the implementation.
+
 **Actions:**
 
-1. **Create Playwright Test Script**
+1. **Use browser_run_code Tool for Screenshots**
    ```javascript
-   // tests/hero-section.spec.js
-   const { test, expect } = require('@playwright/test');
+   // ✅ CORRECT: Use browser_run_code tool
+   // This will be executed through the tool system
+   await page.goto('http://localhost:8000');
+   await page.screenshot({ 
+     path: '.cache/hero-section-desktop.png',
+     fullPage: false
+   });
    
-   test.describe('Hero Section', () => {
-     test.beforeEach(async ({ page }) => {
-       await page.goto('http://localhost:8000');
-     });
-     
-     test('should display hero section', async ({ page }) => {
-       const hero = page.locator('.hero');
-       await expect(hero).toBeVisible();
-     });
-     
-     test('should have correct headline', async ({ page }) => {
-       const title = page.locator('.hero__title');
-       await expect(title).toContainText('Pioneering AI-Driven');
-     });
-     
-     test('should have CTA buttons', async ({ page }) => {
-       const primaryBtn = page.locator('.btn-primary');
-       const secondaryBtn = page.locator('.btn-secondary');
-       await expect(primaryBtn).toBeVisible();
-       await expect(secondaryBtn).toBeVisible();
-     });
-     
-     test('should have particle animation', async ({ page }) => {
-       const particles = page.locator('#particles-js');
-       await expect(particles).toBeVisible();
-     });
-     
-     test('should be responsive', async ({ page }) => {
-       // Test mobile
-       await page.setViewportSize({ width: 375, height: 667 });
-       const hero = page.locator('.hero');
-       await expect(hero).toBeVisible();
-       
-       // Test desktop
-       await page.setViewportSize({ width: 1920, height: 1080 });
-       await expect(hero).toBeVisible();
-     });
-     
-     test('should match design screenshot', async ({ page }) => {
-       await page.screenshot({ 
-         path: 'tests/screenshots/hero-section.png',
-         fullPage: false
-       });
-       // Visual comparison with design mockup
-     });
+   // Mobile screenshot
+   await page.setViewportSize({ width: 375, height: 667 });
+   await page.screenshot({ 
+     path: '.cache/hero-section-mobile.png',
+     fullPage: false
+   });
+   
+   // Full page screenshot
+   await page.setViewportSize({ width: 1440, height: 900 });
+   await page.screenshot({ 
+     path: '.cache/hero-section-fullpage.png',
+     fullPage: true
    });
    ```
 
-2. **Run Playwright Tests**
-   ```bash
-   # Install Playwright (first time only)
-   npm init -y
-   npm install -D @playwright/test
-   npx playwright install
-   
-   # Run tests
-   npx playwright test tests/hero-section.spec.js
-   
-   # Run with UI
-   npx playwright test --ui
-   
-   # Generate report
-   npx playwright show-report
+2. **Screenshot Naming Convention**
+   ```
+   .cache/
+   ├── hero-section-desktop.png       # Desktop view (1440x900)
+   ├── hero-section-mobile.png        # Mobile view (375x667)
+   ├── hero-section-fullpage.png      # Full page scroll
+   ├── platform-cards-desktop.png     # Specific component
+   ├── sticky-scroll-test.png         # Interaction test
+   └── light-mode-switch.png          # Theme switch test
    ```
 
-3. **Check Test Results**
-   - All tests should pass ✅
-   - Review screenshots for visual accuracy
-   - Compare with design document
-   - Check console output for errors
+3. **Validation Workflow**
+   ```
+   Step 1: Navigate to page
+   ↓
+   Step 2: Take desktop screenshot (.cache/xxx-desktop.png)
+   ↓
+   Step 3: Take mobile screenshot (.cache/xxx-mobile.png)
+   ↓
+   Step 4: View screenshots using fs_read or image viewing
+   ↓
+   Step 5: Compare with design document
+   ↓
+   Step 6: Document findings
+   ↓
+   Step 7: Fix issues if needed
+   ↓
+   Step 8: Re-test until perfect
+   ```
 
-4. **Fix Any Issues**
-   - If tests fail, identify the problem
-   - Fix the code
-   - Re-run tests
-   - Repeat until all tests pass
+4. **Example: Complete Validation Process**
+   ```javascript
+   // Use browser_run_code tool with this code:
+   
+   // 1. Desktop view
+   await page.goto('http://localhost:8000');
+   await page.waitForLoadState('networkidle');
+   await page.screenshot({ 
+     path: '.cache/hero-desktop.png',
+     fullPage: false
+   });
+   
+   // 2. Test custom cursor (hover state)
+   await page.mouse.move(500, 300);
+   await page.waitForTimeout(500);
+   await page.screenshot({ 
+     path: '.cache/hero-cursor-hover.png'
+   });
+   
+   // 3. Test scroll behavior
+   await page.evaluate(() => window.scrollTo(0, 800));
+   await page.waitForTimeout(500);
+   await page.screenshot({ 
+     path: '.cache/hero-scrolled.png'
+   });
+   
+   // 4. Mobile view
+   await page.setViewportSize({ width: 375, height: 667 });
+   await page.goto('http://localhost:8000');
+   await page.waitForLoadState('networkidle');
+   await page.screenshot({ 
+     path: '.cache/hero-mobile.png',
+     fullPage: true
+   });
+   
+   // 5. Tablet view
+   await page.setViewportSize({ width: 768, height: 1024 });
+   await page.goto('http://localhost:8000');
+   await page.screenshot({ 
+     path: '.cache/hero-tablet.png'
+   });
+   ```
 
-5. **Document Test Results**
+5. **Check Screenshots**
+   - View screenshots in `.cache/` directory
+   - Compare with design document specifications
+   - Verify colors match (use color picker if needed)
+   - Check spacing and alignment
+   - Verify typography (font size, weight, line height)
+   - Check animations triggered correctly
+   - Verify responsive behavior
+
+6. **Document Test Results**
    ```markdown
-   ## T004 Test Results
-   - ✅ Hero section displays correctly
-   - ✅ Headline text matches design
-   - ✅ CTA buttons present and functional
-   - ✅ Particle animation working
-   - ✅ Responsive on mobile and desktop
-   - ✅ Visual appearance matches design
+   ## T004 Validation Results
    
-   Screenshot: tests/screenshots/hero-section.png
-   Test Report: playwright-report/index.html
+   ### Desktop (1440x900)
+   - ✅ Hero section displays correctly
+   - ✅ Canvas particle network animating
+   - ✅ Custom cursor visible and following mouse
+   - ✅ Gradient text effect applied
+   - ✅ Scroll indicator visible
+   - Screenshot: .cache/hero-desktop.png
+   
+   ### Mobile (375x667)
+   - ✅ Responsive layout working
+   - ✅ Particle count reduced (30 particles)
+   - ✅ Custom cursor disabled
+   - ✅ Text sizes adjusted
+   - ✅ CTA buttons stacked vertically
+   - Screenshot: .cache/hero-mobile.png
+   
+   ### Interactions
+   - ✅ Lenis smooth scroll working
+   - ✅ GSAP reveal animations trigger
+   - ✅ Hover effects working
+   - Screenshot: .cache/hero-scrolled.png
+   
+   ### Issues Found
+   - None
+   
+   ### Status
+   ✅ Ready for production
    ```
+
+7. **Fix Issues if Found**
+   - If screenshots show problems, fix the code
+   - Re-run browser_run_code with screenshot commands
+   - Compare new screenshots with design
+   - Repeat until perfect match
+
+8. **Important Notes**
+   - ✅ Always save to `.cache/` directory
+   - ✅ Use descriptive filenames
+   - ✅ Test multiple viewports (desktop, tablet, mobile)
+   - ✅ Test interactions (hover, scroll, click)
+   - ✅ Compare screenshots with design document
+   - ✅ Document all findings
+   - ❌ Don't save to other directories
+   - ❌ Don't skip screenshot validation
+   - ❌ Don't assume it looks correct without checking
 
 ---
 

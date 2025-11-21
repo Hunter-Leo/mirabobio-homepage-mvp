@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en" class="antialiased">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiRABO BIOTECHNOLOGY | AI-Integrated Synthetic Biology</title>
+    <meta name="description" content="Pioneering AI-integrated platforms to create next-generation bioactive ingredients.">
+    
+    <!-- Fonts: Inter (Clean tech feel) & Space Grotesk (Headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP & Lenis for Award-Winning Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mirabo: {
+                            blue: '#003BA3',
+                            lightBlue: '#4B8DFF',
+                            green: '#32CD32', // Logo Green
+                            dark: '#05080F',
+                            surface: '#0F141E'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'noise': "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.05%22/%3E%3C/svg%3E')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Cursor */
+        body {
+            cursor: none;
+            background-color: #05080F;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #32CD32;
+        }
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(50, 205, 50, 0.5);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+        
+        /* Utility */
+        .clip-text-image {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        
+        .glass-panel {
+            background: rgba(15, 20, 30, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        canvas#hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.6;
+        }
+        
+        /* Scrollbar hide */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+</head>
+<body class="bg-mirabo-dark selection:bg-mirabo-green selection:text-mirabo-dark relative">
+
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Noise Overlay Texture -->
+    <div class="fixed inset-0 w-full h-full bg-noise pointer-events-none z-50 opacity-30 mix-blend-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 py-6 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <!-- Logo (SVG) -->
+            <a href="#" class="relative group w-48 hover-trigger" aria-label="Mirabo Home">
+               <!-- User provided SVG adapted for Dark Mode (Auto-scaled via viewBox) -->
+               <svg viewBox="0 0 3525 1457" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" overflow="hidden" class="w-full h-auto">
+                   <style> 
+                       @keyframes blink { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.6; transform: scale(0.98); } } 
+                       .blinking-dot { animation: blink 3s ease-in-out infinite; transform-origin: center; transform-box: fill-box; } 
+                   </style>
+                   <g transform="translate(-1356 -715)">
+                       <g>
+                           <!-- M (Optimized to White for Dark Theme) -->
+                           <text fill="#FFFFFF" fill-opacity="1" font-family="Tahoma,Tahoma_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="700" font-stretch="normal" font-size="642" text-anchor="start" direction="ltr" writing-mode="lr-tb" unicode-bidi="normal" text-decoration="none" transform="matrix(1 0 0 1 1742.17 1549)">M</text>
+                           <!-- RABO (Optimized to White for Dark Theme) -->
+                           <text fill="#FFFFFF" fill-opacity="1" font-family="Tahoma,Tahoma_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="700" font-stretch="normal" font-size="642" text-anchor="start" direction="ltr" writing-mode="lr-tb" unicode-bidi="normal" text-decoration="none" transform="matrix(1 0 0 1 2552.96 1549)">RABO</text>
+                           <!-- Green Dot -->
+                           <path class="blinking-dot" d="M2439.5 1005 2414.97 1008.63 2392.56 1019.24 2374.18 1035.89 2361.43 1057.16 2355.41 1081.21 2355 1089.5 2355.1 1093.65 2359.94 1117.96 2371.63 1139.84 2389.16 1157.37 2411.04 1169.06 2435.35 1173.9 2439.5 1174 2443.65 1173.9 2467.97 1169.06 2489.85 1157.37 2507.37 1139.84 2519.06 1117.96 2523.9 1093.65 2524 1089.5 2523.9 1085.35 2519.06 1061.03 2507.37 1039.16 2489.85 1021.63 2467.97 1009.93 2443.65 1005.1 2439.5 1005Z" fill="#32CD32" fill-rule="evenodd" fill-opacity="1"/>
+                           <!-- BIOTECHNOLOGY -->
+                           <text fill="#4B8DFF" fill-opacity="1" font-family="Tahoma,Tahoma_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="700" font-stretch="normal" font-size="275" text-anchor="start" direction="ltr" writing-mode="lr-tb" unicode-bidi="normal" text-decoration="none" transform="matrix(1 0 0 1 1774.67 1946)">BIOTECHNOLOGY</text>
+                           <!-- I-Stem (Optimized to White for Dark Theme) -->
+                           <rect x="2384" y="1199" width="108" height="348" fill="#FFFFFF" fill-opacity="1"/>
+                       </g>
+                   </g>
+               </svg>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium tracking-widest uppercase text-gray-400">
+                <a href="#about" class="hover:text-mirabo-green transition-colors hover-trigger">About</a>
+                <a href="#technology" class="hover:text-mirabo-green transition-colors hover-trigger">Platform</a>
+                <a href="#mission" class="hover:text-mirabo-green transition-colors hover-trigger">Mission</a>
+                <a href="#contact" class="px-6 py-2 border border-white/20 rounded-full hover:bg-mirabo-green hover:text-black hover:border-mirabo-green transition-all duration-300 hover-trigger">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+        <canvas id="hero-canvas"></canvas>
+        
+        <div class="container mx-auto px-6 z-10 pt-20">
+            <div class="max-w-5xl">
+                <h2 class="text-mirabo-green font-mono mb-6 text-sm md:text-base tracking-widest reveal-text opacity-0">
+                    /// SYNTHETIC BIOLOGY + AI
+                </h2>
+                <h1 class="text-5xl md:text-8xl font-display font-bold leading-tight mb-8 reveal-text opacity-0">
+                    Bridging Biology <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">and Everyday Life.</span>
+                </h1>
+                <p class="text-gray-400 text-lg md:text-xl max-w-2xl leading-relaxed mb-12 reveal-text opacity-0">
+                    Pioneering AI-integrated platforms to create next-generation bioactive ingredients and medical materials. From In-Silico prediction to commercial scale.
+                </p>
+                
+                <div class="reveal-text opacity-0">
+                    <a href="#technology" class="group inline-flex items-center gap-4 text-white border-b border-white/30 pb-2 hover:border-mirabo-green hover:text-mirabo-green transition-all duration-300 hover-trigger">
+                        <span class="font-display text-lg">Explore MiRAiQ™ Platform</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-hover:translate-x-2 transition-transform">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+            <span class="text-xs uppercase tracking-widest">Scroll</span>
+            <div class="w-[1px] h-12 bg-gradient-to-b from-mirabo-green to-transparent"></div>
+        </div>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-32 bg-mirabo-surface relative">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+            <div class="relative">
+                <!-- Abstract Visual -->
+                <div class="w-full aspect-square rounded-full bg-gradient-to-tr from-mirabo-blue to-mirabo-green opacity-10 blur-3xl absolute top-0 left-0 animate-pulse"></div>
+                <div class="relative glass-panel p-10 rounded-2xl border-l-4 border-mirabo-green">
+                    <h3 class="text-3xl font-display font-bold mb-4">Who We Are</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        MiRABO Biotechnology Limited is a Hong Kong–based synthetic biology company. Through our subsidiary, Shanghai MiRABO, we advance protein in-silico prediction, protein engineering, and bioprocess modeling.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="space-y-8">
+                <h2 class="text-4xl md:text-6xl font-display font-bold leading-tight">
+                    Redefining <br>
+                    <span class="text-mirabo-lightBlue">Bio-Discovery</span>
+                </h2>
+                <p class="text-xl text-gray-400 font-light">
+                    By combining AI-driven modeling with experimental validation, we improve the precision, speed, and scalability of biologics R&D from molecular design to process optimization.
+                </p>
+                
+                <div class="grid grid-cols-2 gap-8 pt-8 border-t border-white/10">
+                    <div>
+                        <span class="block text-4xl font-bold text-white mb-2">HQ</span>
+                        <span class="text-gray-500">Hong Kong</span>
+                    </div>
+                    <div>
+                        <span class="block text-4xl font-bold text-white mb-2">R&D</span>
+                        <span class="text-gray-500">Shanghai</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNOLOGY (Horizontal/Sticky Scroll) -->
+    <section id="technology" class="py-32 bg-mirabo-dark relative overflow-hidden">
+        <div class="container mx-auto px-6 mb-20 text-center">
+            <span class="text-mirabo-green font-mono tracking-widest uppercase">Our Proprietary Engine</span>
+            <h2 class="text-5xl md:text-7xl font-display font-bold mt-4">The MiRAiQ™ Ecosystem</h2>
+        </div>
+
+        <div class="container mx-auto px-6 relative">
+            <!-- Vertical line connecting cards -->
+            <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-mirabo-blue to-transparent -translate-x-1/2 hidden md:block"></div>
+
+            <!-- Card 1 -->
+            <div class="tech-card sticky top-32 mb-24 glass-panel p-8 md:p-16 rounded-3xl max-w-5xl mx-auto border border-white/10 shadow-2xl shadow-mirabo-blue/20">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                        <div class="inline-block px-3 py-1 bg-mirabo-blue/20 text-mirabo-lightBlue rounded-full text-xs mb-6 border border-mirabo-blue/50">STEP 01: ANALYSIS</div>
+                        <h3 class="text-4xl font-bold mb-4">MiRAiQ-PRISM™</h3>
+                        <p class="text-xl text-gray-400 mb-6">Protein In-Silico Analysis AI Engine</p>
+                        <p class="text-gray-300 leading-relaxed mb-8">
+                            Accelerates drug developability assessment through AI. We analyze Sequence Cores, Structure Cores, and Safety Cores to predict solubility, viscosity, and immunogenicity before the wet lab.
+                        </p>
+                        <ul class="space-y-3 text-sm text-gray-400">
+                            <li class="flex items-center gap-3"><span class="w-2 h-2 bg-mirabo-green rounded-full"></span>Molecular Dynamics Simulation</li>
+                            <li class="flex items-center gap-3"><span class="w-2 h-2 bg-mirabo-green rounded-full"></span>Surface Charge & Hydrophobicity</li>
+                        </ul>
+                    </div>
+                    <div class="order-1 md:order-2 flex justify-center">
+                        <!-- Abstract representation of PRISM -->
+                        <div class="w-64 h-64 relative">
+                             <div class="absolute inset-0 border border-mirabo-blue/30 rounded-full animate-[spin_10s_linear_infinite]"></div>
+                             <div class="absolute inset-4 border border-dashed border-mirabo-green/50 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+                             <div class="absolute inset-0 flex items-center justify-center">
+                                 <div class="w-32 h-32 bg-mirabo-blue blur-xl opacity-50 rounded-full"></div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="tech-card sticky top-36 mb-24 glass-panel p-8 md:p-16 rounded-3xl max-w-5xl mx-auto border border-white/10 shadow-2xl shadow-purple-900/20 bg-[#0F141E]">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                        <div class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-xs mb-6 border border-purple-500/50">STEP 02: ENGINEERING</div>
+                        <h3 class="text-4xl font-bold mb-4">MiRAiQ-ORION™</h3>
+                        <p class="text-xl text-gray-400 mb-6">Protein Engineering AI Engine</p>
+                        <p class="text-gray-300 leading-relaxed mb-8">
+                            Rational engineering to optimize frameworks for stability and efficacy. Utilizing the "Design-Build-Test-Learn" cycle to improve protein stability, activity, and yield.
+                        </p>
+                    </div>
+                    <div class="order-1 md:order-2 flex justify-center">
+                         <div class="w-full h-48 bg-gradient-to-r from-transparent via-purple-500/10 to-transparent border-t border-b border-purple-500/20 flex items-center justify-center">
+                            <div class="font-mono text-purple-400 text-xs">[ SEQUENCE OPTIMIZATION RUNNING ]</div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Card 3 -->
+             <div class="tech-card sticky top-40 mb-24 glass-panel p-8 md:p-16 rounded-3xl max-w-5xl mx-auto border border-white/10 shadow-2xl shadow-mirabo-green/20 bg-[#0B120E]">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                        <div class="inline-block px-3 py-1 bg-mirabo-green/20 text-mirabo-green rounded-full text-xs mb-6 border border-mirabo-green/50">STEP 03: PROCESS</div>
+                        <h3 class="text-4xl font-bold mb-4">MiRAiQ-IGNIS™</h3>
+                        <p class="text-xl text-gray-400 mb-6">AI Driven Process Modeling</p>
+                        <p class="text-gray-300 leading-relaxed mb-8">
+                            Enhances yield, quality, and scalability in biologics manufacturing. From Upstream Culture Optimization to Downstream Process Design.
+                        </p>
+                    </div>
+                    <div class="order-1 md:order-2 flex justify-center">
+                        <!-- 3D Graph Representation -->
+                        <div class="relative w-full h-full flex items-center justify-center">
+                            <div class="grid grid-cols-6 gap-1">
+                                <div class="w-2 h-8 bg-mirabo-green/20 rounded-sm animate-pulse"></div>
+                                <div class="w-2 h-12 bg-mirabo-green/40 rounded-sm animate-pulse" style="animation-delay: 0.1s"></div>
+                                <div class="w-2 h-16 bg-mirabo-green/60 rounded-sm animate-pulse" style="animation-delay: 0.2s"></div>
+                                <div class="w-2 h-24 bg-mirabo-green rounded-sm animate-pulse" style="animation-delay: 0.3s"></div>
+                                <div class="w-2 h-14 bg-mirabo-green/50 rounded-sm animate-pulse" style="animation-delay: 0.4s"></div>
+                                <div class="w-2 h-6 bg-mirabo-green/20 rounded-sm animate-pulse" style="animation-delay: 0.5s"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSION (Light Mode Switch) -->
+    <section id="mission" class="py-32 bg-gray-100 text-mirabo-dark relative transition-colors duration-700">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <svg class="w-12 h-12 mx-auto mb-8 text-mirabo-blue" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/></svg>
+                
+                <h2 class="text-3xl md:text-5xl font-display font-medium mb-12 leading-tight">
+                    "Our mission is to bridge biotechnology and everyday life through innovative, sustainable products."
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-12 text-left mt-20 border-t border-gray-300 pt-12">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-mirabo-blue">Sustainability</h3>
+                        <p class="text-gray-600">We are dedicated to enhancing quality of life while preserving the environment, striving to leave a sustainable planet for future generations.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-mirabo-blue">Vision</h3>
+                        <p class="text-gray-600">To become a global leader in synthetic biology, setting new standards in scientific innovation and impacting people positively.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="bg-mirabo-dark text-white py-20 border-t border-white/10">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="col-span-1">
+                    <h3 class="text-2xl font-bold font-display mb-6">MiRABO</h3>
+                    <p class="text-gray-500 text-sm mb-6">
+                        Advanced AI engines to streamline biologics development from molecular design to commercial manufacturing.
+                    </p>
+                </div>
+                
+                <div class="col-span-1">
+                    <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-6">Contact</h4>
+                    <a href="mailto:info@mirabobio.com" class="text-2xl font-display hover:text-mirabo-green transition-colors hover-trigger">info@mirabobio.com</a>
+                </div>
+
+                <div class="col-span-1 md:text-right">
+                     <h4 class="text-sm uppercase tracking-widest text-gray-500 mb-6">Locations</h4>
+                     <p class="text-lg">Hong Kong</p>
+                     <p class="text-lg">Shanghai</p>
+                </div>
+            </div>
+            
+            <div class="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-gray-600 text-xs">
+                <p>&copy; 2025 MiRABO Biotechnology Limited. All Rights Reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // 1. Smooth Scrolling (Lenis)
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // 2. Custom Cursor Logic
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+        const triggers = document.querySelectorAll('.hover-trigger');
+
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            // Slight delay for the outline for "fluid" feel
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+
+        triggers.forEach(trigger => {
+            trigger.addEventListener('mouseenter', () => {
+                cursorOutline.style.width = '60px';
+                cursorOutline.style.height = '60px';
+                cursorOutline.style.backgroundColor = 'rgba(50, 205, 50, 0.1)';
+            });
+            trigger.addEventListener('mouseleave', () => {
+                cursorOutline.style.width = '40px';
+                cursorOutline.style.height = '40px';
+                cursorOutline.style.backgroundColor = 'transparent';
+            });
+        });
+
+        // 3. GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Reveal
+        gsap.to('.reveal-text', {
+            y: 0,
+            opacity: 1,
+            duration: 1.5,
+            stagger: 0.2,
+            ease: 'power4.out',
+            delay: 0.5
+        });
+
+        // Navbar hide/show on scroll
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const nav = document.getElementById('navbar');
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                nav.style.transform = 'translateY(-100%)';
+            } else {
+                nav.style.transform = 'translateY(0)';
+                if(currentScroll > 50) {
+                    nav.classList.add('bg-mirabo-dark/90', 'backdrop-blur-md');
+                } else {
+                    nav.classList.remove('bg-mirabo-dark/90', 'backdrop-blur-md');
+                }
+            }
+            lastScroll = currentScroll;
+        });
+
+        // Tech Cards Stacking Scale Effect
+        const cards = document.querySelectorAll('.tech-card');
+        cards.forEach((card, index) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top bottom-=100",
+                    toggleActions: "play none none reverse"
+                },
+                y: 100,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            });
+        });
+
+        // 4. Canvas Background (Bio Network Simulation)
+        const canvas = document.getElementById('hero-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.size = Math.random() * 2 + 1;
+                this.color = Math.random() > 0.9 ? '#32CD32' : '#4B8DFF'; // Green or Blue
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const count = window.innerWidth < 768 ? 30 : 60;
+            for (let i = 0; i < count; i++) {
+                particles.push(new Particle());
+            }
+        }
+        initParticles();
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, width, height);
+            
+            // Draw Connections
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                
+                for (let j = i; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < 150) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(75, 141, 255, ${0.1 - distance/1500})`;
+                        ctx.lineWidth = 1;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateCanvas);
+        }
+        animateCanvas();
+
+    </script>
+</body>
+</html>

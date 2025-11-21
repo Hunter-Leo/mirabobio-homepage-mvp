@@ -8,10 +8,11 @@
 | Task ID | Task Name | Status | Priority | Estimated Time |
 |---------|-----------|--------|----------|----------------|
 | T001 | Project Setup & Structure | ✅ Completed | High | 1h |
-| T002 | Design System & CSS Variables | ✅ Completed | High | 2h |
-| T003 | Global Components (Header/Footer) | ✅ Completed | High | 3h |
-| T004 | Home Page - Hero Section | ✅ Completed | High | 3h |
-| T005 | Home Page - Content Sections | ✅ Completed | High | 4h |
+| T002 | Design System & CSS Variables | ⚠️ Needs Update | High | 2h |
+| T003 | Global Components (Header/Footer) | ⚠️ Needs Update | High | 3h |
+| T004 | Home Page - Hero Section | ⚠️ Needs Update | High | 3h |
+| T005 | Home Page - Content Sections | ⚠️ Needs Update | High | 4h |
+| **T-UPDATE** | **Update Completed Tasks to refer-index.html Style** | **🔄 In Progress** | **Critical** | **6h** |
 | T006 | About Page | ⬜ Pending | Medium | 4h |
 | T007 | Platform Page - Structure | ⬜ Pending | High | 3h |
 | T008 | Platform Page - Three Platforms | ⬜ Pending | High | 5h |
@@ -29,10 +30,325 @@
 - ⬜ Pending
 - 🔄 In Progress
 - ✅ Completed
-- ⚠️ Blocked
+- ⚠️ Needs Update (refer-index.html style)
 - 🔍 Review
 
-**Total Estimated Time:** 53 hours
+**Total Estimated Time:** 59 hours (53h + 6h update)
+
+---
+
+## 🔄 UPDATE TASK (CRITICAL)
+
+---
+
+### T-UPDATE: Update Completed Tasks to refer-index.html Style
+**Status:** 🔄 In Progress  
+**Priority:** Critical  
+**Estimated Time:** 6 hours  
+**Dependencies:** T001-T005 (Completed tasks)
+
+#### Description
+Update all completed tasks (T002-T005) to match the approved design style from `refer-index.html`. This includes implementing custom cursor, noise overlay, glassmorphism, canvas particles, Lenis smooth scroll, and sticky scroll cards.
+
+#### Reference Files
+- **PRIMARY:** `refer-index.html` (approved design reference)
+- `.dev2/generated/DESIGN_UPDATE.md` (update specifications)
+- `.dev2/generated/homepage-content-design.md` (updated design specs)
+- `.dev2/generated/project-design.md` (updated technical specs)
+- Current files: `index.html`, `assets/css/style.css`, `assets/js/main.js`
+
+#### Update Breakdown
+
+##### UPDATE 1: Design System & CSS (2h)
+**Files to Update:** `assets/css/style.css`, `assets/css/animations.css`
+
+**Tasks:**
+1. Update CSS Variables:
+   ```css
+   --mirabo-dark: #05080F;
+   --mirabo-surface: #0F141E;
+   --mirabo-blue: #003BA3;
+   --mirabo-lightBlue: #4B8DFF;
+   --mirabo-green: #32CD32;
+   ```
+
+2. Add Custom Cursor System:
+   ```css
+   body { cursor: none; }
+   .cursor-dot { /* 8px green dot */ }
+   .cursor-outline { /* 40px ring, expands to 60px on hover */ }
+   ```
+
+3. Add Noise Texture Overlay:
+   ```html
+   <div class="fixed inset-0 bg-noise opacity-30 mix-blend-overlay pointer-events-none z-50"></div>
+   ```
+
+4. Add Glassmorphism Card Styles:
+   ```css
+   .glass-panel {
+     background: rgba(15, 20, 30, 0.6);
+     backdrop-filter: blur(12px);
+     border: 1px solid rgba(255, 255, 255, 0.05);
+   }
+   ```
+
+5. Update Background Colors:
+   - Change all `#0F172A` to `#05080F`
+   - Change all `#1E293B` to `#0F141E`
+
+**Validation:**
+- [ ] Custom cursor follows mouse
+- [ ] Cursor expands on hover
+- [ ] Noise overlay visible
+- [ ] Glassmorphism blur working
+- [ ] Colors match refer-index.html
+
+---
+
+##### UPDATE 2: Navigation & Header (1h)
+**Files to Update:** `index.html`, `assets/css/style.css`, `assets/js/main.js`
+
+**Tasks:**
+1. Update Navigation Scroll Behavior:
+   ```javascript
+   // Hide on scroll down, show on scroll up
+   let lastScroll = 0;
+   window.addEventListener('scroll', () => {
+     const currentScroll = window.pageYOffset;
+     if (currentScroll > lastScroll && currentScroll > 100) {
+       nav.style.transform = 'translateY(-100%)';
+     } else {
+       nav.style.transform = 'translateY(0)';
+       if(currentScroll > 50) {
+         nav.classList.add('bg-mirabo-dark/90', 'backdrop-blur-md');
+       }
+     }
+     lastScroll = currentScroll;
+   });
+   ```
+
+2. Update Logo Hover Effect:
+   ```css
+   .logo:hover { fill: var(--mirabo-green); }
+   ```
+
+**Validation:**
+- [ ] Nav hides on scroll down
+- [ ] Nav shows on scroll up
+- [ ] Background blur on scroll
+- [ ] Logo hover effect working
+
+---
+
+##### UPDATE 3: Hero Section (2h)
+**Files to Update:** `index.html`, `assets/js/main.js`, `assets/js/particles.js`
+
+**Tasks:**
+1. Replace Particles.js with Canvas Particle Network:
+   ```javascript
+   // Create canvas element
+   const canvas = document.getElementById('hero-canvas');
+   const ctx = canvas.getContext('2d');
+   
+   // Particle class with bio network connections
+   class Particle {
+     constructor() {
+       this.color = Math.random() > 0.9 ? '#32CD32' : '#4B8DFF';
+     }
+   }
+   
+   // Draw connections within 150px
+   ```
+
+2. Add Lenis Smooth Scroll:
+   ```html
+   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+   ```
+   ```javascript
+   const lenis = new Lenis({
+     duration: 1.2,
+     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+   });
+   function raf(time) {
+     lenis.raf(time);
+     requestAnimationFrame(raf);
+   }
+   requestAnimationFrame(raf);
+   ```
+
+3. Update Hero Content:
+   - Badge: "/// SYNTHETIC BIOLOGY + AI"
+   - Headline: "Bridging Biology and Everyday Life."
+   - Gradient text on second line
+   - Underline hover effect on CTA
+
+4. Add GSAP Reveal Animations:
+   ```javascript
+   gsap.to('.reveal-text', {
+     y: 0,
+     opacity: 1,
+     duration: 1.5,
+     stagger: 0.2,
+     ease: 'power4.out',
+     delay: 0.5
+   });
+   ```
+
+**Validation:**
+- [ ] Canvas particles animating (60 desktop, 30 mobile)
+- [ ] Particles connect within 150px
+- [ ] Lenis smooth scroll working
+- [ ] GSAP reveal animations trigger
+- [ ] Gradient text effect applied
+- [ ] CTA underline hover working
+
+---
+
+##### UPDATE 4: Content Sections (1h)
+**Files to Update:** `index.html`, `assets/css/style.css`
+
+**Tasks:**
+1. Update Platform Section to Sticky Scroll Cards:
+   ```css
+   .tech-card {
+     position: sticky;
+     margin-bottom: 6rem;
+   }
+   .tech-card:nth-child(1) { top: 8rem; }
+   .tech-card:nth-child(2) { top: 9rem; }
+   .tech-card:nth-child(3) { top: 10rem; }
+   ```
+
+2. Add Different Shadow Colors per Card:
+   - PRISM: `shadow-2xl shadow-mirabo-blue/20`
+   - ORION: `shadow-2xl shadow-purple-900/20`
+   - IGNIS: `shadow-2xl shadow-mirabo-green/20`
+
+3. Update Mission Section to Light Mode:
+   ```html
+   <section class="py-32 bg-gray-100 text-mirabo-dark transition-colors duration-700">
+   ```
+
+4. Add GSAP ScrollTrigger Animations:
+   ```javascript
+   cards.forEach((card) => {
+     gsap.from(card, {
+       scrollTrigger: {
+         trigger: card,
+         start: "top bottom-=100"
+       },
+       y: 100,
+       opacity: 0,
+       duration: 1
+     });
+   });
+   ```
+
+**Validation:**
+- [ ] Sticky cards stack correctly
+- [ ] Cards have correct top positions
+- [ ] Shadow colors match themes
+- [ ] Light mode switch smooth
+- [ ] GSAP scroll animations trigger
+
+---
+
+#### Complete Update Checklist
+
+**Visual Elements:**
+- [ ] Custom cursor system implemented
+- [ ] Noise texture overlay added
+- [ ] Glassmorphism cards styled
+- [ ] Canvas particle network animating
+- [ ] Sticky scroll cards working
+- [ ] Light mode switch smooth
+
+**Interactions:**
+- [ ] Lenis smooth scroll working
+- [ ] GSAP reveal animations trigger
+- [ ] Navigation scroll behavior correct
+- [ ] Hover effects working
+- [ ] All animations 60fps
+
+**Colors:**
+- [ ] Background: #05080F (deep space)
+- [ ] Surface: #0F141E (dark surface)
+- [ ] Green: #32CD32 (bio green)
+- [ ] Blue: #003BA3, #4B8DFF (brand blues)
+
+**Performance:**
+- [ ] 60fps animations
+- [ ] Canvas optimized (30 particles mobile)
+- [ ] No layout shift
+- [ ] Smooth scroll no jank
+
+**Responsive:**
+- [ ] Custom cursor disabled on mobile
+- [ ] Particle count reduced on mobile
+- [ ] Sticky cards work on mobile
+- [ ] All layouts responsive
+
+#### Validation with Playwright
+
+Use `browser_run_code` tool to take screenshots:
+
+```javascript
+// Desktop view
+await page.goto('http://localhost:8000');
+await page.screenshot({ path: '.cache/update-desktop.png' });
+
+// Test custom cursor
+await page.mouse.move(500, 300);
+await page.screenshot({ path: '.cache/update-cursor.png' });
+
+// Test sticky scroll
+await page.evaluate(() => window.scrollTo(0, 2000));
+await page.screenshot({ path: '.cache/update-sticky-cards.png' });
+
+// Test light mode section
+await page.evaluate(() => window.scrollTo(0, 4000));
+await page.screenshot({ path: '.cache/update-light-mode.png' });
+
+// Mobile view
+await page.setViewportSize({ width: 375, height: 667 });
+await page.goto('http://localhost:8000');
+await page.screenshot({ path: '.cache/update-mobile.png', fullPage: true });
+```
+
+**Compare screenshots with refer-index.html**
+
+#### Acceptance Criteria
+- [ ] All visual elements match refer-index.html
+- [ ] All interactions work smoothly
+- [ ] Colors exactly match design
+- [ ] Performance maintained (60fps)
+- [ ] Responsive on all devices
+- [ ] Playwright screenshots validate design
+- [ ] No console errors
+- [ ] Lenis smooth scroll working
+- [ ] Canvas particles animating
+- [ ] Sticky cards stacking correctly
+
+#### Git Commit
+```bash
+git add .
+git commit -m "refactor: update to refer-index.html design style
+
+- Add custom cursor system (green dot + outline)
+- Add noise texture overlay
+- Implement glassmorphism cards
+- Replace Particles.js with Canvas particle network
+- Add Lenis smooth scroll
+- Implement sticky scroll cards
+- Add light mode switch for Mission section
+- Update color scheme to #05080F base
+- Add GSAP reveal and scroll animations
+- Update navigation scroll behavior
+
+All Playwright tests passing
+Screenshots: .cache/update-*.png"
+```
 
 ---
 
@@ -100,31 +416,45 @@ Use Playwright to check:
 **Dependencies:** T001
 
 #### Description
-Implement the complete design system with CSS variables, base styles, typography, and utility classes.
+Implement the complete design system with CSS variables, base styles, typography, and utility classes. **MUST follow refer-index.html style.**
 
 #### Reference Files
+- `refer-index.html` (PRIMARY REFERENCE - color scheme, cursor, noise overlay)
 - `.dev2/generated/homepage-content-design.md` (Color System, Typography)
 - `.dev2/generated/project-design.md` (Design System section)
 
 #### Tasks
 1. Create `assets/css/style.css` with:
-   - CSS Variables (colors, typography, spacing, shadows, transitions)
+   - CSS Variables (colors from refer-index.html: #05080F, #003BA3, #32CD32, etc.)
+   - Custom cursor system (dot + outline)
+   - Noise texture overlay
+   - Glassmorphism card styles
    - CSS Reset
-   - Base styles (html, body)
-   - Typography styles (h1-h6, p, a)
+   - Base styles (html, body with cursor: none)
+   - Typography styles (Inter, Space Grotesk)
    - Container and grid system
    - Utility classes
 
 2. Create `assets/css/animations.css` with:
-   - Keyframe animations (fadeIn, slideUp, glow, float, etc.)
+   - Keyframe animations (fadeIn, slideUp, glow, float, spin, pulse)
    - Animation utility classes
+   - Smooth transitions
 
 3. Create `assets/css/responsive.css` with:
    - Mobile-first media queries
    - Responsive overrides
 
+#### Core Elements to Implement
+- **Custom Cursor**: Green dot (8px) + outline ring (40px)
+- **Noise Overlay**: Fixed SVG fractal noise, 30% opacity
+- **Glassmorphism**: backdrop-filter: blur(12px), rgba backgrounds
+- **Color Scheme**: Deep space dark (#05080F) with green accents (#32CD32)
+
 #### Acceptance Criteria
-- [ ] All CSS variables defined
+- [ ] All CSS variables defined (matching refer-index.html)
+- [ ] Custom cursor system implemented
+- [ ] Noise texture overlay added
+- [ ] Glassmorphism card styles created
 - [ ] Typography system implemented
 - [ ] Spacing system implemented
 - [ ] Color system applied
@@ -133,9 +463,12 @@ Implement the complete design system with CSS variables, base styles, typography
 
 #### Validation
 Use Playwright to check:
+- Custom cursor follows mouse movement
+- Cursor expands on hover
+- Noise overlay visible
 - CSS variables are accessible
 - Typography renders correctly
-- Colors match design specifications
+- Colors match refer-index.html
 - Animations work smoothly
 
 ---
@@ -211,26 +544,71 @@ Use Playwright to:
 **Dependencies:** T003
 
 #### Description
-Create the immersive hero section for the home page with animated particle background, DNA/neural network visualization, and dynamic text.
+Create the immersive hero section for the home page with Canvas particle network, smooth scroll, and dynamic text. **MUST follow refer-index.html style.**
 
 #### Reference Files
+- `refer-index.html` (PRIMARY REFERENCE - hero structure, canvas particles, Lenis scroll)
 - `.dev2/generated/homepage-content-design.md` (Home Page - Hero Section)
-- Unsplash: "abstract technology blue particles"
 
 #### Theme
-**"The Future is Now"** - Immersive tech experience
+**"Bridging Biology and Everyday Life"** - Immersive tech experience
 
 #### Tasks
 1. **Background Layers**:
-   - Dark gradient base
-   - Particle system (Particles.js)
-   - DNA helix animated lines (SVG or Canvas)
-   - Neural network nodes (subtle)
+   - Dark gradient base (#001F54 to #05080F)
+   - Canvas particle network (60 particles, blue/green)
+   - Particle connections within 150px
+   - Smooth particle movement
 
 2. **Content**:
-   - Animated logo entrance
-   - Main headline: "Pioneering AI-Driven Synthetic Biology"
+   - Section badge: "/// SYNTHETIC BIOLOGY + AI" (green, mono font)
+   - Main headline: "Bridging Biology and Everyday Life."
      - Font: Space Grotesk, 96px (mobile: 48px), Bold
+     - Gradient text effect on second line
+   - Subheadline: "Pioneering AI-integrated platforms..."
+     - Font: Inter, 20px, Light, Gray-400
+   - CTA: "Explore MiRAiQ™ Platform" (underline hover effect)
+
+3. **Interactive Elements**:
+   - Lenis smooth scroll initialization
+   - Scroll indicator (bottom center)
+   - GSAP reveal animations (stagger 0.2s)
+   - Custom cursor interaction
+
+4. **Scroll Indicator**:
+   - "Scroll" text + vertical line
+   - Gradient fade effect
+   - Subtle pulse animation
+
+#### Core Features from refer-index.html
+- Canvas particle network with bio connections
+- Lenis smooth scroll (duration: 1.2s)
+- GSAP reveal animations with stagger
+- Gradient text on headline
+- Underline hover effect on CTA
+
+#### Acceptance Criteria
+- [ ] Canvas particle network animating
+- [ ] Particles connect within 150px
+- [ ] Lenis smooth scroll working
+- [ ] GSAP reveal animations trigger
+- [ ] Gradient text effect applied
+- [ ] CTA hover effect working
+- [ ] Scroll indicator visible
+- [ ] Custom cursor interacting
+- [ ] Fully responsive
+- [ ] 60fps performance
+
+#### Validation
+Use Playwright to:
+- Check canvas element exists and animates
+- Verify particle count (60 desktop, 30 mobile)
+- Test smooth scroll behavior
+- Verify GSAP animations trigger
+- Check gradient text rendering
+- Test CTA hover effect
+- Verify responsive layout
+- Measure performance (60fps)
      - Animation: Typing effect + fade in
    - Subheadline with fade-in animation
    - Two CTA buttons:
@@ -289,52 +667,64 @@ Progressive disclosure of company capabilities
 #### Tasks
 1. **Company Overview Section** (1.2):
    - Badge: "Who We Are"
-   - Headline: "Bridging AI and Biology"
+   - Headline: "Redefining Bio-Discovery"
    - Description text
-   - 3-column stats grid (AI-Driven, Sustainable, Innovative)
-   - Glass card design
-   - Icons for each stat
-   - Scroll animations (AOS)
+   - Glass panel card with gradient glow
+   - 2-column stats grid (HQ: Hong Kong, R&D: Shanghai)
+   - Scroll animations (GSAP ScrollTrigger)
 
-2. **MiRAiQ Platform Section** (1.3):
-   - Section badge: "Our Technology"
-   - Headline: "MiRAiQ AI Engine" (gradient text)
-   - Tagline: "From Protein Design to Scalable Production"
-   - Platform visual mockup (center, 3D perspective)
-   - Three platform cards (PRISM, ORION, IGNIS)
-     - Each with unique gradient color
-     - Icon, title, subtitle, "Learn More" link
-     - 3D tilt hover effect
-   - CTA button: "Explore Full Platform"
+2. **MiRAiQ Platform Section** (1.3) - **STICKY SCROLL CARDS**:
+   - Section badge: "Our Proprietary Engine"
+   - Headline: "The MiRAiQ™ Ecosystem"
+   - Vertical connecting line (gradient)
+   - Three sticky scroll cards (refer-index.html style):
+     - **PRISM** (Blue theme, top-32)
+       - Badge: "STEP 01: ANALYSIS"
+       - Abstract visual: rotating circles
+       - Description + feature list
+     - **ORION** (Purple theme, top-36)
+       - Badge: "STEP 02: ENGINEERING"
+       - Abstract visual: sequence optimization
+       - Description
+     - **IGNIS** (Green theme, top-40)
+       - Badge: "STEP 03: PROCESS"
+       - Abstract visual: bar chart animation
+       - Description
+   - Each card: glassmorphism, shadow glow, GSAP scroll animation
 
 3. **Industries Section** (1.4):
-   - Light background (contrast break)
-   - Headline: "Transforming Industries"
-   - 2-column grid:
-     - Personal Care card
-     - Healthcare card
-   - Large background images with gradient overlay
+   - 2-column grid with background images
+   - Gradient overlay on images
    - Hover: Image zoom effect
 
-4. **Mission & Vision Section** (1.5):
-   - Dark gradient background
-   - Split layout (60/40)
-   - Mission (left) with icon and text
-   - Vision (right) with icon and text
-   - Background DNA visualization
+4. **Mission & Vision Section** (1.5) - **LIGHT MODE SWITCH**:
+   - Background: bg-gray-100 (light mode)
+   - Text: text-mirabo-dark
+   - Centered quote-style layout
+   - Icon at top
+   - 2-column grid for Sustainability + Vision
+   - Smooth transition from dark to light
 
 5. **CTA Section** (1.6):
-   - Gradient background with glow
-   - Headline: "Ready to Innovate Together?"
-   - Subtext
-   - Large CTA button: "Get in Touch"
-   - Animated gradient waves
+   - Gradient background
+   - Large CTA button
+   - Contact email link
+
+#### Core Features from refer-index.html
+- Sticky scroll cards with layering (top-32, top-36, top-40)
+- Glassmorphism with different shadow colors
+- Light mode switch for Mission section
+- GSAP ScrollTrigger animations
+- Vertical connecting line between cards
 
 #### Acceptance Criteria
 - [ ] All sections render correctly
-- [ ] Content matches design document
-- [ ] Images loaded and optimized
-- [ ] Scroll animations trigger properly
+- [ ] Sticky scroll cards work properly
+- [ ] Cards stack with correct top positions
+- [ ] Light mode switch smooth
+- [ ] GSAP scroll animations trigger
+- [ ] Glassmorphism effects applied
+- [ ] Shadow glows match theme colors
 - [ ] Hover effects work
 - [ ] Responsive on all devices
 - [ ] Performance maintained (60fps)
@@ -342,10 +732,12 @@ Progressive disclosure of company capabilities
 #### Validation
 Use Playwright to:
 - Scroll through all sections
-- Verify content accuracy
+- Verify sticky card behavior
+- Test card stacking positions
+- Check light mode transition
+- Verify GSAP animations
 - Test hover effects
-- Check animations
-- Test responsive layouts
+- Check responsive layouts
 - Measure performance
 
 ---
