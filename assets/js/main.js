@@ -4,29 +4,69 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Lenis Smooth Scroll (temporarily disabled for testing)
-    // const lenis = new Lenis({
-    //     duration: 1.2,
-    //     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    //     orientation: 'vertical',
-    //     smoothWheel: true
-    // });
-
-    // function raf(time) {
-    //     lenis.raf(time);
-    //     requestAnimationFrame(raf);
-    // }
-    // requestAnimationFrame(raf);
-
-    // GSAP Reveal Animations
-    gsap.from('.reveal-text', {
-        y: 20,
-        opacity: 0,
-        duration: 1.5,
-        stagger: 0.2,
-        ease: 'power4.out',
-        delay: 0.5
-    });
+    // Typewriter effect for hero title
+    const titleElement = document.querySelector('.hero__title');
+    const subtitleElement = document.querySelector('.hero__subtitle');
+    
+    if (titleElement) {
+        const text1 = 'Bridging Biology';
+        const text2 = 'and Everyday Life.';
+        const line1 = document.createTextNode('');
+        const line2 = titleElement.querySelector('span');
+        
+        titleElement.innerHTML = '';
+        titleElement.appendChild(line1);
+        titleElement.appendChild(document.createElement('br'));
+        titleElement.appendChild(line2);
+        
+        let i = 0;
+        function typeWriter() {
+            if (i < text1.length) {
+                line1.textContent += text1.charAt(i);
+                i++;
+                setTimeout(typeWriter, 30);
+            } else if (i === text1.length) {
+                i++;
+                setTimeout(typeWriter, 200);
+            } else {
+                let j = 0;
+                line2.textContent = '';
+                function typeSecondLine() {
+                    if (j < text2.length) {
+                        line2.textContent += text2.charAt(j);
+                        j++;
+                        setTimeout(typeSecondLine, 30);
+                    } else {
+                        // Start subtitle typing after title completes
+                        if (subtitleElement) {
+                            const subtitleText = 'Pioneering AI-integrated platforms to create next-generation bioactive ingredients and medical materials. From In-Silico prediction to commercial scale.';
+                            subtitleElement.textContent = '';
+                            subtitleElement.style.opacity = '1';
+                            let k = 0;
+                            function typeSubtitle() {
+                                if (k < subtitleText.length) {
+                                    subtitleElement.textContent += subtitleText.charAt(k);
+                                    k++;
+                                    setTimeout(typeSubtitle, 2);
+                                } else {
+                                    // Show other elements after subtitle
+                                    gsap.to('.hero__badge, .hero__cta', {
+                                        opacity: 1,
+                                        duration: 0.8,
+                                        ease: 'power2.out'
+                                    });
+                                }
+                            }
+                            setTimeout(typeSubtitle, 300);
+                        }
+                    }
+                }
+                typeSecondLine();
+            }
+        }
+        
+        setTimeout(typeWriter, 500);
+    }
     
     // Initialize AOS
     AOS.init({
