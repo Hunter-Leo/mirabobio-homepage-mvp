@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="About MIRABO Biotechnology - Our mission, vision, and team pioneering AI-driven synthetic biology">
-    <meta name="keywords" content="MIRABO, about us, synthetic biology, AI biotechnology, team">
     <title>About Us | MIRABO Biotechnology</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/images/mirabobio-logo-blink.svg">
+    <link rel="icon" type="image/svg+xml" href="materials/mirabobio-logo-static.svg">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,15 +17,20 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
     <!-- Custom Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/animations.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Noise Overlay Texture -->
+    <div class="bg-noise"></div>
+
+    <!-- Header -->
     <header class="header" id="header">
         <div class="container">
             <nav class="nav">
@@ -42,11 +46,15 @@
                 </ul>
                 <a href="contact.html" class="btn btn-secondary nav__cta">Get Started</a>
                 <button class="nav__toggle" aria-label="Toggle menu">
-                    <span></span><span></span><span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </nav>
         </div>
     </header>
+
+    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu__close" aria-label="Close menu">&times;</button>
         <ul class="mobile-menu__links">
@@ -58,7 +66,167 @@
         </ul>
         <a href="contact.html" class="btn btn-primary">Get Started</a>
     </div>
-    <main></main>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero hero-about" id="home">
+            <div class="hero__content container max-w-5xl mx-auto">
+                <h1 class="text-6xl md:text-7xl font-display font-bold text-white mb-8 leading-tight">
+                    About <span class="text-gradient">MIRABO</span>
+                </h1>
+                <p class="text-xl text-gray-300 leading-relaxed max-w-4xl">
+                    MIRABO Biotechnology Limited is a Hong Kong-based synthetic biology company pioneering AI-integrated platforms to create next-generation bioactive ingredients and medical materials for the personal-care and healthcare industries.
+                </p>
+            </div>
+        </section>
+
+        <!-- Company Story Section -->
+        <section class="section section-overview">
+            <div class="container">
+                <span class="section-badge" data-aos="fade-up">FOUNDED IN 2020</span>
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Two Cities, One Vision</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">A global innovation network bridging East and West</p>
+
+                <div class="stats-grid">
+                    <!-- Hong Kong HQ -->
+                    <div class="stat-card glass-panel" data-aos="fade-right">
+                        <div class="stat-icon">
+                            <img src="assets/images/icons/icon-hongkong.svg" alt="Hong Kong" width="64" height="64">
+                        </div>
+                        <h3 class="stat-title">Hong Kong</h3>
+                        <div class="stat-value">Global HQ</div>
+                        <p class="stat-desc">Strategic hub connecting international markets, research institutions, and innovation ecosystems across Asia-Pacific</p>
+                    </div>
+
+                    <!-- Shanghai R&D -->
+                    <div class="stat-card glass-panel" data-aos="fade-left" data-aos-delay="200">
+                        <div class="stat-icon">
+                            <img src="assets/images/icons/icon-shanghai.svg" alt="Shanghai" width="64" height="64">
+                        </div>
+                        <h3 class="stat-title">Shanghai</h3>
+                        <div class="stat-value">R&D Center</div>
+                        <p class="stat-desc">Advanced AI laboratory driving protein engineering and bioprocess innovation through MiRAiQ™ platform</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision Section -->
+        <section class="section section-mission py-32 bg-gray-100 text-gray-900 transition-colors duration-700">
+            <div class="container max-w-6xl">
+                <!-- Section Header -->
+                <div class="text-center mb-16">
+                    <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Our Commitment</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mt-4 mb-4 text-white">Driving Innovation Forward</h2>
+                    <p class="text-xl text-blue-300">Bridging biotechnology and everyday life</p>
+                </div>
+                
+                <div class="mission-grid">
+                    <div class="mission-card" data-aos="fade-right">
+                        <div class="mission-card__icon mb-6">
+                            <img src="assets/images/icons/icon-mission.svg" alt="Mission" width="120" height="120" class="drop-shadow-[0_0_20px_rgba(75,141,255,0.4)]">
+                        </div>
+                        <h3 class="mission-card__label text-2xl font-bold mb-4">Our Mission</h3>
+                        <p class="mission-card__text">Bridging biotechnology and everyday life through innovative, sustainable products powered by synthetic biology. We are dedicated to enhancing quality of life while preserving the environment.</p>
+                        <div class="mt-6 h-1 w-20 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full"></div>
+                    </div>
+                    <div class="mission-card" data-aos="fade-left">
+                        <div class="mission-card__icon mb-6">
+                            <img src="assets/images/icons/icon-vision.svg" alt="Vision" width="120" height="120" class="drop-shadow-[0_0_20px_rgba(75,141,255,0.4)]">
+                        </div>
+                        <h3 class="mission-card__label text-2xl font-bold mb-4">Our Vision</h3>
+                        <p class="mission-card__text">Becoming a global leader in synthetic biology, pioneering sustainable solutions that extend into broader areas of daily life.</p>
+                        <div class="mt-6 h-1 w-20 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Approach Section -->
+        <section class="section section-overview">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">INTEGRATED WORKFLOW</span>
+                    <h2 class="section-title">From Molecule to Market</h2>
+                    <p class="section-subtitle">A seamless pipeline combining AI prediction with experimental validation</p>
+                </div>
+
+                <div class="approach-timeline">
+                    <!-- Step 1 -->
+                    <div class="timeline-item glass-panel" data-aos="fade-up" data-aos-delay="100">
+                        <div class="timeline-number">01</div>
+                        <div class="timeline-content">
+                            <div class="stat-icon mb-4">
+                                <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3">AI-Driven Modeling</h3>
+                            <p class="text-gray-400">Advanced machine learning algorithms predict protein structures, optimize molecular designs, and accelerate discovery timelines</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="timeline-item glass-panel" data-aos="fade-up" data-aos-delay="200">
+                        <div class="timeline-number">02</div>
+                        <div class="timeline-content">
+                            <div class="stat-icon mb-4">
+                                <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3">Experimental Validation</h3>
+                            <p class="text-gray-400">Laboratory testing confirms computational predictions, refines biological performance, and ensures real-world efficacy</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="timeline-item glass-panel" data-aos="fade-up" data-aos-delay="300">
+                        <div class="timeline-number">03</div>
+                        <div class="timeline-content">
+                            <div class="stat-icon mb-4">
+                                <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3">Process Optimization</h3>
+                            <p class="text-gray-400">Bioprocess engineering maximizes yield, purity, and efficiency while maintaining sustainability standards</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="timeline-item glass-panel" data-aos="fade-up" data-aos-delay="400">
+                        <div class="timeline-number">04</div>
+                        <div class="timeline-content">
+                            <div class="stat-icon mb-4">
+                                <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3">Scalable Production</h3>
+                            <p class="text-gray-400">Industrial-scale manufacturing delivers sustainable bioactive ingredients to global markets efficiently</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section section-cta">
+            <div class="container">
+                <div class="cta-content" data-aos="zoom-in">
+                    <h2 class="cta-title">Join Our Journey</h2>
+                    <p class="cta-text">Explore how we're transforming biotechnology through AI innovation</p>
+                    <div class="cta-buttons">
+                        <a href="platform.html" class="btn btn-primary btn-large btn-glow">Discover MiRAiQ™</a>
+                        <a href="contact.html" class="btn btn-secondary btn-large">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer__grid">
@@ -85,8 +253,12 @@
                 <div class="footer__col">
                     <h4 class="footer__title">Follow Us</h4>
                     <div class="footer__social">
-                        <a href="#" aria-label="LinkedIn"><svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-                        <a href="#" aria-label="Twitter"><svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -95,12 +267,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg>
     </button>
-    
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
     <!-- GSAP Animation Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -108,10 +279,12 @@
     
     <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
     
     <!-- Custom Scripts -->
+    <script src="assets/js/cursor.js"></script>
+    <script src="assets/js/canvas-particles.js"></script>
     <script src="assets/js/utils.js"></script>
-    <script src="assets/js/animations.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -1157,3 +1157,149 @@ section {
   -webkit-background-clip: text;
   color: transparent;
 }
+
+
+/* ========================================
+   ABOUT PAGE STYLES
+   ======================================== */
+
+/* Hero Section */
+.section-hero-about {
+  min-height: 70vh;
+  background: var(--mirabo-dark);
+  display: flex;
+  align-items: center;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+/* Text Gradient */
+.text-gradient {
+  background: linear-gradient(135deg, var(--mirabo-lightBlue) 0%, var(--mirabo-green) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Company Story Section */
+.section-story {
+  background: var(--mirabo-dark);
+}
+
+/* Mission & Vision Section - Light Mode */
+.section-mission-vision {
+  background: #F3F4F6;
+  color: #111827;
+}
+
+.section-mission-vision h2,
+.section-mission-vision h3 {
+  color: #111827;
+}
+
+/* Approach Section */
+.section-approach {
+  background: var(--mirabo-dark);
+}
+
+/* CTA Section */
+.section-cta {
+  background: var(--mirabo-dark);
+}
+
+/* ========================================
+   ABOUT PAGE - TIMELINE STYLES
+   ======================================== */
+
+.approach-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: translateY(-8px);
+}
+
+.timeline-number {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: rgba(75, 141, 255, 0.1);
+  line-height: 1;
+}
+
+.timeline-content {
+  position: relative;
+  z-index: 1;
+  text-align: left;
+}
+
+.timeline-content h3 {
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.timeline-content p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  text-align: left;
+}
+
+
+/* Stats Grid Variations */
+.stats-grid.grid-cols-4 {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--mirabo-lightBlue);
+  margin: 1rem 0;
+}
+
+/* CTA Buttons Container */
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .approach-timeline {
+    grid-template-columns: 1fr;
+  }
+  
+  .timeline-number {
+    font-size: 3rem;
+    top: -0.5rem;
+    right: 1.5rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .cta-buttons .btn {
+    width: 100%;
+  }
+}
