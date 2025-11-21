@@ -1,0 +1,38 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad-rapid" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#32CD32;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Timeline arrow -->
+  <line x1="6" y1="24" x2="38" y2="24" stroke="url(#grad-rapid)" stroke-width="2.5"/>
+  <polygon points="38,24 34,21 34,27" fill="#32CD32"/>
+  
+  <!-- Milestone nodes -->
+  <circle cx="10" cy="24" r="3" fill="#00D9FF"/>
+  <circle cx="20" cy="24" r="3" fill="url(#grad-rapid)"/>
+  <circle cx="30" cy="24" r="3" fill="url(#grad-rapid)"/>
+  <circle cx="38" cy="24" r="3" fill="#32CD32"/>
+  
+  <!-- Speed lines -->
+  <line x1="8" y1="16" x2="14" y2="16" stroke="#00D9FF" stroke-width="1.5" opacity="0.6"/>
+  <line x1="12" y1="12" x2="18" y2="12" stroke="#00D9FF" stroke-width="1.5" opacity="0.4"/>
+  <line x1="8" y1="32" x2="14" y2="32" stroke="#00D9FF" stroke-width="1.5" opacity="0.6"/>
+  <line x1="12" y1="36" x2="18" y2="36" stroke="#00D9FF" stroke-width="1.5" opacity="0.4"/>
+  
+  <!-- Rocket symbol -->
+  <path d="M 40 18 L 44 24 L 40 30 L 38 24 Z" fill="#32CD32"/>
+  <circle cx="40" cy="24" r="1.5" fill="white"/>
+  
+  <!-- Speed particles -->
+  <circle cx="24" cy="18" r="1" fill="#32CD32" opacity="0.8">
+    <animate attributeName="cx" values="24;32;24" dur="1.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="26" cy="30" r="1" fill="#00D9FF" opacity="0.8">
+    <animate attributeName="cx" values="26;34;26" dur="1.5s" begin="0.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="1.5s" begin="0.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>
