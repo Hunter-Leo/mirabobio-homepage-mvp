@@ -26,6 +26,22 @@
     padding: var(--space-3) var(--space-6);
     font-size: 1rem;
   }
+  
+  /* Header */
+  .nav__links,
+  .nav__cta {
+    display: none;
+  }
+  
+  .nav__toggle {
+    display: flex;
+  }
+  
+  /* Footer */
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
 }
 
 /* ========================================
@@ -37,6 +53,14 @@
     --text-h1: 3.5rem;
     --text-h2: 2.5rem;
     --text-h3: 2rem;
+  }
+  
+  .nav__links {
+    gap: var(--space-4);
+  }
+  
+  .footer__grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
