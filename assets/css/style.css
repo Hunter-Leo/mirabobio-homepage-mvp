@@ -1,23 +1,23 @@
 /* MIRABO Biotechnology - Main Stylesheet */
+/* Updated to refer-index.html design system */
 
 /* ========================================
    1. CSS VARIABLES
    ======================================== */
 :root {
-  /* Primary Colors */
-  --deep-space-blue: #001F54;
-  --electric-blue: #0066FF;
-  --cyber-cyan: #00D9FF;
-  --neon-green: #00FF88;
-  --bio-green: #32CD32;
-  --quantum-purple: #8B5CF6;
+  /* Brand Colors (refer-index.html) */
+  --mirabo-blue: #003BA3;
+  --mirabo-lightBlue: #4B8DFF;
+  --mirabo-green: #32CD32;
+  --mirabo-dark: #05080F;
+  --mirabo-surface: #0F141E;
   
   /* Background Colors */
-  --bg-primary: #0F172A;
-  --bg-secondary: #1E293B;
+  --bg-primary: #05080F;
+  --bg-secondary: #0F141E;
   --bg-section-dark: #0A0E1A;
   --bg-section-light: #F8FAFC;
-  --bg-glass: rgba(15, 23, 42, 0.7);
+  --bg-glass: rgba(15, 20, 30, 0.6);
   
   /* Text Colors */
   --text-primary: #F1F5F9;
@@ -26,10 +26,10 @@
   --text-dark: #0F172A;
   
   /* Gradients */
-  --gradient-hero: linear-gradient(135deg, #001F54 0%, #0F172A 50%, #1E1B4B 100%);
-  --gradient-mesh: radial-gradient(circle at 20% 50%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
+  --gradient-hero: linear-gradient(135deg, #05080F 0%, #0F141E 50%, #1E1B4B 100%);
+  --gradient-mesh: radial-gradient(circle at 20% 50%, rgba(75, 141, 255, 0.15) 0%, transparent 50%),
                    radial-gradient(circle at 80% 80%, rgba(50, 205, 50, 0.1) 0%, transparent 50%);
-  --gradient-card: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+  --gradient-card: linear-gradient(145deg, rgba(15, 20, 30, 0.8), rgba(5, 8, 15, 0.9));
   
   /* Typography */
   --font-primary: 'Inter', sans-serif;
@@ -68,8 +68,8 @@
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
-  --shadow-glow: 0 0 20px rgba(0, 217, 255, 0.3);
-  --shadow-glow-green: 0 0 20px rgba(0, 255, 136, 0.3);
+  --shadow-glow: 0 0 20px rgba(75, 141, 255, 0.3);
+  --shadow-glow-green: 0 0 20px rgba(50, 205, 50, 0.3);
   
   /* Transitions */
   --transition-fast: 0.2s ease;
@@ -98,6 +98,7 @@ body {
   color: var(--text-primary);
   background-color: var(--bg-primary);
   overflow-x: hidden;
+  cursor: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -1021,4 +1022,99 @@ section {
   50% {
     box-shadow: 0 0 40px rgba(0, 217, 255, 0.8);
   }
+}
+
+/* ========================================
+   CUSTOM CURSOR SYSTEM (refer-index.html)
+   ======================================== */
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--mirabo-green);
+}
+
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(50, 205, 50, 0.5);
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+.cursor-outline.hover {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(50, 205, 50, 0.1);
+}
+
+/* ========================================
+   NOISE TEXTURE OVERLAY
+   ======================================== */
+.bg-noise {
+  background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.05"/%3E%3C/svg%3E');
+}
+
+/* ========================================
+   GLASSMORPHISM STYLES
+   ======================================== */
+.glass-panel {
+  background: rgba(15, 20, 30, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+  background: rgba(15, 20, 30, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: var(--space-8);
+  transition: all var(--transition-base);
+}
+
+.glass-card:hover {
+  background: rgba(15, 20, 30, 0.8);
+  border-color: rgba(50, 205, 50, 0.2);
+  transform: translateY(-4px);
+}
+
+/* ========================================
+   STICKY SCROLL CARDS
+   ======================================== */
+.sticky-card {
+  position: sticky;
+  margin-bottom: 6rem;
+}
+
+.sticky-card:nth-child(1) { top: 8rem; }
+.sticky-card:nth-child(2) { top: 9rem; }
+.sticky-card:nth-child(3) { top: 10rem; }
+
+/* ========================================
+   SCROLLBAR HIDE
+   ======================================== */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+.clip-text-image {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
