@@ -21,8 +21,8 @@
 | T010 | Contact Page | ✅ Completed | High | 3h |
 | T011 | Animations & Interactions | ✅ Completed | High | 4h |
 | T012 | Responsive Design | ✅ Completed | High | 4h |
-| T013 | Image Optimization | ⬜ Pending | Medium | 2h |
-| T014 | SEO & Meta Tags | ⬜ Pending | Medium | 2h |
+| T013 | Image Optimization | ✅ Completed | Medium | 2h |
+| T014 | SEO & Meta Tags | ✅ Completed | Medium | 2h |
 | T015 | Testing & QA | ⬜ Pending | High | 4h |
 | T016 | Performance Optimization | ⬜ Pending | High | 3h |
 | T017 | Deployment Setup | ⬜ Pending | High | 2h |
