@@ -186,6 +186,20 @@
     margin-bottom: 1rem;
   }
   
+  /* Hide Follow Us on mobile, keep WeChat */
+  .footer__col:nth-child(4) {
+    display: none;
+  }
+  
+  .footer__col--wechat {
+    display: block !important;
+    align-items: flex-start !important;
+  }
+  
+  .footer__wechat-title {
+    justify-content: flex-start !important;
+  }
+  
   .footer__col {
     text-align: left !important;
   }
