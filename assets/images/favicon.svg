@@ -1,0 +1,13 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    .blinking-dot {
+      animation: blink 3s ease-in-out infinite;
+    }
+  </style>
+  <!-- Large blinking green dot -->
+  <circle class="blinking-dot" cx="16" cy="16" r="14" fill="#32CD32"/>
+</svg>
