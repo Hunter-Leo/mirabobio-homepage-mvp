@@ -182,7 +182,8 @@ section {
 
 .btn-secondary:hover {
   background: var(--cyber-cyan);
-  color: var(--text-dark);
+  color: white;
+  border-color: var(--cyber-cyan);
   transform: translateY(-2px);
 }
 
@@ -414,6 +415,45 @@ section {
 .footer__social a:hover {
   color: var(--cyber-cyan);
   filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.5));
+}
+
+.footer__wechat {
+  margin-top: 1.5rem;
+}
+
+.footer__wechat-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--mirabo-green);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.footer__wechat-qr {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Contact page social icons hover effect */
+.glass-panel a svg,
+.glass-panel button svg {
+  transition: all 0.3s ease;
+}
+
+.glass-panel a:hover svg,
+.glass-panel button:hover svg {
+  color: var(--mirabo-lightBlue) !important;
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(75, 141, 255, 0.6));
+}
+
+.glass-panel button:hover svg {
+  color: var(--mirabo-green) !important;
+  filter: drop-shadow(0 0 8px rgba(50, 205, 50, 0.6));
 }
 
 .footer__bottom {
@@ -1281,6 +1321,8 @@ section {
   gap: 1.5rem;
   justify-content: center;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 10;
 }
 
 @media (max-width: 768px) {
