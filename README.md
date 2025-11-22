@@ -38,6 +38,23 @@ mirabobio-homepage-mvp/
 └── _headers               # Security headers
 ```
 
+## 📦 Deployment
+
+Deployed on **Cloudflare Pages** with automatic builds from Git repository.
+
+### Quick Deploy
+```bash
+git push origin main
+```
+
+Cloudflare Pages will automatically build and deploy.
+
+### Custom Domain
+- Production: `https://www.mirabobio.com`
+- Preview: `https://mirabobio-homepage-mvp.pages.dev`
+
+For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md)
+
 ## 🛠️ Development
 
 ### Local Development
@@ -76,16 +93,6 @@ Visit: `http://localhost:8000`
 - Display: Space Grotesk
 - Body: Inter
 - Mono: JetBrains Mono
-
-## 📦 Deployment
-
-Deployed on **Cloudflare Pages** with automatic builds from Git repository.
-
-### Deployment Steps
-1. Push code to Git repository
-2. Connect repository to Cloudflare Pages
-3. Configure build settings (none needed for static site)
-4. Deploy automatically on push
 
 ## 📄 License
 
