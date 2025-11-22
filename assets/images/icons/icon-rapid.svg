@@ -1,38 +1,36 @@
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="grad-rapid" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="grad-rocket" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#32CD32;stop-opacity:1" />
     </linearGradient>
   </defs>
   
-  <!-- Timeline arrow -->
-  <line x1="6" y1="24" x2="38" y2="24" stroke="url(#grad-rapid)" stroke-width="2.5"/>
-  <polygon points="38,24 34,21 34,27" fill="#32CD32"/>
+  <!-- Rocket body -->
+  <path d="M24 4 L28 16 L28 28 L24 32 L20 28 L20 16 Z" fill="url(#grad-rocket)" stroke="#00D9FF" stroke-width="2"/>
   
-  <!-- Milestone nodes -->
-  <circle cx="10" cy="24" r="3" fill="#00D9FF"/>
-  <circle cx="20" cy="24" r="3" fill="url(#grad-rapid)"/>
-  <circle cx="30" cy="24" r="3" fill="url(#grad-rapid)"/>
-  <circle cx="38" cy="24" r="3" fill="#32CD32"/>
+  <!-- Rocket window -->
+  <circle cx="24" cy="14" r="3" fill="#0A0E1A" stroke="#00D9FF" stroke-width="1"/>
+  
+  <!-- Left wing -->
+  <path d="M20 20 L14 26 L14 30 L20 26 Z" fill="#00D9FF" opacity="0.8"/>
+  
+  <!-- Right wing -->
+  <path d="M28 20 L34 26 L34 30 L28 26 Z" fill="#32CD32" opacity="0.8"/>
+  
+  <!-- Flame -->
+  <path d="M20 32 L22 38 L24 44 L26 38 L28 32 Z" fill="#00D9FF" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.3;0.6" dur="0.5s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Inner flame -->
+  <path d="M22 32 L23 36 L24 40 L25 36 L26 32 Z" fill="#32CD32" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.4;0.8" dur="0.5s" repeatCount="indefinite"/>
+  </path>
   
   <!-- Speed lines -->
-  <line x1="8" y1="16" x2="14" y2="16" stroke="#00D9FF" stroke-width="1.5" opacity="0.6"/>
-  <line x1="12" y1="12" x2="18" y2="12" stroke="#00D9FF" stroke-width="1.5" opacity="0.4"/>
-  <line x1="8" y1="32" x2="14" y2="32" stroke="#00D9FF" stroke-width="1.5" opacity="0.6"/>
-  <line x1="12" y1="36" x2="18" y2="36" stroke="#00D9FF" stroke-width="1.5" opacity="0.4"/>
-  
-  <!-- Rocket symbol -->
-  <path d="M 40 18 L 44 24 L 40 30 L 38 24 Z" fill="#32CD32"/>
-  <circle cx="40" cy="24" r="1.5" fill="white"/>
-  
-  <!-- Speed particles -->
-  <circle cx="24" cy="18" r="1" fill="#32CD32" opacity="0.8">
-    <animate attributeName="cx" values="24;32;24" dur="1.5s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.8;0;0.8" dur="1.5s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="26" cy="30" r="1" fill="#00D9FF" opacity="0.8">
-    <animate attributeName="cx" values="26;34;26" dur="1.5s" begin="0.5s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.8;0;0.8" dur="1.5s" begin="0.5s" repeatCount="indefinite"/>
-  </circle>
+  <line x1="10" y1="12" x2="16" y2="12" stroke="#00D9FF" stroke-width="1.5" opacity="0.4" stroke-linecap="round"/>
+  <line x1="8" y1="16" x2="14" y2="16" stroke="#00D9FF" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+  <line x1="32" y1="12" x2="38" y2="12" stroke="#32CD32" stroke-width="1.5" opacity="0.4" stroke-linecap="round"/>
+  <line x1="34" y1="16" x2="40" y2="16" stroke="#32CD32" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
 </svg>

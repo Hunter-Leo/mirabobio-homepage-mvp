@@ -1,162 +1,485 @@
-/* MIRABO Biotechnology - Responsive Styles */
+/* MIRABO Biotechnology - Responsive Design */
+/* Mobile-first approach with breakpoints */
 
 /* ========================================
-   MOBILE (0-639px)
+   BREAKPOINTS
+   - Mobile: < 640px
+   - Tablet: 640px - 1024px
+   - Desktop: > 1024px
    ======================================== */
-@media (max-width: 639px) {
-  :root {
-    --text-hero: 3rem;
-    --text-h1: 2.5rem;
-    --text-h2: 2rem;
-    --text-h3: 1.5rem;
-    --text-h4: 1.25rem;
-    --text-body: 1rem;
-    --space-24: 3rem;
-    --space-32: 4rem;
+
+/* ========================================
+   MOBILE OPTIMIZATIONS (< 640px)
+   ======================================== */
+@media (max-width: 640px) {
+  /* Force full width */
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
   }
   
+  /* Container - full width on mobile */
   .container {
-    padding: 0 var(--space-4);
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin: 0 !important;
   }
   
+  /* Hero section - full width */
+  .hero {
+    width: 100%;
+    min-height: 100vh !important;
+    padding: 6rem 0 4rem !important;
+  }
+  
+  /* Hero content */
+  .hero__content {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* All sections full width */
   section {
-    padding: var(--space-16) 0;
+    width: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
   
-  .section {
-    padding: var(--space-16) 0;
+  /* Navigation - Show mobile menu toggle */
+  .nav__links {
+    display: none !important;
   }
   
-  .btn {
-    padding: var(--space-3) var(--space-6);
-    font-size: 1rem;
-  }
-  
-  /* Header */
-  .nav__links,
   .nav__cta {
     display: none;
   }
   
   .nav__toggle {
+    display: flex !important;
+  }
+  
+  .nav__logo img {
+    height: 32px;
+    width: auto;
+  }
+  
+  .nav {
+    padding: 0 !important;
+    width: 100%;
+  }
+  
+  /* Typography scaling */
+  :root {
+    --text-hero: 2.5rem;
+    --text-h1: 2rem;
+    --text-h2: 1.75rem;
+    --text-h3: 1.5rem;
+    --text-h4: 1.25rem;
+    --text-body: 1rem;
+  }
+  
+  .hero__content {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  
+  .hero__title {
+    font-size: 2.5rem;
+    line-height: 1.05;
+    margin-bottom: 1rem;
+  }
+  
+  .hero__subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  
+  .hero__cta {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .hero__cta .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
     display: flex;
+    align-items: center;
+  }
+  
+  /* Hide scroll indicator on mobile to avoid overlap */
+  .hero__scroll {
+    display: none !important;
+  }
+  
+  /* Navigation */
+  .nav {
+    padding: 1rem;
+  }
+  
+  .nav__logo img {
+    height: 32px;
+  }
+  
+  /* Sections */
+  section {
+    padding: 3rem 0 !important;
+    width: 100%;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Cards */
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .tech-card {
+    padding: 2rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .tech-card:nth-child(1),
+  .tech-card:nth-child(2),
+  .tech-card:nth-child(3) {
+    top: 0 !important;
+    position: relative !important;
+  }
+  
+  /* Platform cards */
+  .platform-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .platform-card__title {
+    font-size: 1.5rem;
   }
   
   /* Footer */
-  .footer__grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
+  .footer {
+    padding: 3rem 0 2rem !important;
   }
   
-  /* Hero */
+  .footer__grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2rem 1rem !important;
+    text-align: left !important;
+  }
+  
+  .footer__col:first-child {
+    grid-column: 1 / -1 !important;
+    margin-bottom: 1rem;
+  }
+  
+  .footer__col {
+    text-align: left !important;
+  }
+  
+  .footer__col h4 {
+    margin-bottom: 1rem !important;
+    font-size: 1rem !important;
+  }
+  
+  .footer__col ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer__col ul li {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .footer__col p {
+    font-size: 0.875rem;
+  }
+  
+  .footer__bottom {
+    text-align: center !important;
+    margin-top: 2rem !important;
+    font-size: 0.75rem !important;
+  }
+  
+  /* Industry cards */
+  .industry-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  .industry-card {
+    height: 400px !important;
+  }
+  
+  .industry-card__content {
+    padding: 2rem !important;
+  }
+  
+  .industry-card__title {
+    font-size: 1.5rem !important;
+  }
+  
+  .industry-card__desc {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* ========================================
+   TABLET OPTIMIZATIONS (641px - 1024px)
+   ======================================== */
+@media (min-width: 641px) and (max-width: 1024px) {
+  /* Navigation - Show mobile menu on tablet too */
+  .nav__links {
+    display: none !important;
+  }
+  
+  .nav__toggle {
+    display: flex !important;
+  }
+  
+  /* Typography scaling */
+  :root {
+    --text-hero: 4rem;
+    --text-h1: 3rem;
+    --text-h2: 2.25rem;
+    --text-h3: 1.875rem;
+    --text-h4: 1.5rem;
+  }
+  
+  /* Hero section */
+  .hero {
+    padding: 8rem 2rem 6rem;
+  }
+  
   .hero__title {
-    font-size: var(--text-hero);
+    font-size: 4rem;
+    line-height: 1.05;
   }
   
   .hero__subtitle {
     font-size: 1.125rem;
   }
   
-  .hero__cta {
-    flex-direction: column;
-    align-items: center;
+  /* Sections */
+  section {
+    padding: 6rem 2rem;
   }
   
-  .hero__cta .btn {
-    width: 100%;
-    max-width: 300px;
-  }
-  
-  /* Content Sections */
-  .stats-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
-  }
-  
-  .platform-cards {
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
-  }
-  
-  .industry-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
-  }
-  
-  .industry-card {
-    height: 400px;
-  }
-  
-  .mission-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
-  }
-  
-  .cta-title {
-    font-size: var(--text-h2);
-  }
-  
-  .cta-text {
-    font-size: var(--text-body);
-  }
-  
-  .btn-large {
-    padding: var(--space-4) var(--space-8);
-    font-size: var(--text-body);
-  }
-}
-
-/* ========================================
-   TABLET (640px-1023px)
-   ======================================== */
-@media (min-width: 640px) and (max-width: 1023px) {
-  :root {
-    --text-hero: 4rem;
-    --text-h1: 3.5rem;
-    --text-h2: 2.5rem;
-    --text-h3: 2rem;
-    --space-32: 6rem;
-  }
-  
-  .nav__links {
-    gap: var(--space-4);
-  }
-  
-  .footer__grid {
+  /* Cards */
+  .card-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
   
-  .section {
-    padding: var(--space-24) 0;
+  .tech-card {
+    margin-bottom: 3rem;
   }
   
-  /* Content Sections */
-  .stats-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
-  }
-  
-  .platform-cards {
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
-  }
-  
-  .industry-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
-  }
-  
-  .mission-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-10);
+  /* Navigation */
+  .nav__menu {
+    gap: 1.5rem;
   }
 }
 
 /* ========================================
-   DESKTOP (1024px+)
+   DESKTOP OPTIMIZATIONS (> 1024px)
    ======================================== */
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
+  /* Container max-width */
   .container {
-    padding: 0 var(--space-8);
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  /* Hero section */
+  .hero {
+    padding: 10rem 2rem 8rem;
+  }
+  
+  /* Sections */
+  section {
+    padding: 8rem 2rem;
+  }
+  
+  /* Cards */
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* ========================================
+   CUSTOM CURSOR - DISABLE ON MOBILE
+   ======================================== */
+@media (max-width: 1024px) {
+  .cursor-dot,
+  .cursor-outline {
+    display: none !important;
+  }
+  
+  body {
+    cursor: auto !important;
+  }
+  
+  a, button {
+    cursor: pointer !important;
+  }
+}
+
+/* ========================================
+   CANVAS PARTICLES - REDUCE ON MOBILE
+   ======================================== */
+@media (max-width: 768px) {
+  #hero-canvas {
+    opacity: 0.5;
+  }
+}
+
+/* ========================================
+   STICKY CARDS - DISABLE ON MOBILE
+   ======================================== */
+@media (max-width: 768px) {
+  .tech-card {
+    position: relative !important;
+    top: 0 !important;
+  }
+}
+
+/* ========================================
+   ABOUT PAGE RESPONSIVE
+   ======================================== */
+@media (max-width: 640px) {
+  .about-hero {
+    padding: 6rem 1rem 4rem;
+  }
+  
+  .about-hero__title {
+    font-size: 2rem;
+  }
+  
+  .locations-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .mission-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .workflow-steps {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Fix timeline number position - match platform style */
+  .timeline-number {
+    font-size: 2rem !important;
+    top: 1rem !important;
+    right: 1rem !important;
+    color: rgba(75, 141, 255, 0.15) !important;
+  }
+  
+  .timeline-item {
+    padding: 2rem !important;
+  }
+  
+  /* Solutions page - partnership step number to bottom left */
+  .step-number {
+    top: auto !important;
+    bottom: 1.5rem !important;
+    right: auto !important;
+    left: 1.5rem !important;
+    font-size: 2rem !important;
+  }
+  
+  .partnership-step {
+    padding: 2rem !important;
+  }
+  
+  /* Platform page - center tech-points list */
+  .tech-points {
+    display: block !important;
+    text-align: left !important;
+    padding-left: 15% !important;
+    padding-right: 10% !important;
+  }
+  
+  .tech-card {
+    text-align: center !important;
+  }
+}
+
+/* ========================================
+   PLATFORM PAGE RESPONSIVE
+   ======================================== */
+@media (max-width: 640px) {
+  .platform-hero {
+    padding: 6rem 1rem 4rem;
+  }
+  
+  .platform-title {
+    font-size: 2rem;
+  }
+  
+  .platform-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .platform-card {
+    min-height: auto;
+  }
+}
+
+/* ========================================
+   SOLUTIONS PAGE RESPONSIVE
+   ======================================== */
+@media (max-width: 640px) {
+  .solutions-hero {
+    padding: 6rem 1rem 4rem;
+  }
+  
+  .solution-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .solution-card__image {
+    height: 250px;
+  }
+}
+
+/* ========================================
+   CONTACT PAGE RESPONSIVE
+   ======================================== */
+@media (max-width: 640px) {
+  .contact-hero {
+    padding: 6rem 1rem 4rem;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .contact-form {
+    padding: 2rem 1.5rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
   }
 }

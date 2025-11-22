@@ -231,11 +231,11 @@ section {
 }
 
 .nav__logo img {
-  transition: filter var(--transition-base);
+  transition: opacity var(--transition-base);
 }
 
 .nav__logo:hover img {
-  filter: brightness(0) saturate(100%) invert(64%) sepia(98%) saturate(1352%) hue-rotate(73deg) brightness(119%) contrast(119%);
+  opacity: 0.8;
 }
 
 .nav__links {
@@ -515,7 +515,7 @@ section {
   font-weight: var(--font-bold);
   color: var(--text-primary);
   margin-bottom: var(--space-6);
-  line-height: 1.1;
+  line-height: 1.05;
 }
 
 .gradient-text {
