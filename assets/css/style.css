@@ -1405,9 +1405,9 @@ section {
 /* Stage Cards Grid */
 .pipeline-stages-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto 3rem;
 }
 
@@ -1453,6 +1453,16 @@ section {
 .stage-card[data-platform="ignis"]:hover {
   border-color: #FF6B00;
   box-shadow: 0 20px 60px rgba(255, 107, 0, 0.4);
+}
+
+.stage-card--inactive {
+  opacity: 0.4;
+  border-style: dashed !important;
+  pointer-events: none;
+}
+
+.stage-card--inactive .stage-platform-badge {
+  display: none;
 }
 
 .stage-number {

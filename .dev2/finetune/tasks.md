@@ -13,7 +13,7 @@
 | FT-007 | About Us 图片替换与优化 | ✅ 已完成 | 中 | 2h | - |
 | FT-008 | About Us Mission/Vision 重写 | ✅ 已完成 | 中 | 1.5h | FT-006 |
 | FT-009 | About Us 增加 Team Section | ✅ 已完成 | 低 | 3h | - |
-| FT-010 | Platform Pipeline 可视化调整 | ⬜ 待开始 | 中 | 3h | - |
+| FT-010 | Platform Pipeline 可视化调整 | ✅ 已完成 | 中 | 3h | - |
 | FT-011 | Platform Sequence Core 内容更新 | ✅ 已完成 | 中 | 0.5h | - |
 | FT-012 | Solutions 页面完全重构 | ⬜ 待开始 | 高 | 6h | - |
 | FT-013 | 全站内容一致性检查 | ⬜ 待开始 | 高 | 2h | FT-001~012 |
