@@ -10,7 +10,7 @@
 | FT-004 | 首页三个平台卡片内容更新 | ✅ 已完成 | 高 | 2h | - |
 | FT-005 | 首页删除 Industries Section | ✅ 已完成 | 低 | 0.5h | - |
 | FT-006 | About Us 基本信息更新 | ✅ 已完成 | 高 | 1h | - |
-| FT-007 | About Us 图片替换与优化 | ⬜ 待开始 | 中 | 2h | - |
+| FT-007 | About Us 图片替换与优化 | ✅ 已完成 | 中 | 2h | - |
 | FT-008 | About Us Mission/Vision 重写 | ⬜ 待开始 | 中 | 1.5h | FT-006 |
 | FT-009 | About Us 增加 Team Section | ⬜ 待开始 | 低 | 3h | - |
 | FT-010 | Platform Pipeline 可视化调整 | ⬜ 待开始 | 中 | 3h | - |
