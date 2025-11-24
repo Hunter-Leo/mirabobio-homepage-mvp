@@ -1658,6 +1658,24 @@ section {
   margin-bottom: 1.5rem;
 }
 
+.platform-badge.prism {
+  background: rgba(75, 141, 255, 0.1);
+  border-color: #4B8DFF;
+  color: #4B8DFF;
+}
+
+.platform-badge.orion {
+  background: rgba(0, 217, 255, 0.1);
+  border-color: #00D9FF;
+  color: #00D9FF;
+}
+
+.platform-badge.ignis {
+  background: rgba(255, 107, 0, 0.1);
+  border-color: #FF6B00;
+  color: #FF6B00;
+}
+
 .platform-title {
   font-size: 3.5rem;
   font-weight: 700;
@@ -1689,6 +1707,24 @@ section {
   font-size: 0.875rem;
   font-weight: 600;
   font-family: var(--font-mono);
+}
+
+.stage-badge.prism {
+  background: rgba(75, 141, 255, 0.1);
+  border-color: #4B8DFF;
+  color: #4B8DFF;
+}
+
+.stage-badge.orion {
+  background: rgba(0, 217, 255, 0.1);
+  border-color: #00D9FF;
+  color: #00D9FF;
+}
+
+.stage-badge.ignis {
+  background: rgba(255, 107, 0, 0.1);
+  border-color: #FF6B00;
+  color: #FF6B00;
 }
 
 /* Text Gradients */
@@ -2051,7 +2087,138 @@ section {
 
 /* Breadcrumb - 已移除，不再使用 */
 
-/* Solution Card Section */
+/* Solutions Section */
+.section-solutions {
+    padding: 6rem 0;
+}
+
+.section-solutions .solution-card {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    padding: 2rem 0;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section-solutions .solution-card:last-child {
+    border-bottom: none;
+}
+
+.section-solutions .solution-card:hover {
+    transform: translateX(8px);
+}
+
+.section-solutions .solution-card:hover .solution-title {
+    color: var(--cyber-cyan);
+}
+
+.solution-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 1rem 0 0.75rem;
+    line-height: 1.3;
+    transition: color 0.3s ease;
+}
+
+.solution-tagline {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .section-solutions .solution-card {
+        padding: 1.5rem 0;
+    }
+    
+    .solution-title {
+        font-size: 1.5rem;
+    }
+}
+
+.solution-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.solution-badge--prism {
+    background: rgba(75, 141, 255, 0.1);
+    border: 1px solid rgba(75, 141, 255, 0.3);
+    color: #4B8DFF;
+}
+
+.solution-badge--orion {
+    background: rgba(0, 217, 255, 0.1);
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    color: #00D9FF;
+}
+
+.solution-badge--ignis {
+    background: rgba(255, 107, 0, 0.1);
+    border: 1px solid rgba(255, 107, 0, 0.3);
+    color: #FF6B00;
+}
+
+.solution-tagline {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+.solution-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.solution-features li {
+    padding: 0.75rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: var(--text-secondary);
+}
+
+.solution-features li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--cyber-cyan);
+    font-weight: bold;
+}
+
+.custom-solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.custom-solution-card {
+    padding: 2rem;
+    text-align: center;
+}
+
+.custom-solution-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.custom-solution-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
 .solution-card-section {
   padding: 4rem 0;
 }
