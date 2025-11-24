@@ -8,7 +8,7 @@
 | FT-002 | 首页 Hero 背景动画添加 | ✅ 已完成 | 中 | 3h | FT-001 |
 | FT-003 | 首页 "Who we are" Section 重写 | ✅ 已完成 | 高 | 2h | - |
 | FT-004 | 首页三个平台卡片内容更新 | ✅ 已完成 | 高 | 2h | - |
-| FT-005 | 首页删除 Industries Section | ⬜ 待开始 | 低 | 0.5h | - |
+| FT-005 | 首页删除 Industries Section | ✅ 已完成 | 低 | 0.5h | - |
 | FT-006 | About Us 基本信息更新 | ⬜ 待开始 | 高 | 1h | - |
 | FT-007 | About Us 图片替换与优化 | ⬜ 待开始 | 中 | 2h | - |
 | FT-008 | About Us Mission/Vision 重写 | ⬜ 待开始 | 中 | 1.5h | FT-006 |
