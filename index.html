@@ -26,10 +26,15 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     
+    <!-- Preload critical resources -->
+    <link rel="preload" as="image" href="assets/images/backgrounds/fold_adalimumab_free_cystein_model_0_rotation_slow.gif">
+    <link rel="preload" as="style" href="assets/css/style.css">
+    
     <!-- Preconnect for external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     
     <!-- Google Fonts with display=swap -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -362,13 +367,13 @@
     </button>
     
     <!-- GSAP Animation Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     
     <!-- Custom Scripts -->
-    <script src="assets/js/cursor.js"></script>
-    <script src="assets/js/canvas-particles.js"></script>
-    <script src="assets/js/utils.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cursor.js" defer></script>
+    <script src="assets/js/canvas-particles.js" defer></script>
+    <script src="assets/js/utils.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>
