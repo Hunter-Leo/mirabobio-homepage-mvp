@@ -15,7 +15,7 @@
 | FT-009 | About Us 增加 Team Section | ✅ 已完成 | 低 | 3h | - |
 | FT-010 | Platform Pipeline 可视化调整 | ✅ 已完成 | 中 | 3h | - |
 | FT-011 | Platform Sequence Core 内容更新 | ✅ 已完成 | 中 | 0.5h | - |
-| FT-012 | Solutions 页面完全重构 | ⬜ 待开始 | 高 | 6h | - |
+| FT-012 | Solutions 页面完全重构 | ✅ 已完成 | 高 | 6h | - |
 | FT-013 | 全站内容一致性检查 | ⬜ 待开始 | 高 | 2h | FT-001~012 |
 | FT-014 | 响应式测试与调整 | ⬜ 待开始 | 高 | 2h | FT-013 |
 | FT-015 | 性能优化与最终测试 | ⬜ 待开始 | 高 | 2h | FT-014 |
