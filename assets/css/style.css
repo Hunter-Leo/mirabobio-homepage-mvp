@@ -1465,6 +1465,11 @@ section {
   display: none;
 }
 
+.stage-card--inactive .stage-icon-svg {
+  filter: grayscale(100%) brightness(1.5);
+  opacity: 0.6;
+}
+
 .stage-number {
   position: absolute;
   top: 1rem;
