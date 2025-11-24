@@ -518,9 +518,14 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--mirabo-dark);
+  background: var(--gradient-hero);
   overflow: hidden;
   padding-top: 80px;
+}
+
+/* Homepage hero uses solid dark background (index.html only) */
+.hero:not(.hero-platform):not(.hero-about):not(.hero-solutions):not(.hero-contact) {
+  background: var(--mirabo-dark);
 }
 
 .hero__canvas {
