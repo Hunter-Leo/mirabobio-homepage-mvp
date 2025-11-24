@@ -9,59 +9,41 @@ document.addEventListener('DOMContentLoaded', function() {
     const subtitleElement = document.querySelector('.hero__subtitle');
     
     if (titleElement) {
-        const text1 = 'Bridging Biology';
-        const text2 = 'and Everyday Life.';
-        const line1 = document.createTextNode('');
-        const line2 = titleElement.querySelector('span');
+        const titleText = 'Building Better Biologics with AI';
+        const line = titleElement.querySelector('span');
         
         titleElement.innerHTML = '';
-        titleElement.appendChild(line1);
-        titleElement.appendChild(document.createElement('br'));
-        titleElement.appendChild(line2);
+        titleElement.appendChild(line);
         
         let i = 0;
         function typeWriter() {
-            if (i < text1.length) {
-                line1.textContent += text1.charAt(i);
+            if (i < titleText.length) {
+                line.textContent += titleText.charAt(i);
                 i++;
                 setTimeout(typeWriter, 30);
-            } else if (i === text1.length) {
-                i++;
-                setTimeout(typeWriter, 200);
             } else {
-                let j = 0;
-                line2.textContent = '';
-                function typeSecondLine() {
-                    if (j < text2.length) {
-                        line2.textContent += text2.charAt(j);
-                        j++;
-                        setTimeout(typeSecondLine, 30);
-                    } else {
-                        // Start subtitle typing after title completes
-                        if (subtitleElement) {
-                            const subtitleText = 'Pioneering AI-integrated platforms to create next-generation bioactive ingredients and medical materials. From In-Silico prediction to commercial scale.';
-                            subtitleElement.textContent = '';
-                            subtitleElement.style.opacity = '1';
-                            let k = 0;
-                            function typeSubtitle() {
-                                if (k < subtitleText.length) {
-                                    subtitleElement.textContent += subtitleText.charAt(k);
-                                    k++;
-                                    setTimeout(typeSubtitle, 2);
-                                } else {
-                                    // Show other elements after subtitle
-                                    gsap.to('.hero__badge, .hero__cta', {
-                                        opacity: 1,
-                                        duration: 0.8,
-                                        ease: 'power2.out'
-                                    });
-                                }
-                            }
-                            setTimeout(typeSubtitle, 300);
+                // Start subtitle typing after title completes
+                if (subtitleElement) {
+                    const subtitleText = 'Integrated AI solutions for designing and developing protein therapeutics from discovery through commercial manufacturing';
+                    subtitleElement.textContent = '';
+                    subtitleElement.style.opacity = '1';
+                    let k = 0;
+                    function typeSubtitle() {
+                        if (k < subtitleText.length) {
+                            subtitleElement.textContent += subtitleText.charAt(k);
+                            k++;
+                            setTimeout(typeSubtitle, 2);
+                        } else {
+                            // Show other elements after subtitle
+                            gsap.to('.hero__badge, .hero__cta', {
+                                opacity: 1,
+                                duration: 0.8,
+                                ease: 'power2.out'
+                            });
                         }
                     }
+                    setTimeout(typeSubtitle, 300);
                 }
-                typeSecondLine();
             }
         }
         
