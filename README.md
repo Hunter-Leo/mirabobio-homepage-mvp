@@ -42,6 +42,30 @@ mirabobio-homepage-mvp/
 
 Deployed on **Cloudflare Pages** with automatic builds from Git repository.
 
+### Build System
+
+The project uses an automated build system to handle cache-busting:
+
+```bash
+# Local build (for testing)
+npm run build
+
+# Output will be in dist/ directory
+```
+
+The build script automatically:
+- Copies all files to `dist/` directory
+- Injects version numbers into CSS/JS references (`?v=xxx`)
+- Uses Git commit SHA on Cloudflare Pages
+- Ensures users always get the latest version
+
+### Cloudflare Pages Configuration
+
+**Build Settings:**
+- Build command: `npm run build`
+- Build output directory: `dist`
+- Node version: 18 or higher
+
 ### Quick Deploy
 ```bash
 git push origin main

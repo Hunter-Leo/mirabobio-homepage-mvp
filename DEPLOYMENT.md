@@ -20,9 +20,23 @@ git push origin main
 4. Select **Connect to Git**
 5. Choose your repository: `mirabobio-homepage-mvp`
 6. Configure build settings:
-   - **Build command:** (leave empty)
-   - **Build output directory:** `/`
+   - **Framework preset:** None
+   - **Build command:** `npm run build`
+   - **Build output directory:** `dist`
    - **Root directory:** (leave empty)
+   - **Environment variables:** None required
+
+**Build System:**
+- The build script automatically injects version numbers (`?v=xxx`) into all CSS/JS references
+- Uses Git commit SHA as version identifier
+- Ensures cache-busting for instant updates
+- Source files remain unchanged, output goes to `dist/`
+
+**Local Testing:**
+```bash
+npm run build
+# Check dist/ directory for output
+```
 
 ### Step 3: Deploy
 
