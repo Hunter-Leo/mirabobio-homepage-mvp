@@ -2775,4 +2775,14 @@ textarea.form-input {
     .team-cards {
         grid-template-columns: 1fr;
     }
+    
+    .team-card-photo {
+        width: 120px;
+    }
+}
+
+@media (max-width: 640px) {
+    .team-card-photo {
+        width: 100px;
+    }
 }
