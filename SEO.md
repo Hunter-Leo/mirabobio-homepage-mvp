@@ -23,6 +23,15 @@
 3. Verify ownership
 4. Submit sitemap
 
+### 4. Naver Webmaster Tools (for Korea market)
+
+1. Visit https://searchadvisor.naver.com
+2. Sign in with Naver account
+3. Add site: `mirabobio.com`
+4. Verify ownership (HTML file upload or meta tag)
+5. Submit sitemap: `https://mirabobio.com/sitemap.xml`
+6. Request site collection (사이트 수집 요청)
+
 ## Google Indexing Timeline
 
 **Fastest:** Few hours to 1-2 days
