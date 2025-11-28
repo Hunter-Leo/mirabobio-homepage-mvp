@@ -2704,28 +2704,31 @@ textarea.form-input {
 
 .team-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2rem;
 }
 
 .team-card {
-    text-align: center;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
 }
 
 .team-card-photo {
-    width: 100%;
+    width: 200px;
+    flex-shrink: 0;
     aspect-ratio: 3/4;
     object-fit: cover;
     object-position: center top;
     border-radius: 8px;
-    margin-bottom: 1.5rem;
 }
 
 .team-card-info {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 0.5rem;
+    text-align: left;
 }
 
 .team-card-name {
@@ -2739,6 +2742,20 @@ textarea.form-input {
     font-size: 1.125rem;
     color: var(--text-secondary);
     margin: 0;
+}
+
+.team-card-desc {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    text-align: left;
+    font-size: 0.9rem;
+    color: var(--text-tertiary);
+    line-height: 1.8;
+}
+
+.team-card-desc li {
+    margin-bottom: 0.5rem;
 }
 
 .team-badge {
