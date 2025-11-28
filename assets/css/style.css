@@ -2785,4 +2785,8 @@ textarea.form-input {
     .team-card-photo {
         width: 100px;
     }
+    
+    .section-badge {
+        margin-bottom: var(--space-4);
+    }
 }
