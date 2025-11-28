@@ -63,6 +63,18 @@ htmlFiles.forEach(file => {
     `src="assets/js/$1?v=${version}"`
   );
   
+  // 替换所有图片引用，添加版本号（svg, jpg, png, webp, gif）
+  content = content.replace(
+    /src="assets\/images\/([^"?]+\.(svg|jpg|jpeg|png|webp|gif))(\?v=[^"]*)?"/g,
+    `src="assets/images/$1?v=${version}"`
+  );
+  
+  // 替换所有视频引用，添加版本号（mp4, webm, ogg）
+  content = content.replace(
+    /src="assets\/videos\/([^"?]+\.(mp4|webm|ogg))(\?v=[^"]*)?"/g,
+    `src="assets/videos/$1?v=${version}"`
+  );
+  
   fs.writeFileSync(destPath, content);
   console.log(`✓ Processed ${file}`);
 });
