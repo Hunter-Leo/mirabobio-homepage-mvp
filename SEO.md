@@ -56,7 +56,30 @@
   - `https://mirabobio.com/solutions.html`
   - `https://mirabobio.com/contact.html`
 
-### 2. Site Quality (Already Implemented ✅)
+### 2. Bing Webmaster Tools - URL Submission
+
+- Use "URL Submission" tool
+- Submit individual URLs for faster indexing
+- Limit: 10 URLs per day (free tier)
+- Or use "Submit URLs" API for bulk submission
+
+### 3. Naver Webmaster - Site Collection Request
+
+- Go to "사이트 수집 요청" (Site Collection Request)
+- Submit individual page URLs
+- Use "간편 등록" (Simple Registration) for quick indexing
+- Check "수집 현황" (Collection Status) to monitor progress
+
+### 4. Baidu Webmaster - URL Push
+
+- Use "链接提交" (Link Submission) tool
+- Options:
+  - **主动推送 (Active Push):** API for real-time submission
+  - **自动推送 (Auto Push):** Add JS code to pages
+  - **sitemap:** Submit sitemap URL
+  - **手动提交 (Manual Submit):** Submit URLs manually
+
+### 5. Site Quality (Already Implemented ✅)
 
 - ✅ Good structure and navigation
 - ✅ Responsive design
@@ -66,14 +89,14 @@
 - ✅ sitemap.xml and robots.txt
 - ✅ Proper meta tags and canonical URLs
 
-### 3. Get Backlinks
+### 6. Get Backlinks
 
 - Add website link to LinkedIn company page: https://www.linkedin.com/company/mirabo-biotechnology
 - Register in relevant industry directories
 - Publish press releases
 - Partner websites and collaborations
 
-### 4. Social Media Sharing
+### 7. Social Media Sharing
 
 - Share website links on LinkedIn, Twitter, etc.
 - Google discovers sites through these channels
