@@ -2063,16 +2063,40 @@ section {
 }
 
 @media (max-width: 768px) {
+  .section-benefits .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+  
   .advantage-card {
-    padding: 2rem;
+    padding: 1rem 0.75rem !important;
+    text-align: center;
+  }
+  
+  .advantage-icon-wrapper {
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .advantage-icon-wrapper svg {
+    width: 32px;
+    height: 32px;
   }
   
   .advantage-main-title {
-    font-size: 1.25rem;
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
   }
   
   .advantage-subtitle {
-    font-size: 0.9375rem;
+    font-size: 0.7rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .advantage-text {
+    font-size: 0.65rem;
+    line-height: 1.4;
+    text-align: left;
   }
 }
 
