@@ -2104,7 +2104,63 @@ section {
     font-size: 1.25rem;
   }
   
-  .tech-grid,
+  .platform-technologies {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .tech-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+  
+  .tech-card {
+    padding: 1rem 0.75rem !important;
+    text-align: center;
+    margin: 0 !important;
+  }
+  
+  .tech-icon {
+    height: 40px;
+    margin-bottom: 0.5rem;
+    justify-content: center;
+  }
+  
+  .tech-icon img {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .tech-title {
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+    text-align: center;
+  }
+  
+  .tech-desc {
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    line-height: 1.3;
+  }
+  
+  .tech-points {
+    padding-left: 0;
+    font-size: 0.65rem;
+  }
+  
+  .tech-points li {
+    padding-left: 0;
+    line-height: 1.4;
+    margin-bottom: 0.2rem;
+  }
+  
+  .tech-points li::before {
+    font-size: 0.65rem;
+    margin-right: 0.3rem;
+  }
+  
   .process-stages,
   .benefits-grid {
     grid-template-columns: 1fr;
