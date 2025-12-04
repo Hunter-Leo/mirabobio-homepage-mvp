@@ -143,6 +143,34 @@
     margin-bottom: 2rem;
   }
   
+  /* Platform sticky cards - 手机端居中 */
+  .sticky-card > div > div.grid {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  .sticky-card .space-y-6 {
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  
+  .sticky-card .space-y-6 > div,
+  .sticky-card .space-y-6 > h3,
+  .sticky-card .space-y-6 > p {
+    text-align: center !important;
+  }
+  
+  .sticky-card .space-y-6 > ul {
+    text-align: left !important;
+  }
+  
+  /* 保持 IGNIS 动画的 grid 布局 */
+  .sticky-card .grid.grid-cols-6 {
+    display: grid !important;
+    flex-direction: unset !important;
+  }
+  
   /* Cards */
   .card-grid {
     grid-template-columns: 1fr;
