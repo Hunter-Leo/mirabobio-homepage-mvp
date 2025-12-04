@@ -53,26 +53,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // Header scroll effect
     const header = document.getElementById('header');
     let lastScroll = 0;
+    let ticking = false;
     
-    window.addEventListener('scroll', throttle(() => {
-        const currentScroll = window.pageYOffset;
-        
-        // Hide on scroll down, show on scroll up
-        if (currentScroll > lastScroll && currentScroll > 100) {
-            header.style.transform = 'translateY(-100%)';
-        } else {
-            header.style.transform = 'translateY(0)';
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                const currentScroll = window.pageYOffset;
+                
+                // Hide on scroll down, show on scroll up
+                if (currentScroll > lastScroll && currentScroll > 100) {
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    header.style.transform = 'translateY(0)';
+                }
+                
+                // Add backdrop blur when scrolled
+                if (currentScroll > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                
+                lastScroll = currentScroll;
+                ticking = false;
+            });
+            ticking = true;
         }
-        
-        // Add backdrop blur when scrolled
-        if (currentScroll > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-        
-        lastScroll = currentScroll;
-    }, 100));
+    }, { passive: true });
     
     // Mobile menu toggle
     const navToggle = document.querySelector('.nav__toggle');

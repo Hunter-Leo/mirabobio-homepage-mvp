@@ -214,7 +214,9 @@ section {
   right: 0;
   height: 80px;
   z-index: 1000;
-  transition: transform var(--transition-base), background var(--transition-base);
+  transition: transform 0.3s ease, background 0.3s ease;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .header.scrolled {
