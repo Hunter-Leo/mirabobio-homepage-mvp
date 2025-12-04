@@ -722,6 +722,11 @@
     text-align: center !important;
   }
   
+  /* Index page - green bullet align with first line */
+  .sticky-card li > span.flex-shrink-0 {
+    top: -0.1em;
+  }
+  
   /* Contact page - form compact */
   #contactForm {
     gap: 0.75rem !important;
