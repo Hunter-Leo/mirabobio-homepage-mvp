@@ -736,14 +736,19 @@ section {
 }
 
 .stat-icon {
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
   margin: 0 auto var(--space-6);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--cyber-cyan);
   filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.5));
+}
+
+.stat-icon img {
+  width: 100%;
+  height: 100%;
 }
 
 .stat-title {
