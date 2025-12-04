@@ -1,34 +1,21 @@
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- IgG抗体 -->
   <defs>
     <linearGradient id="grad-eng" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#32CD32;stop-opacity:1" />
+      <stop offset="0%" stop-color="#00D9FF"/>
+      <stop offset="100%" stop-color="#32CD32"/>
     </linearGradient>
   </defs>
   
-  <!-- 3D cube wireframe -->
-  <!-- Front face -->
-  <path d="M 12 20 L 28 20 L 28 36 L 12 36 Z" stroke="url(#grad-eng)" stroke-width="2" fill="none"/>
+  <!-- 左重链 (连续) -->
+  <path d="M22 44 L22 26 L10 10" stroke="#00D9FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   
-  <!-- Back face -->
-  <path d="M 20 12 L 36 12 L 36 28 L 20 28 Z" stroke="url(#grad-eng)" stroke-width="2" fill="none" opacity="0.6"/>
+  <!-- 右重链 (连续) -->
+  <path d="M26 44 L26 26 L38 10" stroke="#00D9FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   
-  <!-- Connecting edges -->
-  <line x1="12" y1="20" x2="20" y2="12" stroke="url(#grad-eng)" stroke-width="2" opacity="0.6"/>
-  <line x1="28" y1="20" x2="36" y2="12" stroke="url(#grad-eng)" stroke-width="2" opacity="0.6"/>
-  <line x1="28" y1="36" x2="36" y2="28" stroke="url(#grad-eng)" stroke-width="2" opacity="0.6"/>
-  <line x1="12" y1="36" x2="20" y2="28" stroke="url(#grad-eng)" stroke-width="2" opacity="0.6"/>
+  <!-- 左轻链 (紧贴重链外侧) -->
+  <path d="M19 26 L7 10" stroke="#32CD32" stroke-width="2.5" stroke-linecap="round"/>
   
-  <!-- Grid lines -->
-  <line x1="20" y1="20" x2="20" y2="36" stroke="#00D9FF" stroke-width="1" opacity="0.4"/>
-  <line x1="12" y1="28" x2="28" y2="28" stroke="#00D9FF" stroke-width="1" opacity="0.4"/>
-  
-  <!-- Key points -->
-  <circle cx="12" cy="20" r="2" fill="#00D9FF"/>
-  <circle cx="28" cy="36" r="2" fill="#32CD32"/>
-  <circle cx="36" cy="12" r="2" fill="#00D9FF"/>
-  <circle cx="20" cy="28" r="2" fill="#32CD32"/>
-  
-  <!-- Optimization arrow -->
-  <path d="M 32 40 L 38 40 L 35 44 Z" fill="#32CD32"/>
+  <!-- 右轻链 (紧贴重链外侧) -->
+  <path d="M29 26 L41 10" stroke="#32CD32" stroke-width="2.5" stroke-linecap="round"/>
 </svg>

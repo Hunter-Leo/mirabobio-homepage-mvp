@@ -1,14 +1,17 @@
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Safety/Efficacy: 盾牌 + 勾选 -->
   <defs>
     <linearGradient id="grad-safe" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#4B8DFF;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#003BA3;stop-opacity:1" />
+      <stop offset="0%" stop-color="#4B8DFF"/>
+      <stop offset="100%" stop-color="#003BA3"/>
     </linearGradient>
   </defs>
-  <path d="M 24 8 L 40 24 L 24 40 L 8 24 Z" stroke="url(#grad-safe)" stroke-width="2" fill="none"/>
-  <circle cx="24" cy="24" r="3" fill="#4B8DFF"/>
-  <path d="M 24 16 L 24 20" stroke="#4B8DFF" stroke-width="2" stroke-linecap="round"/>
-  <path d="M 24 28 L 24 32" stroke="#4B8DFF" stroke-width="2" stroke-linecap="round"/>
-  <path d="M 16 24 L 20 24" stroke="#4B8DFF" stroke-width="2" stroke-linecap="round"/>
-  <path d="M 28 24 L 32 24" stroke="#4B8DFF" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- 盾牌轮廓 -->
+  <path d="M24 6 L40 12 L40 24 C40 34 32 42 24 44 C16 42 8 34 8 24 L8 12 Z" 
+        stroke="url(#grad-safe)" stroke-width="2" fill="none"/>
+  
+  <!-- 勾选标记 -->
+  <path d="M16 24 L22 30 L32 18" 
+        stroke="#4B8DFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>

@@ -1,7 +1,27 @@
 <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="40" cy="40" r="38" stroke="#4B8DFF" stroke-width="3" opacity="0.4"/>
-  <circle cx="40" cy="40" r="30" stroke="#4B8DFF" stroke-width="3" opacity="0.6"/>
-  <path d="M40 10 L40 70 M10 40 L70 40" stroke="#4B8DFF" stroke-width="2.5" opacity="0.5"/>
-  <circle cx="40" cy="40" r="20" fill="#4B8DFF" opacity="0.2"/>
-  <path d="M35 40 L38 43 L45 36" stroke="#4B8DFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Mission: 指南针 - 方向、指引 -->
+  
+  <!-- 外圈 -->
+  <circle cx="40" cy="40" r="28" stroke="#4B8DFF" stroke-width="2.5" fill="none"/>
+  
+  <!-- 刻度点 -->
+  <circle cx="40" cy="14" r="2.5" fill="#32CD32"/>
+  <circle cx="66" cy="40" r="2" fill="#4B8DFF" opacity="0.5"/>
+  <circle cx="40" cy="66" r="2" fill="#4B8DFF" opacity="0.5"/>
+  <circle cx="14" cy="40" r="2" fill="#4B8DFF" opacity="0.5"/>
+  
+  <!-- 指针 - 北 -->
+  <path d="M40 20 L44 40 L40 44 L36 40 Z" fill="url(#compassGrad)"/>
+  <!-- 指针 - 南 -->
+  <path d="M40 60 L44 40 L40 36 L36 40 Z" fill="#4B8DFF" opacity="0.3"/>
+  
+  <!-- 中心点 -->
+  <circle cx="40" cy="40" r="3" fill="#4B8DFF"/>
+  
+  <defs>
+    <linearGradient id="compassGrad" x1="40" y1="20" x2="40" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#32CD32"/>
+      <stop offset="100%" stop-color="#4B8DFF"/>
+    </linearGradient>
+  </defs>
 </svg>

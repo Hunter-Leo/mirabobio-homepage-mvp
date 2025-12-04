@@ -1,12 +1,21 @@
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Structure Core: 3D分子结构 -->
   <defs>
     <linearGradient id="grad-struct" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#4B8DFF;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#003BA3;stop-opacity:1" />
+      <stop offset="0%" stop-color="#4B8DFF"/>
+      <stop offset="100%" stop-color="#003BA3"/>
     </linearGradient>
   </defs>
-  <rect x="12" y="12" width="24" height="24" stroke="url(#grad-struct)" stroke-width="2" fill="none"/>
-  <circle cx="24" cy="24" r="4" fill="#4B8DFF"/>
-  <line x1="12" y1="12" x2="36" y2="36" stroke="#4B8DFF" stroke-width="1" opacity="0.4"/>
-  <line x1="36" y1="12" x2="12" y2="36" stroke="#4B8DFF" stroke-width="1" opacity="0.4"/>
+  
+  <!-- 3D立方体框架 -->
+  <path d="M24 6 L40 16 L40 32 L24 42 L8 32 L8 16 Z" 
+        stroke="url(#grad-struct)" stroke-width="2" fill="none"/>
+  <path d="M24 6 L24 22" stroke="#4B8DFF" stroke-width="1.5" opacity="0.6"/>
+  <path d="M24 22 L40 32" stroke="#4B8DFF" stroke-width="1.5" opacity="0.6"/>
+  <path d="M24 22 L8 32" stroke="#4B8DFF" stroke-width="1.5" opacity="0.6"/>
+  
+  <!-- 节点 -->
+  <circle cx="24" cy="6" r="3" fill="#4B8DFF"/>
+  <circle cx="24" cy="22" r="3" fill="#4B8DFF" opacity="0.8"/>
+  <circle cx="24" cy="42" r="2.5" fill="#4B8DFF" opacity="0.5"/>
 </svg>
