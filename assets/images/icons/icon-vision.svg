@@ -1,28 +1,25 @@
 <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Vision: 北极星 - 远见、目标 -->
-  
-  <!-- 主星芒 - 四向 -->
-  <path d="M40 8 L43 34 L40 40 L37 34 Z" fill="url(#starGrad)"/>
-  <path d="M40 72 L43 46 L40 40 L37 46 Z" fill="#4B8DFF" opacity="0.4"/>
-  <path d="M8 40 L34 37 L40 40 L34 43 Z" fill="#4B8DFF" opacity="0.4"/>
-  <path d="M72 40 L46 37 L40 40 L46 43 Z" fill="#4B8DFF" opacity="0.4"/>
-  
-  <!-- 次星芒 - 斜向 -->
-  <path d="M18 18 L35 35 L40 40 L35 38 Z" fill="#4B8DFF" opacity="0.25"/>
-  <path d="M62 18 L45 35 L40 40 L45 38 Z" fill="#4B8DFF" opacity="0.25"/>
-  <path d="M18 62 L35 45 L40 40 L35 42 Z" fill="#4B8DFF" opacity="0.25"/>
-  <path d="M62 62 L45 45 L40 40 L45 42 Z" fill="#4B8DFF" opacity="0.25"/>
-  
-  <!-- 中心 - 品牌绿点 -->
-  <circle cx="40" cy="40" r="5" fill="#32CD32"/>
-  
-  <!-- 光晕 -->
-  <circle cx="40" cy="40" r="10" stroke="#32CD32" stroke-width="1.5" opacity="0.3"/>
-  
+  <!-- Vision: 灯泡 + 灯丝 -->
   <defs>
-    <linearGradient id="starGrad" x1="40" y1="8" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+    <linearGradient id="visionGrad" x1="20" y1="10" x2="60" y2="60" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#4B8DFF"/>
-      <stop offset="100%" stop-color="#32CD32"/>
+      <stop offset="100%" stop-color="#003BA3"/>
     </linearGradient>
   </defs>
+  
+  <!-- 灯泡轮廓 -->
+  <path d="M40 8 C24 8, 14 20, 14 34 C14 44, 20 52, 28 56 L28 64 L52 64 L52 56 C60 52, 66 44, 66 34 C66 20, 56 8, 40 8 Z" 
+        stroke="url(#visionGrad)" stroke-width="3" fill="none"/>
+  
+  <!-- 灯泡底座 -->
+  <line x1="30" y1="68" x2="50" y2="68" stroke="#4B8DFF" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="32" y1="72" x2="48" y2="72" stroke="#4B8DFF" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- 灯丝 - 波浪形 -->
+  <path d="M32 52 L32 44 Q36 38, 40 44 Q44 50, 48 44 L48 52" 
+        stroke="#4B8DFF" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- 发光核心 -->
+  <circle cx="40" cy="32" r="8" fill="url(#visionGrad)" opacity="0.3"/>
+  <circle cx="40" cy="32" r="4" fill="#32CD32"/>
 </svg>

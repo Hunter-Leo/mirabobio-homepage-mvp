@@ -1,27 +1,20 @@
 <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Mission: 指南针 - 方向、指引 -->
-  
-  <!-- 外圈 -->
-  <circle cx="40" cy="40" r="28" stroke="#4B8DFF" stroke-width="2.5" fill="none"/>
-  
-  <!-- 刻度点 -->
-  <circle cx="40" cy="14" r="2.5" fill="#32CD32"/>
-  <circle cx="66" cy="40" r="2" fill="#4B8DFF" opacity="0.5"/>
-  <circle cx="40" cy="66" r="2" fill="#4B8DFF" opacity="0.5"/>
-  <circle cx="14" cy="40" r="2" fill="#4B8DFF" opacity="0.5"/>
-  
-  <!-- 指针 - 北 -->
-  <path d="M40 20 L44 40 L40 44 L36 40 Z" fill="url(#compassGrad)"/>
-  <!-- 指针 - 南 -->
-  <path d="M40 60 L44 40 L40 36 L36 40 Z" fill="#4B8DFF" opacity="0.3"/>
-  
-  <!-- 中心点 -->
-  <circle cx="40" cy="40" r="3" fill="#4B8DFF"/>
-  
+  <!-- Mission: 心形 + 脉搏 - 为患者健康 -->
   <defs>
-    <linearGradient id="compassGrad" x1="40" y1="20" x2="40" y2="44" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#32CD32"/>
-      <stop offset="100%" stop-color="#4B8DFF"/>
+    <linearGradient id="missionGrad" x1="20" y1="20" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4B8DFF"/>
+      <stop offset="100%" stop-color="#003BA3"/>
     </linearGradient>
   </defs>
+  
+  <!-- 心形轮廓 -->
+  <path d="M40 68 C20 50, 8 36, 8 26 C8 16, 16 10, 26 10 C32 10, 37 14, 40 18 C43 14, 48 10, 54 10 C64 10, 72 16, 72 26 C72 36, 60 50, 40 68 Z" 
+        stroke="url(#missionGrad)" stroke-width="3" fill="none"/>
+  
+  <!-- 心电图脉搏线 -->
+  <path d="M16 38 L30 38 L34 28 L40 48 L46 28 L50 38 L64 38" 
+        stroke="#4B8DFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- 绿点 - 生命力 -->
+  <circle cx="40" cy="38" r="3" fill="#32CD32"/>
 </svg>
