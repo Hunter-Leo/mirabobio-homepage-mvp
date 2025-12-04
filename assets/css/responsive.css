@@ -262,6 +262,121 @@
     font-size: 0.75rem !important;
   }
   
+  /* Stats grid - 2 columns layout like platform page */
+  .stats-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+    margin-top: 1.5rem !important;
+  }
+  
+  .stat-card {
+    padding: 1rem 0.75rem !important;
+    text-align: center !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+  
+  .stat-icon {
+    margin-bottom: 0.5rem !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  
+  .stat-icon img {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  
+  .stat-title {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.5rem !important;
+    text-align: center !important;
+  }
+  
+  .stat-desc {
+    font-size: 0.7rem !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+  }
+  
+  /* Section header spacing */
+  .section-platform {
+    padding-top: 2rem !important;
+  }
+  
+  .section-platform .container {
+    margin-bottom: 1rem !important;
+  }
+  
+  .section-platform .container .section-badge {
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .section-platform .container h2 {
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .section-platform .container p.section-tagline {
+    margin-bottom: 0 !important;
+  }
+  
+  /* Override Tailwind mb classes */
+  .section-platform .mb-8 {
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .section-platform .mb-20 {
+    margin-bottom: 0 !important;
+  }
+  
+  /* First sticky card top margin */
+  .section-platform .relative {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  /* Platform sticky cards - compact */
+  .sticky-card {
+    position: relative !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .sticky-card .glass-panel {
+    padding: 1.5rem !important;
+    border-radius: 1rem !important;
+  }
+  
+  /* Hide animation graphics on mobile */
+  .sticky-card .grid > div:last-child:not(.space-y-6) {
+    display: none !important;
+  }
+  
+  .sticky-card h3 {
+    font-size: 1.5rem !important;
+  }
+  
+  .sticky-card .text-2xl {
+    font-size: 1rem !important;
+  }
+  
+  .sticky-card .text-lg {
+    font-size: 0.8rem !important;
+  }
+  
+  .sticky-card ul.space-y-4 {
+    gap: 0.5rem !important;
+  }
+  
+  .sticky-card ul li {
+    font-size: 0.75rem !important;
+  }
+  
+  .sticky-card a {
+    font-size: 0.85rem !important;
+    margin-top: 0.5rem !important;
+  }
+
   /* Industry cards */
   .industry-grid {
     grid-template-columns: 1fr !important;
@@ -394,6 +509,50 @@
 @media (max-width: 768px) {
   #hero-canvas {
     opacity: 0.5;
+  }
+  
+  /* Section platform header spacing */
+  .section-platform {
+    padding-top: 2rem !important;
+  }
+  
+  .section-platform > .container {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  .section-platform .section-tagline {
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Override Tailwind classes */
+  .section-platform .mb-8 {
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .section-platform .mb-20 {
+    margin-bottom: 2rem !important;
+  }
+  
+  .section-platform > .relative {
+    margin-top: 0 !important;
+  }
+  
+  /* Sticky cards - remove sticky positioning and inline top */
+  .sticky-card {
+    position: relative !important;
+    top: 0 !important;
+    margin-bottom: 1.5rem !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+  
+  .sticky-card:first-child {
+    margin-top: 2rem !important;
+  }
+  
+  .sticky-card .mb-32 {
+    margin-bottom: 0 !important;
   }
 }
 
