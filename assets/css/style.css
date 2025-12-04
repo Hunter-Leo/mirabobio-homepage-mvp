@@ -1370,13 +1370,14 @@ section {
 
 @media (max-width: 768px) {
   .approach-timeline {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
   
   .timeline-number {
-    font-size: 3rem;
-    top: -0.5rem;
-    right: 1.5rem;
+    font-size: 2rem;
+    top: 0.5rem;
+    right: 1rem;
   }
   
   .cta-buttons {

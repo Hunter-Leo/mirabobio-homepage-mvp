@@ -598,24 +598,72 @@
   }
   
   .mission-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  
+  .mission-card {
+    padding: 1rem 0.75rem !important;
+  }
+  
+  .mission-card__icon img {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .mission-card .mission-card__icon {
+    height: 40px;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .mission-card__label {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .mission-card__text {
+    font-size: 0.7rem !important;
+    line-height: 1.3 !important;
   }
   
   .workflow-steps {
     grid-template-columns: 1fr;
   }
   
-  /* Fix timeline number position - match platform style */
-  .timeline-number {
-    font-size: 2rem !important;
-    top: 1rem !important;
-    right: 1rem !important;
-    color: rgba(75, 141, 255, 0.15) !important;
+  /* INTEGRATED WORKFLOW - 2 columns */
+  .approach-timeline {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem;
   }
   
   .timeline-item {
-    padding: 2rem !important;
+    padding: 1rem 0.75rem !important;
+  }
+  
+  .timeline-item h3 {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .timeline-item p {
+    font-size: 0.7rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  .timeline-item .stat-icon svg {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .timeline-item .stat-icon {
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .timeline-number {
+    font-size: 1.5rem !important;
+    top: 0.5rem !important;
+    right: 0.5rem !important;
+    color: rgba(75, 141, 255, 0.15) !important;
   }
   
   /* Solutions page - partnership step number to bottom left */
