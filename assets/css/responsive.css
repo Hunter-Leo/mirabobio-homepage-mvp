@@ -277,6 +277,20 @@
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
   }
   
+  /* About page location cards (with inline background) - override */
+  .stat-card[style*="background:"] {
+    grid-column: 1 / -1 !important;
+    padding: 0 !important;
+    text-align: left !important;
+    border: none !important;
+    min-height: 280px !important;
+  }
+  
+  .stat-card[style*="background:"] .stat-title,
+  .stat-card[style*="background:"] .stat-desc {
+    text-align: left !important;
+  }
+  
   .stat-icon {
     margin-bottom: 0.5rem !important;
     display: flex !important;
