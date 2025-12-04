@@ -119,12 +119,17 @@
   }
   
   /* Navigation */
+  .header {
+    height: 60px !important;
+  }
+  
   .nav {
-    padding: 1rem;
+    padding: 0.75rem 1rem;
+    height: 60px;
   }
   
   .nav__logo img {
-    height: 32px;
+    height: 28px;
   }
   
   /* Sections */

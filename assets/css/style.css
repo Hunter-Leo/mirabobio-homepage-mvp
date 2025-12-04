@@ -362,16 +362,18 @@ section {
 
 .footer__logo {
   margin-bottom: var(--space-4);
+  display: block;
 }
 
 .footer__tagline {
   font-weight: var(--font-semibold);
   margin-bottom: var(--space-2);
+  color: var(--text-primary);
 }
 
 .footer__desc {
   font-size: var(--text-small);
-  color: var(--text-secondary);
+  color: rgba(241, 245, 249, 0.8);
 }
 
 .footer__title {
