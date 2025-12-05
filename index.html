@@ -14,14 +14,14 @@
     <meta property="og:url" content="https://mirabobio.com/">
     <meta property="og:title" content="MiRABO Biotechnology | AI-Driven Biologics">
     <meta property="og:description" content="Pioneering AI platforms for protein therapeutic development from discovery to commercial manufacturing.">
-    <meta property="og:image" content="https://mirabobio.com/assets/images/og-image.jpg">
+    <meta property="og:image" content="https://mirabobio.com/assets/images/mirabobio-og.png">
     <meta property="og:site_name" content="MiRABO Biotechnology">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MiRABO Biotechnology | AI-Driven Biologics">
     <meta name="twitter:description" content="Pioneering AI platforms for protein therapeutic development from discovery to commercial manufacturing.">
-    <meta name="twitter:image" content="https://mirabobio.com/assets/images/og-image.jpg">
+    <meta name="twitter:image" content="https://mirabobio.com/assets/images/mirabobio-og.png">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
@@ -46,25 +46,34 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     
-    <!-- Structured Data -->
+    <!-- Structured Data - Organization -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "MiRABO Biotechnology",
       "url": "https://mirabobio.com",
-      "logo": "https://mirabobio.com/materials/mirabobio-logo-static.svg",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://mirabobio.com/assets/images/mirabobio-logo-static.svg",
+        "width": 600,
+        "height": 200
+      },
+      "image": "https://mirabobio.com/assets/images/mirabobio-og.png",
       "description": "AI-driven biologics company pioneering protein therapeutic development platforms",
+      "foundingDate": "2023",
       "address": [
         {
           "@type": "PostalAddress",
           "addressLocality": "Hong Kong",
-          "addressRegion": "Hong Kong Science Park"
+          "addressRegion": "Hong Kong Science Park",
+          "addressCountry": "HK"
         },
         {
           "@type": "PostalAddress",
           "addressLocality": "Shanghai",
-          "addressRegion": "Zhangjiang"
+          "addressRegion": "Zhangjiang",
+          "addressCountry": "CN"
         }
       ],
       "contactPoint": {
@@ -74,6 +83,52 @@
       },
       "sameAs": [
         "https://www.linkedin.com/company/mirabo-biotechnology"
+      ]
+    }
+    </script>
+    <!-- Structured Data - WebSite with SearchAction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "MiRABO Biotechnology",
+      "url": "https://mirabobio.com",
+      "publisher": {
+        "@type": "Organization",
+        "name": "MiRABO Biotechnology"
+      }
+    }
+    </script>
+    <!-- Structured Data - SiteNavigationElement for Sitelinks -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "position": 1,
+          "name": "About Us",
+          "url": "https://mirabobio.com/about.html"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 2,
+          "name": "Platform",
+          "url": "https://mirabobio.com/platform.html"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 3,
+          "name": "Solutions",
+          "url": "https://mirabobio.com/solutions.html"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 4,
+          "name": "Contact",
+          "url": "https://mirabobio.com/contact.html"
+        }
       ]
     }
     </script>
