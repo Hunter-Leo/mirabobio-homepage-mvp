@@ -499,23 +499,6 @@
   }
 }
 
-/* ========================================
-   CUSTOM CURSOR - DISABLE ON MOBILE
-   ======================================== */
-@media (max-width: 1024px) {
-  .cursor-dot,
-  .cursor-outline {
-    display: none !important;
-  }
-  
-  body {
-    cursor: auto !important;
-  }
-  
-  a, button {
-    cursor: pointer !important;
-  }
-}
 
 /* ========================================
    CANVAS PARTICLES - REDUCE ON MOBILE

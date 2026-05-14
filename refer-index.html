@@ -46,35 +46,11 @@
     </script>
 
     <style>
-        /* Custom Cursor */
         body {
-            cursor: none;
             background-color: #05080F;
             color: #ffffff;
             overflow-x: hidden;
         }
-        .cursor-dot,
-        .cursor-outline {
-            position: fixed;
-            top: 0;
-            left: 0;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            z-index: 9999;
-            pointer-events: none;
-        }
-        .cursor-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #32CD32;
-        }
-        .cursor-outline {
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(50, 205, 50, 0.5);
-            transition: width 0.2s, height 0.2s, background-color 0.2s;
-        }
-        
         /* Utility */
         .clip-text-image {
             background-clip: text;
@@ -107,10 +83,6 @@
     </style>
 </head>
 <body class="bg-mirabo-dark selection:bg-mirabo-green selection:text-mirabo-dark relative">
-
-    <!-- Custom Cursor Elements -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
 
     <!-- Noise Overlay Texture -->
     <div class="fixed inset-0 w-full h-full bg-noise pointer-events-none z-50 opacity-30 mix-blend-overlay"></div>
@@ -388,39 +360,7 @@
         }
         requestAnimationFrame(raf);
 
-        // 2. Custom Cursor Logic
-        const cursorDot = document.querySelector('.cursor-dot');
-        const cursorOutline = document.querySelector('.cursor-outline');
-        const triggers = document.querySelectorAll('.hover-trigger');
-
-        window.addEventListener('mousemove', (e) => {
-            const posX = e.clientX;
-            const posY = e.clientY;
-
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.top = `${posY}px`;
-
-            // Slight delay for the outline for "fluid" feel
-            cursorOutline.animate({
-                left: `${posX}px`,
-                top: `${posY}px`
-            }, { duration: 500, fill: "forwards" });
-        });
-
-        triggers.forEach(trigger => {
-            trigger.addEventListener('mouseenter', () => {
-                cursorOutline.style.width = '60px';
-                cursorOutline.style.height = '60px';
-                cursorOutline.style.backgroundColor = 'rgba(50, 205, 50, 0.1)';
-            });
-            trigger.addEventListener('mouseleave', () => {
-                cursorOutline.style.width = '40px';
-                cursorOutline.style.height = '40px';
-                cursorOutline.style.backgroundColor = 'transparent';
-            });
-        });
-
-        // 3. GSAP Animations
+        // 2. GSAP Animations
         gsap.registerPlugin(ScrollTrigger);
 
         // Hero Reveal
