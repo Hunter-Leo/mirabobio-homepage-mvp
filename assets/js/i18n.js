@@ -278,8 +278,7 @@
         existing.remove();
       }
 
-      var hostname = window.location.hostname.toLowerCase();
-      var isCnDomain = hostname.endsWith('.cn');
+      var isCnDomain = false; // Show all languages regardless of domain
 
       var self = this;
       var langMap = { en: 'EN', zh: '中文', ko: '한국어' };
