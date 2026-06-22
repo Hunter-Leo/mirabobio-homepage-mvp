@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact MiRABO Biotechnology - Get in touch to discuss how our AI platforms can accelerate your biologics development">
-    <title>Contact Us | MiRABO Biotechnology</title>
-    
+    <meta name="description" content="Contact MiRABO Biotechnology - Get in touch to discuss how our AI platforms can accelerate your biologics development" data-i18n-meta-content="contact.meta_desc">
+    <title data-i18n-title="contact.page_title">Contact Us | MiRABO Biotechnology</title>
+
+    <!-- Hreflang tags -->
+    <link rel="alternate" hreflang="en" href="https://mirabobio.com/contact.html">
+    <link rel="alternate" hreflang="zh" href="https://mirabobio.com/contact.html">
+    <link rel="alternate" hreflang="ko" href="https://mirabobio.com/contact.html">
+    <link rel="alternate" hreflang="x-default" href="https://mirabobio.com/contact.html">
+
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mirabobio.com/contact.html">
-    <meta property="og:title" content="Contact Us | MiRABO Biotechnology">
-    <meta property="og:description" content="Contact MiRABO Biotechnology - Get in touch to discuss how our AI platforms can accelerate your biologics development">
+    <meta property="og:title" content="Contact Us | MiRABO Biotechnology" data-i18n-meta-content="contact.og_title">
+    <meta property="og:description" content="Contact MiRABO Biotechnology - Get in touch to discuss how our AI platforms can accelerate your biologics development" data-i18n-meta-content="contact.og_desc">
     <meta property="og:image" content="https://mirabobio.com/assets/images/mirabobio-og.png">
     
     <!-- Favicon -->
@@ -44,11 +50,11 @@
                     <img src="assets/images/mirabobio-logo-blink-white.svg" alt="MiRABO Biotechnology" width="180">
                 </a>
                 <ul class="nav__links">
-                    <li><a href="index.html" class="nav__link">Home</a></li>
-                    <li><a href="about.html" class="nav__link">About Us</a></li>
-                    <li><a href="platform.html" class="nav__link">Platform</a></li>
-                    <li><a href="solutions.html" class="nav__link">Solutions</a></li>
-                    <li><a href="contact.html" class="nav__link active">Contact</a></li>
+                    <li><a href="index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
+                    <li><a href="about.html" class="nav__link" data-i18n="nav.about">About Us</a></li>
+                    <li><a href="platform.html" class="nav__link" data-i18n="nav.platform">Platform</a></li>
+                    <li><a href="solutions.html" class="nav__link" data-i18n="nav.solutions">Solutions</a></li>
+                    <li><a href="contact.html" class="nav__link active" data-i18n="nav.contact">Contact</a></li>
                 </ul>
                 <button class="nav__toggle" aria-label="Toggle menu">
                     <span></span>
@@ -63,22 +69,28 @@
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu__close" aria-label="Close menu">&times;</button>
         <ul class="mobile-menu__links">
-            <li><a href="index.html" class="mobile-menu__link">Home</a></li>
-            <li><a href="about.html" class="mobile-menu__link">About Us</a></li>
-            <li><a href="platform.html" class="mobile-menu__link">Platform</a></li>
-            <li><a href="solutions.html" class="mobile-menu__link">Solutions</a></li>
-            <li><a href="contact.html" class="mobile-menu__link">Contact</a></li>
+            <li><a href="index.html" class="mobile-menu__link" data-i18n="mobile_menu.home">Home</a></li>
+            <li><a href="about.html" class="mobile-menu__link" data-i18n="mobile_menu.about">About Us</a></li>
+            <li><a href="platform.html" class="mobile-menu__link" data-i18n="mobile_menu.platform">Platform</a></li>
+            <li><a href="solutions.html" class="mobile-menu__link" data-i18n="mobile_menu.solutions">Solutions</a></li>
+            <li><a href="contact.html" class="mobile-menu__link" data-i18n="mobile_menu.contact">Contact</a></li>
         </ul>
+        <!-- Mobile Language Switcher -->
+        <div class="lang-switcher--mobile">
+            <a href="#" data-lang="en" class="active">EN</a>
+            <a href="#" data-lang="zh">中文</a>
+            <a href="#" data-lang="ko">한국어</a>
+        </div>
     </div>
 
     <main>
         <!-- Hero Section -->
         <section class="hero hero-about" id="home">
             <div class="hero__content container max-w-5xl mx-auto">
-                <h1 class="text-6xl md:text-7xl font-display font-bold text-white mb-8 leading-tight">
+                <h1 class="text-6xl md:text-7xl font-display font-bold text-white mb-8 leading-tight" data-i18n="contact.hero_title">
                     Let's Innovate <span class="text-gradient">Together</span>
                 </h1>
-                <p class="text-xl text-gray-300 leading-relaxed max-w-4xl">
+                <p class="text-xl text-gray-300 leading-relaxed max-w-4xl" data-i18n="contact.hero_desc">
                     Get in touch with our team to discuss how MiRAiQ can accelerate your R&D
                 </p>
             </div>
@@ -89,7 +101,7 @@
                 <div class="grid md:grid-cols-2 gap-12 lg:gap-16">
                     <!-- Left: Contact Form -->
                     <div class="glass-panel p-8 lg:p-10" data-aos="fade-right">
-                        <h2 class="text-3xl font-bold mb-6 text-white text-left">Send Us a Message</h2>
+                        <h2 class="text-3xl font-bold mb-6 text-white text-left" data-i18n="contact.form_title">Send Us a Message</h2>
                         <form id="contactForm" class="space-y-6">
                             <!-- Web3Forms Access Key -->
                             <input type="hidden" name="access_key" value="b6e09a84-a5a4-4daf-9f15-50f1743663f4">
@@ -98,16 +110,16 @@
                             
                             <!-- Name Field -->
                             <div class="form-group">
-                                <label for="name" class="form-label">Name *</label>
-                                <input type="text" id="name" name="name" required class="form-input" placeholder="Your name">
+                                <label for="name" class="form-label" data-i18n="contact.form_label_name">Name *</label>
+                                <input type="text" id="name" name="name" required class="form-input" placeholder="Your name" data-i18n-placeholder="contact.form_placeholder_name">
                                 <span class="form-error" id="nameError"></span>
                             </div>
 
                             <!-- Email Field -->
                             <div class="form-group">
-                                <label for="email" class="form-label">Email *</label>
+                                <label for="email" class="form-label" data-i18n="contact.form_label_email">Email *</label>
                                 <div class="relative">
-                                    <input type="email" id="email" name="email" required class="form-input pl-12" placeholder="your@email.com">
+                                    <input type="email" id="email" name="email" required class="form-input pl-12" placeholder="your@email.com" data-i18n-placeholder="contact.form_placeholder_email">
                                     <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                                     </svg>
@@ -117,49 +129,49 @@
 
                             <!-- Company Field -->
                             <div class="form-group">
-                                <label for="company" class="form-label">Company *</label>
-                                <input type="text" id="company" name="company" required class="form-input" placeholder="Your company name">
+                                <label for="company" class="form-label" data-i18n="contact.form_label_company">Company *</label>
+                                <input type="text" id="company" name="company" required class="form-input" placeholder="Your company name" data-i18n-placeholder="contact.form_placeholder_company">
                                 <span class="form-error" id="companyError"></span>
                             </div>
 
                             <!-- Industry Dropdown -->
                             <div class="form-group">
-                                <label for="industry" class="form-label">Industry</label>
+                                <label for="industry" class="form-label" data-i18n="contact.form_label_industry">Industry</label>
                                 <select id="industry" name="industry" class="form-input">
-                                    <option value="">Select an industry</option>
-                                    <option value="personal-care">Personal Care</option>
-                                    <option value="healthcare">Healthcare</option>
-                                    <option value="pharmaceutical">Pharmaceutical</option>
-                                    <option value="other">Other</option>
+                                    <option value="" data-i18n="contact.form_placeholder_industry">Select an industry</option>
+                                    <option value="personal-care" data-i18n="contact.form_option_personal_care">Personal Care</option>
+                                    <option value="healthcare" data-i18n="contact.form_option_healthcare">Healthcare</option>
+                                    <option value="pharmaceutical" data-i18n="contact.form_option_pharma">Pharmaceutical</option>
+                                    <option value="other" data-i18n="contact.form_option_other">Other</option>
                                 </select>
                             </div>
 
                             <!-- Subject Field -->
                             <div class="form-group">
-                                <label for="subject" class="form-label">Subject *</label>
-                                <input type="text" id="subject" name="subject" required class="form-input" placeholder="What is this about?">
+                                <label for="subject" class="form-label" data-i18n="contact.form_label_subject">Subject *</label>
+                                <input type="text" id="subject" name="subject" required class="form-input" placeholder="What is this about?" data-i18n-placeholder="contact.form_placeholder_subject">
                                 <span class="form-error" id="subjectError"></span>
                             </div>
 
                             <!-- Message Field -->
                             <div class="form-group">
-                                <label for="message" class="form-label">Message *</label>
-                                <textarea id="message" name="message" required rows="5" class="form-input resize-none" placeholder="Tell us more about your inquiry..."></textarea>
+                                <label for="message" class="form-label" data-i18n="contact.form_label_message">Message *</label>
+                                <textarea id="message" name="message" required rows="5" class="form-input resize-none" placeholder="Tell us more about your inquiry..." data-i18n-placeholder="contact.form_placeholder_message"></textarea>
                                 <div class="flex justify-between items-center mt-2">
                                     <span class="form-error" id="messageError"></span>
-                                    <span class="text-sm text-gray-500" id="charCount">0 / 1000</span>
+                                    <span class="text-sm text-gray-500" id="charCount" data-i18n="contact.form_char_count">0 / 1000</span>
                                 </div>
                             </div>
 
                             <!-- Submit Button -->
                             <button type="submit" class="btn btn-primary btn-large w-full btn-glow" id="submitBtn">
-                                <span id="btnText">Send Message</span>
+                                <span id="btnText" data-i18n="contact.form_btn_text">Send Message</span>
                                 <span id="btnLoader" class="hidden">
                                     <svg class="animate-spin h-5 w-5 inline-block" fill="none" viewBox="0 0 24 24">
                                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                     </svg>
-                                    Sending...
+                                    <span data-i18n="contact.form_btn_sending">Sending...</span>
                                 </span>
                             </button>
                         </form>
@@ -170,7 +182,7 @@
                                 <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                                 </svg>
-                                <p class="text-green-400 font-semibold">Message sent successfully! We'll get back to you soon.</p>
+                                <p class="text-green-400 font-semibold" data-i18n="contact.form_success">Message sent successfully! We'll get back to you soon.</p>
                             </div>
                         </div>
                     </div>
@@ -179,7 +191,7 @@
                     <div class="space-y-8" data-aos="fade-left">
                         <!-- Contact Details -->
                         <div class="glass-panel p-6">
-                            <h3 class="text-xl font-bold text-white mb-4">Contact Details</h3>
+                            <h3 class="text-xl font-bold text-white mb-4" data-i18n="contact.details_title">Contact Details</h3>
                             <div class="space-y-3">
                                 <div class="flex items-center gap-3">
                                     <svg class="w-5 h-5 text-mirabo-lightBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -198,14 +210,14 @@
 
                         <!-- Business Hours -->
                         <div class="glass-panel p-6">
-                            <h3 class="text-xl font-bold text-white mb-4">Business Hours</h3>
-                            <p class="text-gray-300 mb-2">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                            <p class="text-gray-500 text-sm">Hong Kong Time / Shanghai Time (UTC+8)</p>
+                            <h3 class="text-xl font-bold text-white mb-4" data-i18n="contact.hours_title">Business Hours</h3>
+                            <p class="text-gray-300 mb-2" data-i18n="contact.hours_text">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                            <p class="text-gray-500 text-sm" data-i18n="contact.hours_note">Hong Kong Time / Shanghai Time (UTC+8)</p>
                         </div>
 
                         <!-- Social Media -->
                         <div class="glass-panel p-6">
-                            <h3 class="text-xl font-bold text-white mb-4">Follow Us</h3>
+                            <h3 class="text-xl font-bold text-white mb-4" data-i18n="contact.follow_title">Follow Us</h3>
                             <div class="flex gap-4">
                                 <a href="https://www.linkedin.com/company/mirabo-biotechnology" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full border-2 border-gray-600 hover:border-mirabo-lightBlue flex items-center justify-center transition-all hover:bg-mirabo-lightBlue/10" aria-label="LinkedIn">
                                     <svg class="w-5 h-5 text-gray-400 hover:text-mirabo-lightBlue" fill="currentColor" viewBox="0 0 24 24">
@@ -222,21 +234,21 @@
 
                         <!-- Company Locations -->
                         <div class="glass-panel p-6">
-                            <h3 class="text-xl font-bold text-white mb-4 text-center">Our Locations</h3>
+                            <h3 class="text-xl font-bold text-white mb-4 text-center" data-i18n="contact.locations_title">Our Locations</h3>
                             <div class="space-y-3">
                                 <div class="flex items-center gap-3">
                                     <svg class="w-5 h-5 text-mirabo-lightBlue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                                     </svg>
-                                    <p class="text-gray-300 text-sm text-left flex-1">Hong Kong Science Park, Hong Kong</p>
+                                    <p class="text-gray-300 text-sm text-left flex-1" data-i18n="contact.location_hk">Hong Kong Science Park, Hong Kong</p>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <svg class="w-5 h-5 text-mirabo-lightBlue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                                     </svg>
-                                    <p class="text-gray-300 text-sm text-left flex-1">Zhangjiang Pharma Valley Innovation Center, Shanghai</p>
+                                    <p class="text-gray-300 text-sm text-left flex-1" data-i18n="contact.location_sh">Zhangjiang Pharma Valley Innovation Center, Shanghai</p>
                                 </div>
                             </div>
                         </div>
@@ -259,22 +271,22 @@
             <div class="footer__grid">
                 <div class="footer__col">
                     <img src="assets/images/mirabobio-logo-static-white.svg" alt="MiRABO" width="150" class="footer__logo">
-                    <p class="footer__tagline">Pioneering AI-Driven Biologics</p>
-                    <p class="footer__desc">Accelerating protein therapeutic development through advanced AI platforms.</p>
+                    <p class="footer__tagline" data-i18n="footer.tagline">Pioneering AI-Driven Biologics</p>
+                    <p class="footer__desc" data-i18n="footer.desc">Accelerating protein therapeutic development through advanced AI platforms.</p>
                 </div>
                 <div class="footer__col">
-                    <h4 class="footer__title">Quick Links</h4>
+                    <h4 class="footer__title" data-i18n="footer.quick_links">Quick Links</h4>
                     <ul class="footer__links">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="platform.html">Platform</a></li>
-                        <li><a href="solutions.html">Solutions</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html" data-i18n="footer.quick_about">About Us</a></li>
+                        <li><a href="platform.html" data-i18n="footer.quick_platform">Platform</a></li>
+                        <li><a href="solutions.html" data-i18n="footer.quick_solutions">Solutions</a></li>
+                        <li><a href="contact.html" data-i18n="footer.quick_contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer__col">
-                    <h4 class="footer__title">Contact</h4>
-                    <p>Hong Kong Science Park</p>
-                    <p>Zhangjiang, Shanghai</p>
+                    <h4 class="footer__title" data-i18n="footer.contact">Contact</h4>
+                    <p data-i18n="footer.address_hk">Hong Kong Science Park</p>
+                    <p data-i18n="footer.address_sh">Zhangjiang, Shanghai</p>
                     <p class="flex items-center gap-2">
                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
@@ -283,7 +295,7 @@
                     </p>
                 </div>
                 <div class="footer__col">
-                    <h4 class="footer__title">Follow Us</h4>
+                    <h4 class="footer__title" data-i18n="footer.follow_us">Follow Us</h4>
                     <div class="footer__social">
                         <a href="https://www.linkedin.com/company/mirabo-biotechnology" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                             <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
@@ -295,13 +307,13 @@
                         <svg width="20" height="20" fill="#32CD32" viewBox="0 0 24 24">
                             <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/>
                         </svg>
-                        <span>WeChat Official</span>
+                        <span data-i18n="footer.wechat">WeChat Official</span>
                     </h4>
                     <img src="assets/images/wechat-public-qrcode.png" alt="WeChat QR Code" class="footer__wechat-qr">
                 </div>
             </div>
             <div class="footer__bottom">
-                <p>&copy; 2025 MiRABO Biotechnology. All rights reserved.</p>
+                <p data-i18n="footer.copyright">&copy; 2025 MiRABO Biotechnology. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -319,9 +331,9 @@
     <div id="wechatModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center">
         <div class="glass-panel p-8 max-w-sm mx-4 relative">
             <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
-            <h3 class="text-xl font-bold text-white mb-4 text-center">Follow Us on WeChat</h3>
+            <h3 class="text-xl font-bold text-white mb-4 text-center" data-i18n="contact.modal_title">Follow Us on WeChat</h3>
             <img src="assets/images/wechat-public-qrcode.png" alt="WeChat QR Code" class="w-full rounded-lg">
-            <p class="text-gray-400 text-sm text-center mt-4">Scan to follow our official account</p>
+            <p class="text-gray-400 text-sm text-center mt-4" data-i18n="contact.modal_desc">Scan to follow our official account</p>
         </div>
     </div>
 
@@ -333,6 +345,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     
     <!-- Custom Scripts -->
+    <script src="assets/js/i18n.js" defer></script>
     <script src="assets/js/canvas-particles.js" defer></script>
     <script src="assets/js/utils.js" defer></script>
     <script src="assets/js/main.js" defer></script>
