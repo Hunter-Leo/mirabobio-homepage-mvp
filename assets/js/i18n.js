@@ -278,8 +278,6 @@
         existing.remove();
       }
 
-      var isCnDomain = false; // Show all languages regardless of domain
-
       var self = this;
       var langMap = { en: 'EN', zh: '中文', ko: '한국어' };
       var currentLangCode = this.state.currentLang;
@@ -299,7 +297,7 @@
         '<ul class="lang-switcher__dropdown" role="menu">' +
           '<li role="none"><a href="#" role="menuitem" data-lang="en">EN</a></li>' +
           '<li role="none"><a href="#" role="menuitem" data-lang="zh">中文</a></li>' +
-          (isCnDomain ? '' : '<li role="none"><a href="#" role="menuitem" data-lang="ko">한국어</a></li>') +
+          '<li role="none"><a href="#" role="menuitem" data-lang="ko">한국어</a></li>' +
         '</ul>';
 
       navLinks.appendChild(li);
