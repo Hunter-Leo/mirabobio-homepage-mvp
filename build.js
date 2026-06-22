@@ -31,6 +31,14 @@ filesToCopy.forEach(file => {
   }
 });
 
+// 复制 locales 目录（i18n 翻译文件）
+const localesDir = path.join(__dirname, 'locales');
+const distLocalesDir = path.join(distDir, 'locales');
+if (fs.existsSync(localesDir)) {
+  fs.cpSync(localesDir, distLocalesDir, { recursive: true });
+  console.log('✓ Copied locales/');
+}
+
 // 处理 HTML 文件
 const htmlFiles = [
   'index.html',

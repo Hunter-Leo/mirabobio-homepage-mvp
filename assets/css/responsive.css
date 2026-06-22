@@ -805,3 +805,34 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ========================================
+   MOBILE MENU LANGUAGE SWITCHER
+   ======================================== */
+@media (max-width: 768px) {
+  .mobile-menu .lang-switcher--mobile {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 8px;
+  }
+
+  .mobile-menu .lang-switcher--mobile a {
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: all var(--transition-fast);
+  }
+
+  .mobile-menu .lang-switcher--mobile a:hover,
+  .mobile-menu .lang-switcher--mobile a.active {
+    background: rgba(75, 141, 255, 0.1);
+    border-color: var(--mirabo-lightBlue);
+    color: var(--text-primary);
+  }
+}

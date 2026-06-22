@@ -2888,8 +2888,100 @@ textarea.form-input {
     .team-card-photo {
         width: 100px;
     }
-    
+
     .section-badge {
         margin-bottom: var(--space-4);
+    }
+}
+
+/* ========================================
+   20. LANGUAGE SWITCHER
+   ======================================== */
+.lang-switcher {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.lang-switcher__btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: var(--font-primary);
+    font-size: 0.875rem;
+}
+
+.lang-switcher__label {
+    color: rgba(241, 245, 249, 0.8);
+    transition: color var(--transition-base);
+}
+
+.lang-switcher__btn:hover .lang-switcher__label {
+    color: var(--text-primary);
+}
+
+.lang-switcher__arrow {
+    color: rgba(241, 245, 249, 0.6);
+    transition: transform var(--transition-fast);
+}
+
+.lang-switcher__btn[aria-expanded="true"] .lang-switcher__arrow {
+    transform: rotate(180deg);
+}
+
+.lang-switcher__dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    min-width: 100px;
+    background: var(--bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 4px 0;
+    list-style: none;
+    z-index: 1000;
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(12px);
+}
+
+.lang-switcher__dropdown.active {
+    display: block;
+}
+
+.lang-switcher__dropdown li a {
+    display: block;
+    padding: 8px 16px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: all var(--transition-fast);
+}
+
+.lang-switcher__dropdown li a:hover {
+    background: rgba(75, 141, 255, 0.1);
+    color: var(--text-primary);
+}
+
+.lang-switcher__dropdown li a.active {
+    color: var(--mirabo-green);
+    font-weight: var(--font-semibold);
+}
+
+/* Mobile: hide lang-switcher when nav__links are hidden */
+@media (max-width: 768px) {
+    .nav__links .lang-switcher {
+        display: none !important;
+    }
+}
+
+/* Desktop: show inside nav */
+@media (min-width: 769px) {
+    .lang-switcher {
+        display: flex;
     }
 }

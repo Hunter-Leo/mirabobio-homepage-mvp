@@ -1,21 +1,31 @@
 /**
  * MIRABO Biotechnology - Main JavaScript
  * Core functionality and initialization
+ *
+ * Typewriter text reads from I18n translations when available.
+ * Listens for 'i18nReady' event dispatched by i18n.js.
  */
 
-document.addEventListener('DOMContentLoaded', function() {
+function initTypewriter() {
     // Typewriter effect for hero title
-    const titleElement = document.querySelector('.hero__title');
-    const subtitleElement = document.querySelector('.hero__subtitle');
-    
+    var titleElement = document.querySelector('.hero__title');
+    var subtitleElement = document.querySelector('.hero__subtitle');
+
     if (titleElement) {
-        const titleText = 'Building Better Biologics with AI';
-        const line = titleElement.querySelector('span');
-        
+        // Read text from I18n translations, fall back to hardcoded English
+        var titleText = (window.I18n && window.I18n.state.translations &&
+            window.I18n.state.translations.home && window.I18n.state.translations.home.hero_title) ||
+            'Building Better Biologics with AI';
+        var subtitleText = (window.I18n && window.I18n.state.translations &&
+            window.I18n.state.translations.home && window.I18n.state.translations.home.hero_subtitle) ||
+            'Integrated AI solutions for designing and developing protein therapeutics from discovery through commercial manufacturing';
+
+        var line = titleElement.querySelector('span');
+
         titleElement.innerHTML = '';
         titleElement.appendChild(line);
-        
-        let i = 0;
+
+        var i = 0;
         function typeWriter() {
             if (i < titleText.length) {
                 line.textContent += titleText.charAt(i);
@@ -24,10 +34,9 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 // Start subtitle typing after title completes
                 if (subtitleElement) {
-                    const subtitleText = 'Integrated AI solutions for designing and developing protein therapeutics from discovery through commercial manufacturing';
                     subtitleElement.textContent = '';
                     subtitleElement.style.opacity = '1';
-                    let k = 0;
+                    var k = 0;
                     function typeSubtitle() {
                         if (k < subtitleText.length) {
                             subtitleElement.textContent += subtitleText.charAt(k);
@@ -46,10 +55,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }
-        
+
         setTimeout(typeWriter, 500);
     }
-    
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize typewriter after i18n is ready, or immediately if no i18n
+    if (window.I18n) {
+        window.addEventListener('i18nReady', initTypewriter);
+    } else {
+        initTypewriter();
+    }
+
     // Header scroll effect
     const header = document.getElementById('header');
     let lastScroll = 0;

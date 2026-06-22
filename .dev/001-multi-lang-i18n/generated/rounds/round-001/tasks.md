@@ -4,17 +4,17 @@
 
 | ID | Type | Task Name | Status | Priority | Deps | Notes |
 |----|------|-----------|--------|----------|------|-------|
-| T-001 | feat | 创建 locales/ 基础文件（en.json, zh.json, ko.json, icp-config.json） | not-started | P0 | - | |
-| T-002 | feat | 编写 i18n.js 运行时脚本 | not-started | P0 | T-001 | 需翻译文件存在 |
-| T-003 | ui | 添加语言切换器样式到 style.css | not-started | P0 | - | 可独立完成 |
-| T-004 | ui | index.html — 添加 data-i18n 属性 + 切换器 + hreflang | not-started | P1 | T-002 | 需 i18n.js 就绪后测试 |
-| T-005 | ui | about.html — 添加 data-i18n 属性 + 切换器 | not-started | P1 | T-002 | |
-| T-006 | ui | platform.html — 添加 data-i18n 属性 + 切换器 | not-started | P1 | T-002 | 内容最多 |
-| T-007 | ui | solutions.html — 添加 data-i18n 属性 + 切换器 | not-started | P1 | T-002 | |
-| T-008 | ui | contact.html — 添加 data-i18n 属性 + 切换器 + SEO meta | not-started | P1 | T-002 | 含表单 label/placeholder |
-| T-009 | feat | 修改 main.js — typewriter 从 i18n 读取文本 | not-started | P1 | T-002 | |
-| T-010 | config | 修改 build.js — 复制 locales/ 目录 | not-started | P1 | - | 可独立完成 |
-| T-011 | test | 全量构建测试 + 功能验证 + ICP 验证 | not-started | P0 | T-001~T-010 | |
+| T-001 | feat | 创建 locales/ 基础文件（en.json, zh.json, ko.json, icp-config.json） | done | P0 | - | 4 JSON 文件创建，280 keys 完全一致 |
+| T-002 | feat | 编写 i18n.js 运行时脚本 | done | P0 | T-001 | 348 行，含 init/translate/setLang/renderICP/renderLangSwitcher |
+| T-003 | ui | 添加语言切换器样式到 style.css | done | P0 | - | style.css + responsive.css 共 ~90 行 CSS |
+| T-004 | ui | index.html — 添加 data-i18n 属性 + 切换器 + hreflang | done | P1 | T-002 | 59 处 data-i18n，含 hreflang + 移动端切换器 |
+| T-005 | ui | about.html — 添加 data-i18n 属性 + 切换器 | done | P1 | T-002 | 58 处 data-i18n |
+| T-006 | ui | platform.html — 添加 data-i18n 属性 + 切换器 | done | P1 | T-002 | 130 处 data-i18n（含 PRISM/ORION/IGNIS tech cards） |
+| T-007 | ui | solutions.html — 添加 data-i18n 属性 + 切换器 | done | P1 | T-002 | 47 处 data-i18n |
+| T-008 | ui | contact.html — 添加 data-i18n 属性 + 切换器 + SEO meta | done | P1 | T-002 | 51 处，含 form label/placeholder/options |
+| T-009 | feat | 修改 main.js — typewriter 从 i18n 读取文本 | done | P1 | T-002 | 监听 i18nReady 事件，fallback 到硬编码英文 |
+| T-010 | config | 修改 build.js — 复制 locales/ 目录 | done | P1 | - | fs.cpSync('locales', ...) |
+| T-011 | test | 全量构建测试 + 功能验证 + ICP 验证 | done | P0 | T-001~T-010 | npm run build 成功，dist/locales/ 存在 |
 
 ## 依赖图
 
