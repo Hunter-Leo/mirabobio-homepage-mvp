@@ -33,6 +33,10 @@
     "scroll": "向下滚动探索"
   },
   "home": {
+    "meta_desc": "MiRABO Biotechnology 以AI驱动的生物药开发平台，涵盖从发现到商业化生产的蛋白质治疗药物全流程",
+    "og_title": "MiRABO Biotechnology | AI驱动的生物药平台",
+    "og_desc": "以AI平台驱动蛋白质治疗药物开发，从发现到商业化生产",
+    "page_title": "MiRABO Biotechnology | AI驱动的生物药平台",
     "hero_title": "用 AI 打造更好的生物药",
     "hero_subtitle": "集成的 AI 解决方案，覆盖蛋白质治疗药物从发现到商业生产的全流程设计与开发",
     "hero_cta": "探索我们的平台",

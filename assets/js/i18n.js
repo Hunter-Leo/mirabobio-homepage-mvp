@@ -20,6 +20,12 @@
 (function () {
   'use strict';
 
+  // Prevent flash of untranslated content — hide translatable elements
+  // until translations are applied, then make them visible.
+  var i18nFlashStyle = document.createElement('style');
+  i18nFlashStyle.textContent = '[data-i18n], [data-i18n-placeholder], [data-i18n-title] { visibility: hidden; }';
+  document.head.appendChild(i18nFlashStyle);
+
   /** Main i18n controller object */
   var I18n = {
     config: {
@@ -72,6 +78,10 @@
      */
     _onReady: function () {
       this._translate();
+      // Reveal translated content
+      if (i18nFlashStyle && i18nFlashStyle.parentNode) {
+        i18nFlashStyle.parentNode.removeChild(i18nFlashStyle);
+      }
       this._renderICP();
       this._renderLangSwitcher();
       document.documentElement.lang = this.state.currentLang;
