@@ -1,0 +1,8 @@
+{
+  "mirabobio.cn": [
+    { "type": "icp", "text": "沪ICP备XXXXXXXX号", "url": "https://beian.miit.gov.cn" }
+  ],
+  "mirabobio.com.cn": [
+    { "type": "icp", "text": "沪ICP备XXXXXXXX号-2", "url": "https://beian.miit.gov.cn" }
+  ]
+}
