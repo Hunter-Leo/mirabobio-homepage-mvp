@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MiRAiQ AI Engine - Three integrated AI platforms covering the entire biologics development pipeline">
-    <title>Platform & Technology | MiRABO Biotechnology</title>
-    
+    <meta name="description" content="MiRAiQ AI Engine - Three integrated AI platforms covering the entire biologics development pipeline" data-i18n-meta-content="platform.meta_desc">
+    <title data-i18n-title="platform.page_title">Platform & Technology | MiRABO Biotechnology</title>
+
+    <!-- Hreflang tags -->
+    <link rel="alternate" hreflang="en" href="https://mirabobio.com/platform.html">
+    <link rel="alternate" hreflang="zh" href="https://mirabobio.com/platform.html">
+    <link rel="alternate" hreflang="ko" href="https://mirabobio.com/platform.html">
+    <link rel="alternate" hreflang="x-default" href="https://mirabobio.com/platform.html">
+
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mirabobio.com/platform.html">
-    <meta property="og:title" content="Platform & Technology | MiRABO Biotechnology">
-    <meta property="og:description" content="MiRAiQ AI Engine - Three integrated AI platforms covering the entire biologics development pipeline">
+    <meta property="og:title" content="Platform & Technology | MiRABO Biotechnology" data-i18n-meta-content="platform.og_title">
+    <meta property="og:description" content="MiRAiQ AI Engine - Three integrated AI platforms covering the entire biologics development pipeline" data-i18n-meta-content="platform.og_desc">
     <meta property="og:image" content="https://mirabobio.com/assets/images/mirabobio-og.png">
     
     <!-- Favicon -->
@@ -41,11 +47,11 @@
                     <img src="assets/images/mirabobio-logo-blink-white.svg" alt="MiRABO Biotechnology" width="180">
                 </a>
                 <ul class="nav__links">
-                    <li><a href="index.html" class="nav__link">Home</a></li>
-                    <li><a href="about.html" class="nav__link">About Us</a></li>
-                    <li><a href="platform.html" class="nav__link active">Platform</a></li>
-                    <li><a href="solutions.html" class="nav__link">Solutions</a></li>
-                    <li><a href="contact.html" class="nav__link">Contact</a></li>
+                    <li><a href="index.html" class="nav__link" data-i18n="nav.home">Home</a></li>
+                    <li><a href="about.html" class="nav__link" data-i18n="nav.about">About Us</a></li>
+                    <li><a href="platform.html" class="nav__link active" data-i18n="nav.platform">Platform</a></li>
+                    <li><a href="solutions.html" class="nav__link" data-i18n="nav.solutions">Solutions</a></li>
+                    <li><a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a></li>
                 </ul>
                 <button class="nav__toggle" aria-label="Toggle menu">
                     <span></span>
@@ -60,12 +66,18 @@
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu__close" aria-label="Close menu">&times;</button>
         <ul class="mobile-menu__links">
-            <li><a href="index.html" class="mobile-menu__link">Home</a></li>
-            <li><a href="about.html" class="mobile-menu__link">About Us</a></li>
-            <li><a href="platform.html" class="mobile-menu__link">Platform</a></li>
-            <li><a href="solutions.html" class="mobile-menu__link">Solutions</a></li>
-            <li><a href="contact.html" class="mobile-menu__link">Contact</a></li>
+            <li><a href="index.html" class="mobile-menu__link" data-i18n="mobile_menu.home">Home</a></li>
+            <li><a href="about.html" class="mobile-menu__link" data-i18n="mobile_menu.about">About Us</a></li>
+            <li><a href="platform.html" class="mobile-menu__link" data-i18n="mobile_menu.platform">Platform</a></li>
+            <li><a href="solutions.html" class="mobile-menu__link" data-i18n="mobile_menu.solutions">Solutions</a></li>
+            <li><a href="contact.html" class="mobile-menu__link" data-i18n="mobile_menu.contact">Contact</a></li>
         </ul>
+        <!-- Mobile Language Switcher -->
+        <div class="lang-switcher--mobile">
+            <a href="#" data-lang="en" class="active">EN</a>
+            <a href="#" data-lang="zh">中文</a>
+            <a href="#" data-lang="ko">한국어</a>
+        </div>
     </div>
 
     <main>
@@ -75,17 +87,17 @@
                 <!-- MCP Badge -->
                 <div class="mcp-badge-top">
                     <img src="assets/images/icons/mcp-icon.svg" alt="MCP" class="mcp-icon-tiny">
-                    <span>MCP Enabled</span>
+                    <span data-i18n="platform.mcp_badge">MCP Enabled</span>
                 </div>
-                
-                <h1 class="text-6xl md:text-7xl font-display font-bold text-white mb-8 leading-tight">
+
+                <h1 class="text-6xl md:text-7xl font-display font-bold text-white mb-8 leading-tight" data-i18n="platform.hero_title">
                     <span class="text-gradient">MiRAiQ</span> AI Engine
                 </h1>
-                <p class="text-2xl md:text-3xl text-gray-300 font-light mb-6">
+                <p class="text-2xl md:text-3xl text-gray-300 font-light mb-6" data-i18n="platform.hero_subtitle">
                     From Protein Design to Manufacturing
                 </p>
-                
-                <p class="text-xl text-gray-400 leading-relaxed max-w-4xl">
+
+                <p class="text-xl text-gray-400 leading-relaxed max-w-4xl" data-i18n="platform.hero_desc">
                     Three integrated AI platforms covering the entire biologics development pipeline from molecular design to commercial manufacturing.
                 </p>
             </div>
@@ -95,9 +107,9 @@
         <section class="section section-pipeline py-32">
             <div class="container">
                 <div class="text-center mb-20">
-                    <span class="section-badge" data-aos="fade-up">DEVELOPMENT PIPELINE</span>
-                    <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">AI-Integrated Full Pipeline</h2>
-                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Accelerating every stage from discovery to production</p>
+                    <span class="section-badge" data-aos="fade-up" data-i18n="platform.pipeline_badge">DEVELOPMENT PIPELINE</span>
+                    <h2 class="section-title" data-aos="fade-up" data-aos-delay="100" data-i18n="platform.pipeline_title">AI-Integrated Full Pipeline</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200" data-i18n="platform.pipeline_subtitle">Accelerating every stage from discovery to production</p>
                 </div>
 
                 <div class="pipeline-flow">
@@ -107,16 +119,16 @@
                             <div class="stage-icon-wrapper">
                                 <img src="assets/images/icons/icon-target.svg" alt="Target ID" class="stage-icon-svg">
                             </div>
-                            <h3 class="stage-name">Target ID</h3>
-                            <p class="stage-desc">Identify and validate therapeutic targets</p>
+                            <h3 class="stage-name" data-i18n="platform.stage1_name">Target ID</h3>
+                            <p class="stage-desc" data-i18n="platform.stage1_desc">Identify and validate therapeutic targets</p>
                         </div>
 
                         <div class="stage-card glass-panel stage-card--inactive" data-platform="none" data-aos="fade-up" data-aos-delay="200">
                             <div class="stage-icon-wrapper">
                                 <img src="assets/images/icons/icon-microscope.svg" alt="Lead ID" class="stage-icon-svg">
                             </div>
-                            <h3 class="stage-name">Lead ID</h3>
-                            <p class="stage-desc">Discover lead candidates through AI analysis</p>
+                            <h3 class="stage-name" data-i18n="platform.stage2_name">Lead ID</h3>
+                            <p class="stage-desc" data-i18n="platform.stage2_desc">Discover lead candidates through AI analysis</p>
                         </div>
 
                         <div class="stage-card glass-panel" data-platform="prism" data-aos="fade-up" data-aos-delay="250">
@@ -124,9 +136,9 @@
                             <div class="stage-icon-wrapper">
                                 <img src="assets/images/icons/icon-developability.svg" alt="Developability" class="stage-icon-svg">
                             </div>
-                            <h3 class="stage-name">Lead optimization</h3>
+                            <h3 class="stage-name" data-i18n="platform.stage3_name">Lead optimization</h3>
                             <div class="stage-platform-badge prism">PRISM™</div>
-                            <p class="stage-desc">Assess developability through AI</p>
+                            <p class="stage-desc" data-i18n="platform.stage3_desc">Assess developability through AI</p>
                         </div>
 
                         <div class="stage-card glass-panel" data-platform="orion" data-aos="fade-up" data-aos-delay="300">
@@ -134,9 +146,9 @@
                             <div class="stage-icon-wrapper">
                                 <img src="assets/images/icons/icon-optimize.svg" alt="Lead Opt" class="stage-icon-svg">
                             </div>
-                            <h3 class="stage-name">Protein engineering</h3>
+                            <h3 class="stage-name" data-i18n="platform.stage4_name">Protein engineering</h3>
                             <div class="stage-platform-badge orion">ORION™</div>
-                            <p class="stage-desc">Optimize protein properties via DBTL</p>
+                            <p class="stage-desc" data-i18n="platform.stage4_desc">Optimize protein properties via DBTL</p>
                         </div>
 
                         <div class="stage-card glass-panel" data-platform="ignis" data-aos="fade-up" data-aos-delay="400">
@@ -144,9 +156,9 @@
                             <div class="stage-icon-wrapper">
                                 <img src="assets/images/icons/icon-bioreactor.svg" alt="Process Dev" class="stage-icon-svg">
                             </div>
-                            <h3 class="stage-name">Process optimization</h3>
+                            <h3 class="stage-name" data-i18n="platform.stage5_name">Process optimization</h3>
                             <div class="stage-platform-badge ignis">IGNIS™</div>
-                            <p class="stage-desc">Develop scalable bioprocesses</p>
+                            <p class="stage-desc" data-i18n="platform.stage5_desc">Develop scalable bioprocesses</p>
                         </div>
 
                         <div class="stage-card glass-panel" data-platform="ignis" data-aos="fade-up" data-aos-delay="500">
@@ -154,9 +166,9 @@
                             <div class="stage-icon-wrapper">
                                 <img src="assets/images/icons/icon-factory.svg" alt="Manufacturing" class="stage-icon-svg">
                             </div>
-                            <h3 class="stage-name">Manufacturing</h3>
+                            <h3 class="stage-name" data-i18n="platform.stage6_name">Manufacturing</h3>
                             <div class="stage-platform-badge ignis">IGNIS™</div>
-                            <p class="stage-desc">Commercial-scale production</p>
+                            <p class="stage-desc" data-i18n="platform.stage6_desc">Commercial-scale production</p>
                         </div>
                     </div>
 
@@ -182,12 +194,12 @@
             <div class="container">
                 <div class="platform-content">
                     <div class="platform-header" data-aos="fade-up">
-                        <span class="platform-badge prism">AI-Driven Analysis</span>
+                        <span class="platform-badge prism" data-i18n="platform.prism_badge">AI-Driven Analysis</span>
                         <h2 class="platform-title">
                             <span class="text-gradient-blue">MIRAIQ-PRISM™</span>
                         </h2>
-                        <p class="platform-subtitle">In-Silico Analysis Engine</p>
-                        <p class="platform-purpose">Accelerate developability assessment of protein candidates through comprehensive computational analysis</p>
+                        <p class="platform-subtitle" data-i18n="platform.prism_subtitle">In-Silico Analysis Engine</p>
+                        <p class="platform-purpose" data-i18n="platform.prism_purpose">Accelerate developability assessment of protein candidates through comprehensive computational analysis</p>
                     </div>
 
                     <div class="platform-technologies">
@@ -196,49 +208,49 @@
                                 <div class="tech-icon">
                                     <img src="assets/images/icons/icon-sequence.svg" alt="Sequence Core" width="48" height="48">
                                 </div>
-                                <h3 class="tech-title">Sequence Core</h3>
-                                <p class="tech-desc">Protein sequence analysis</p>
+                                <h3 class="tech-title" data-i18n="platform.prism_tech1_title">Sequence Core</h3>
+                                <p class="tech-desc" data-i18n="platform.prism_tech1_desc">Protein sequence analysis</p>
                                 <ul class="tech-points">
-                                    <li>PTM analysis</li>
-                                    <li>Codon optimization</li>
-                                    <li>Systematic plasmid Optimization</li>
+                                    <li data-i18n="platform.prism_tech1_point1">PTM analysis</li>
+                                    <li data-i18n="platform.prism_tech1_point2">Codon optimization</li>
+                                    <li data-i18n="platform.prism_tech1_point3">Systematic plasmid Optimization</li>
                                 </ul>
                             </div>
                             <div class="tech-card glass-panel" data-aos="fade-up" data-aos-delay="200">
                                 <div class="tech-icon">
                                     <img src="assets/images/icons/icon-structure.svg" alt="Structure Core" width="48" height="48">
                                 </div>
-                                <h3 class="tech-title">Structure Core</h3>
-                                <p class="tech-desc">3D structure modeling</p>
+                                <h3 class="tech-title" data-i18n="platform.prism_tech2_title">Structure Core</h3>
+                                <p class="tech-desc" data-i18n="platform.prism_tech2_desc">3D structure modeling</p>
                                 <ul class="tech-points">
-                                    <li>Disulfide bond analysis</li>
-                                    <li>Free cysteine analysis</li>
-                                    <li>Structure prediction</li>
-                                    <li>Molecular dynamics simulation</li>
+                                    <li data-i18n="platform.prism_tech2_point1">Disulfide bond analysis</li>
+                                    <li data-i18n="platform.prism_tech2_point2">Free cysteine analysis</li>
+                                    <li data-i18n="platform.prism_tech2_point3">Structure prediction</li>
+                                    <li data-i18n="platform.prism_tech2_point4">Molecular dynamics simulation</li>
                                 </ul>
                             </div>
                             <div class="tech-card glass-panel" data-aos="fade-up" data-aos-delay="300">
                                 <div class="tech-icon">
                                     <img src="assets/images/icons/icon-safety.svg" alt="Safety/Efficacy Core" width="48" height="48">
                                 </div>
-                                <h3 class="tech-title">Safety/Efficacy Core</h3>
-                                <p class="tech-desc">Risk assessment</p>
+                                <h3 class="tech-title" data-i18n="platform.prism_tech3_title">Safety/Efficacy Core</h3>
+                                <p class="tech-desc" data-i18n="platform.prism_tech3_desc">Risk assessment</p>
                                 <ul class="tech-points">
-                                    <li>Immunogenicity prediction</li>
-                                    <li>Off-target effect analysis</li>
-                                    <li>Potency assessment</li>
+                                    <li data-i18n="platform.prism_tech3_point1">Immunogenicity prediction</li>
+                                    <li data-i18n="platform.prism_tech3_point2">Off-target effect analysis</li>
+                                    <li data-i18n="platform.prism_tech3_point3">Potency assessment</li>
                                 </ul>
                             </div>
                             <div class="tech-card glass-panel" data-aos="fade-up" data-aos-delay="400">
                                 <div class="tech-icon">
                                     <img src="assets/images/icons/icon-properties.svg" alt="Other Properties" width="48" height="48">
                                 </div>
-                                <h3 class="tech-title">Other Properties</h3>
-                                <p class="tech-desc">Physical characteristics</p>
+                                <h3 class="tech-title" data-i18n="platform.prism_tech4_title">Other Properties</h3>
+                                <p class="tech-desc" data-i18n="platform.prism_tech4_desc">Physical characteristics</p>
                                 <ul class="tech-points">
-                                    <li>Aggregation propensity</li>
-                                    <li>Solubility prediction</li>
-                                    <li>Viscosity & stability modeling</li>
+                                    <li data-i18n="platform.prism_tech4_point1">Aggregation propensity</li>
+                                    <li data-i18n="platform.prism_tech4_point2">Solubility prediction</li>
+                                    <li data-i18n="platform.prism_tech4_point3">Viscosity & stability modeling</li>
                                 </ul>
                             </div>
                         </div>
@@ -252,12 +264,12 @@
             <div class="container">
                 <div class="platform-content">
                     <div class="platform-header" data-aos="fade-up">
-                        <span class="platform-badge orion">AI-Driven Engineering</span>
+                        <span class="platform-badge orion" data-i18n="platform.orion_badge">AI-Driven Engineering</span>
                         <h2 class="platform-title">
                             <span class="text-gradient-cyan">MIRAIQ-ORION™</span>
                         </h2>
-                        <p class="platform-subtitle">Protein Engineering Platform</p>
-                        <p class="platform-purpose">Optimize protein properties through intelligent design</p>
+                        <p class="platform-subtitle" data-i18n="platform.orion_subtitle">Protein Engineering Platform</p>
+                        <p class="platform-purpose" data-i18n="platform.orion_purpose">Optimize protein properties through intelligent design</p>
                     </div>
 
                     <div class="platform-technologies">
@@ -266,48 +278,48 @@
                                 <div class="tech-icon">
                                     <img src="assets/images/icons/icon-ai-model.svg" alt="AI Modeling" width="48" height="48">
                                 </div>
-                                <h3 class="tech-title">AI Modeling</h3>
-                                <p class="tech-desc">Machine learning-driven protein design</p>
+                                <h3 class="tech-title" data-i18n="platform.orion_tech1_title">AI Modeling</h3>
+                                <p class="tech-desc" data-i18n="platform.orion_tech1_desc">Machine learning-driven protein design</p>
                                 <ul class="tech-points">
-                                    <li>Mutation site prediction</li>
-                                    <li>Stability scoring</li>
-                                    <li>Multi-objective optimization</li>
+                                    <li data-i18n="platform.orion_tech1_point1">Mutation site prediction</li>
+                                    <li data-i18n="platform.orion_tech1_point2">Stability scoring</li>
+                                    <li data-i18n="platform.orion_tech1_point3">Multi-objective optimization</li>
                                 </ul>
                             </div>
                             <div class="tech-card glass-panel" data-aos="fade-up" data-aos-delay="200">
                                 <div class="tech-icon">
                                     <img src="assets/images/icons/icon-dbtl.svg" alt="DBTL Cycles" width="48" height="48">
                                 </div>
-                                <h3 class="tech-title">DBTL Cycles</h3>
-                                <p class="tech-desc">Design-Build-Test-Learn iteration</p>
+                                <h3 class="tech-title" data-i18n="platform.orion_tech2_title">DBTL Cycles</h3>
+                                <p class="tech-desc" data-i18n="platform.orion_tech2_desc">Design-Build-Test-Learn iteration</p>
                                 <ul class="tech-points">
-                                    <li>Automated workflows</li>
-                                    <li>Real-time data integration</li>
-                                    <li>Continuous learning</li>
+                                    <li data-i18n="platform.orion_tech2_point1">Automated workflows</li>
+                                    <li data-i18n="platform.orion_tech2_point2">Real-time data integration</li>
+                                    <li data-i18n="platform.orion_tech2_point3">Continuous learning</li>
                                 </ul>
                             </div>
                             <div class="tech-card glass-panel" data-aos="fade-up" data-aos-delay="300">
                                 <div class="tech-icon">
                                     <img src="assets/images/icons/icon-engineering.svg" alt="Rational Engineering" width="48" height="48">
                                 </div>
-                                <h3 class="tech-title">Rational Engineering</h3>
-                                <p class="tech-desc">Structure-guided optimization</p>
+                                <h3 class="tech-title" data-i18n="platform.orion_tech3_title">Rational Engineering</h3>
+                                <p class="tech-desc" data-i18n="platform.orion_tech3_desc">Structure-guided optimization</p>
                                 <ul class="tech-points">
-                                    <li>3D structure analysis</li>
-                                    <li>Binding affinity tuning</li>
-                                    <li>Expression enhancement</li>
+                                    <li data-i18n="platform.orion_tech3_point1">3D structure analysis</li>
+                                    <li data-i18n="platform.orion_tech3_point2">Binding affinity tuning</li>
+                                    <li data-i18n="platform.orion_tech3_point3">Expression enhancement</li>
                                 </ul>
                             </div>
                             <div class="tech-card glass-panel" data-aos="fade-up" data-aos-delay="400">
                                 <div class="tech-icon">
                                     <img src="assets/images/icons/icon-rapid.svg" alt="Rapid Development" width="48" height="48">
                                 </div>
-                                <h3 class="tech-title">Rapid Development</h3>
-                                <p class="tech-desc">Accelerated timeline to market</p>
+                                <h3 class="tech-title" data-i18n="platform.orion_tech4_title">Rapid Development</h3>
+                                <p class="tech-desc" data-i18n="platform.orion_tech4_desc">Accelerated timeline to market</p>
                                 <ul class="tech-points">
-                                    <li>10x faster cycles</li>
-                                    <li>Parallel testing</li>
-                                    <li>Predictive success rates</li>
+                                    <li data-i18n="platform.orion_tech4_point1">10x faster cycles</li>
+                                    <li data-i18n="platform.orion_tech4_point2">Parallel testing</li>
+                                    <li data-i18n="platform.orion_tech4_point3">Predictive success rates</li>
                                 </ul>
                             </div>
                         </div>
@@ -321,12 +333,12 @@
             <div class="container">
                 <div class="platform-content">
                     <div class="platform-header" data-aos="fade-up">
-                        <span class="platform-badge ignis">AI-Driven Manufacturing</span>
+                        <span class="platform-badge ignis" data-i18n="platform.ignis_badge">AI-Driven Manufacturing</span>
                         <h2 class="platform-title">
                             <span class="text-gradient-orange">MIRAIQ-IGNIS™</span>
                         </h2>
-                        <p class="platform-subtitle">Bioprocess Optimization Platform</p>
-                        <p class="platform-purpose">Scale from lab to commercial production efficiently through intelligent bioprocess optimization</p>
+                        <p class="platform-subtitle" data-i18n="platform.ignis_subtitle">Bioprocess Optimization Platform</p>
+                        <p class="platform-purpose" data-i18n="platform.ignis_purpose">Scale from lab to commercial production efficiently through intelligent bioprocess optimization</p>
                     </div>
 
                     <div class="platform-technologies">
@@ -335,48 +347,48 @@
                                 <div class="tech-icon">
                                     <img src="assets/images/icons/icon-upstream.svg" alt="Upstream" width="48" height="48">
                                 </div>
-                                <h3 class="tech-title">Upstream</h3>
-                                <p class="tech-desc">Cell culture optimization</p>
+                                <h3 class="tech-title" data-i18n="platform.ignis_tech1_title">Upstream</h3>
+                                <p class="tech-desc" data-i18n="platform.ignis_tech1_desc">Cell culture optimization</p>
                                 <ul class="tech-points">
-                                    <li>Fermentation control</li>
-                                    <li>Media optimization</li>
-                                    <li>Cell line development</li>
+                                    <li data-i18n="platform.ignis_tech1_point1">Fermentation control</li>
+                                    <li data-i18n="platform.ignis_tech1_point2">Media optimization</li>
+                                    <li data-i18n="platform.ignis_tech1_point3">Cell line development</li>
                                 </ul>
                             </div>
                             <div class="tech-card glass-panel" data-aos="fade-up" data-aos-delay="200">
                                 <div class="tech-icon">
                                     <img src="assets/images/icons/icon-downstream.svg" alt="Downstream" width="48" height="48">
                                 </div>
-                                <h3 class="tech-title">Downstream</h3>
-                                <p class="tech-desc">Purification process</p>
+                                <h3 class="tech-title" data-i18n="platform.ignis_tech2_title">Downstream</h3>
+                                <p class="tech-desc" data-i18n="platform.ignis_tech2_desc">Purification process</p>
                                 <ul class="tech-points">
-                                    <li>Chromatography optimization</li>
-                                    <li>Recovery process design</li>
-                                    <li>Yield maximization</li>
+                                    <li data-i18n="platform.ignis_tech2_point1">Chromatography optimization</li>
+                                    <li data-i18n="platform.ignis_tech2_point2">Recovery process design</li>
+                                    <li data-i18n="platform.ignis_tech2_point3">Yield maximization</li>
                                 </ul>
                             </div>
                             <div class="tech-card glass-panel" data-aos="fade-up" data-aos-delay="300">
                                 <div class="tech-icon">
                                     <img src="assets/images/icons/icon-formulation.svg" alt="Formulation" width="48" height="48">
                                 </div>
-                                <h3 class="tech-title">Formulation</h3>
-                                <p class="tech-desc">Product stability</p>
+                                <h3 class="tech-title" data-i18n="platform.ignis_tech3_title">Formulation</h3>
+                                <p class="tech-desc" data-i18n="platform.ignis_tech3_desc">Product stability</p>
                                 <ul class="tech-points">
-                                    <li>Stability optimization</li>
-                                    <li>Delivery system design</li>
-                                    <li>Shelf-life extension</li>
+                                    <li data-i18n="platform.ignis_tech3_point1">Stability optimization</li>
+                                    <li data-i18n="platform.ignis_tech3_point2">Delivery system design</li>
+                                    <li data-i18n="platform.ignis_tech3_point3">Shelf-life extension</li>
                                 </ul>
                             </div>
                             <div class="tech-card glass-panel" data-aos="fade-up" data-aos-delay="400">
                                 <div class="tech-icon">
                                     <img src="assets/images/icons/icon-scale.svg" alt="Scale-up/down" width="48" height="48">
                                 </div>
-                                <h3 class="tech-title">Scale-up/down</h3>
-                                <p class="tech-desc">Production scaling</p>
+                                <h3 class="tech-title" data-i18n="platform.ignis_tech4_title">Scale-up/down</h3>
+                                <p class="tech-desc" data-i18n="platform.ignis_tech4_desc">Production scaling</p>
                                 <ul class="tech-points">
-                                    <li>Process transfer</li>
-                                    <li>Scale-independent parameters</li>
-                                    <li>Manufacturing readiness</li>
+                                    <li data-i18n="platform.ignis_tech4_point1">Process transfer</li>
+                                    <li data-i18n="platform.ignis_tech4_point2">Scale-independent parameters</li>
+                                    <li data-i18n="platform.ignis_tech4_point3">Manufacturing readiness</li>
                                 </ul>
                             </div>
                         </div>
@@ -390,11 +402,11 @@
             <div class="container max-w-6xl">
                 <!-- Header -->
                 <div class="text-center mb-16" data-aos="fade-up">
-                    <span class="section-badge">WHY CHOOSE US</span>
-                    <h2 class="text-4xl md:text-5xl font-bold text-white mt-6 mb-4">
+                    <span class="section-badge" data-i18n="platform.benefits_badge">WHY CHOOSE US</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mt-6 mb-4" data-i18n="platform.benefits_title">
                         Beyond AIDD: <span class="text-gradient">Manufacturing-Centric</span> AI
                     </h2>
-                    <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+                    <p class="text-lg text-gray-300 max-w-3xl mx-auto" data-i18n="platform.benefits_desc">
                         Starting from industrial endpoints, creating a definitive path from molecular discovery to scalable production
                     </p>
                 </div>
@@ -411,9 +423,9 @@
                                 <rect x="4" y="22" width="14" height="14" rx="2"/>
                             </svg>
                         </div>
-                        <h3 class="advantage-main-title">Industrial DNA</h3>
-                        <p class="advantage-subtitle">Starting with the End</p>
-                        <p class="advantage-text">
+                        <h3 class="advantage-main-title" data-i18n="platform.advantage1_title">Industrial DNA</h3>
+                        <p class="advantage-subtitle" data-i18n="platform.advantage1_subtitle">Starting with the End</p>
+                        <p class="advantage-text" data-i18n="platform.advantage1_text">
                             Embedded quality attributes into our algorithm, our platform delivers a <span class="text-emphasis">manufacturable solutions</span>, not just a molecule.
                         </p>
                     </div>
@@ -426,9 +438,9 @@
                                 <polyline points="36 6 20 22.4 14 16.4"/>
                             </svg>
                         </div>
-                        <h3 class="advantage-main-title">Close-Loop Engine</h3>
-                        <p class="advantage-subtitle">Validated by Products</p>
-                        <p class="advantage-text">
+                        <h3 class="advantage-main-title" data-i18n="platform.advantage2_title">Close-Loop Engine</h3>
+                        <p class="advantage-subtitle" data-i18n="platform.advantage2_subtitle">Validated by Products</p>
+                        <p class="advantage-text" data-i18n="platform.advantage2_text">
                             Our platform drives full R&D cycles of core products. The tools are <span class="text-emphasis">validated through real pipelines</span>, not experimental software.
                         </p>
                     </div>
@@ -442,9 +454,9 @@
                                 <path d="M6 8v23c0 2.8 6.3 5 14 5s14-2.2 14-5V8"/>
                             </svg>
                         </div>
-                        <h3 class="advantage-main-title">Domain Knowledge with Data</h3>
-                        <p class="advantage-subtitle">Dual Assurance by Domain Expert and Exclusive Data</p>
-                        <p class="advantage-text">
+                        <h3 class="advantage-main-title" data-i18n="platform.advantage3_title">Domain Knowledge with Data</h3>
+                        <p class="advantage-subtitle" data-i18n="platform.advantage3_subtitle">Dual Assurance by Domain Expert and Exclusive Data</p>
+                        <p class="advantage-text" data-i18n="platform.advantage3_text">
                             Combining biological expert knowledge to curate high-quality data, supplemented with in-house <span class="text-emphasis">high-throughput experiments</span> for exclusive proprietary data, ensuring <span class="text-emphasis">reliability</span>.
                         </p>
                     </div>
@@ -458,9 +470,9 @@
                                 <polyline points="3 19 20 27 37 19"/>
                             </svg>
                         </div>
-                        <h3 class="advantage-main-title">System-Level Chassis Adaptation</h3>
-                        <p class="advantage-subtitle">Beyond Enzymes, Understanding Cell Factories</p>
-                        <p class="advantage-text">
+                        <h3 class="advantage-main-title" data-i18n="platform.advantage4_title">System-Level Chassis Adaptation</h3>
+                        <p class="advantage-subtitle" data-i18n="platform.advantage4_subtitle">Beyond Enzymes, Understanding Cell Factories</p>
+                        <p class="advantage-text" data-i18n="platform.advantage4_text">
                             Beyond single molecule design, our AI optimizes <span class="text-emphasis">metabolic pathways and chassis</span> compatibility. Solving systems engineering challenges to ensure products can be <span class="text-emphasis">made, survive well, and yield high</span>.
                         </p>
                     </div>
@@ -471,14 +483,14 @@
         <!-- CTA Section -->
         <section class="section section-cta">
             <div class="container text-center">
-                <h2 class="text-5xl md:text-6xl font-display font-bold mb-6" data-aos="fade-up">
+                <h2 class="text-5xl md:text-6xl font-display font-bold mb-6" data-aos="fade-up" data-i18n="platform.cta_title">
                     Ready to Transform Your <span class="text-gradient">R&D Process?</span>
                 </h2>
-                <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100" data-i18n="platform.cta_text">
                     Get in touch with our team to discuss how MiRAiQ can accelerate your biologics development
                 </p>
                 <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
-                    <a href="contact.html" class="btn btn-primary btn-large btn-glow">Schedule a Demo</a>
+                    <a href="contact.html" class="btn btn-primary btn-large btn-glow" data-i18n="platform.cta_btn">Schedule a Demo</a>
                 </div>
             </div>
         </section>
@@ -490,26 +502,26 @@
             <div class="footer__grid">
                 <div class="footer__col">
                     <img src="assets/images/mirabobio-logo-static-white.svg" alt="MiRABO" width="150" class="footer__logo">
-                    <p class="footer__tagline">Pioneering AI-Driven Biologics</p>
-                    <p class="footer__desc">Accelerating protein therapeutic development through advanced AI platforms.</p>
+                    <p class="footer__tagline" data-i18n="footer.tagline">Pioneering AI-Driven Biologics</p>
+                    <p class="footer__desc" data-i18n="footer.desc">Accelerating protein therapeutic development through advanced AI platforms.</p>
                 </div>
                 <div class="footer__col">
-                    <h4 class="footer__title">Quick Links</h4>
+                    <h4 class="footer__title" data-i18n="footer.quick_links">Quick Links</h4>
                     <ul class="footer__links">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="platform.html">Platform</a></li>
-                        <li><a href="solutions.html">Solutions</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html" data-i18n="footer.quick_about">About Us</a></li>
+                        <li><a href="platform.html" data-i18n="footer.quick_platform">Platform</a></li>
+                        <li><a href="solutions.html" data-i18n="footer.quick_solutions">Solutions</a></li>
+                        <li><a href="contact.html" data-i18n="footer.quick_contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer__col">
-                    <h4 class="footer__title">Contact</h4>
-                    <p>Hong Kong Science Park</p>
-                    <p>Zhangjiang, Shanghai</p>
+                    <h4 class="footer__title" data-i18n="footer.contact">Contact</h4>
+                    <p data-i18n="footer.address_hk">Hong Kong Science Park</p>
+                    <p data-i18n="footer.address_sh">Zhangjiang, Shanghai</p>
                     <p class="flex items-center gap-2"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>info@mirabobio.com</p>
                 </div>
                 <div class="footer__col">
-                    <h4 class="footer__title">Follow Us</h4>
+                    <h4 class="footer__title" data-i18n="footer.follow_us">Follow Us</h4>
                     <div class="footer__social">
                         <a href="https://www.linkedin.com/company/mirabo-biotechnology" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                             <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
@@ -521,13 +533,13 @@
                         <svg width="20" height="20" fill="#32CD32" viewBox="0 0 24 24">
                             <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/>
                         </svg>
-                        <span>WeChat Official</span>
+                        <span data-i18n="footer.wechat">WeChat Official</span>
                     </h4>
                     <img src="assets/images/wechat-public-qrcode.png" alt="WeChat QR Code" class="footer__wechat-qr">
                 </div>
             </div>
             <div class="footer__bottom">
-                <p>&copy; 2025 MiRABO Biotechnology. All rights reserved.</p>
+                <p data-i18n="footer.copyright">&copy; 2025 MiRABO Biotechnology. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -546,6 +558,7 @@
     <script>AOS.init({ duration: 1000, once: true });</script>
     
     <!-- Custom Scripts -->
+    <script src="assets/js/i18n.js" defer></script>
     <script src="assets/js/canvas-particles.js" defer></script>
     <script src="assets/js/utils.js" defer></script>
     <script src="assets/js/main.js" defer></script>
