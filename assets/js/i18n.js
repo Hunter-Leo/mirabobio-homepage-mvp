@@ -214,6 +214,7 @@
         localStorage.setItem(self.config.storageKey, lang);
         document.documentElement.lang = lang;
         self._translate();
+        self._replaceAddressCn();
         self._renderICP();
       }).catch(function (err) {
         console.warn('i18n: Failed to load language "' + lang + '": ' + err.message);
