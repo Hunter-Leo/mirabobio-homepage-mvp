@@ -78,8 +78,8 @@
      */
     _onReady: function () {
       this._translate();
-      // On .cn domains, replace address block with mainland China address
-      this._replaceAddressCn();
+      // On .cn domains, swap address keys to mainland China address
+      this._swapAddressCn();
       // Reveal translated content
       if (i18nFlashStyle && i18nFlashStyle.parentNode) {
         i18nFlashStyle.parentNode.removeChild(i18nFlashStyle);
@@ -214,7 +214,7 @@
         localStorage.setItem(self.config.storageKey, lang);
         document.documentElement.lang = lang;
         self._translate();
-        self._replaceAddressCn();
+        self._swapAddressCn();
         self._renderICP();
       }).catch(function (err) {
         console.warn('i18n: Failed to load language "' + lang + '": ' + err.message);
@@ -266,31 +266,24 @@
     },
 
     /**
-     * On .cn domains, replace the two footer address elements (address_hk,
-     * address_sh) with a single mainland China address line.
+     * On .cn domains, swap the footer address element keys from their
+     * global addresses (address_hk, address_sh) to the mainland China
+     * address (address_cn_full). Does NOT remove data-i18n attributes,
+     * so _translate() can still update the text on language switch.
      */
-    _replaceAddressCn: function () {
+    _swapAddressCn: function () {
       var hostname = window.location.hostname.toLowerCase();
       if (!hostname.endsWith('.cn')) {
         return;
       }
 
-      var cnAddress = this._t('footer.address_cn_full', '');
-      if (!cnAddress) {
-        return;
-      }
-
-      // Find address elements by their data-i18n keys
       var hkEl = document.querySelector('[data-i18n="footer.address_hk"]');
       var shEl = document.querySelector('[data-i18n="footer.address_sh"]');
 
       if (hkEl) {
-        // Replace first address with full CN address
-        hkEl.textContent = cnAddress;
-        hkEl.removeAttribute('data-i18n');
+        hkEl.setAttribute('data-i18n', 'footer.address_cn_full');
       }
       if (shEl) {
-        // Remove second address line
         shEl.style.display = 'none';
       }
     },
