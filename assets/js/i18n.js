@@ -77,9 +77,10 @@
      * renders switcher, and dispatches ready event.
      */
     _onReady: function () {
-      this._translate();
-      // On .cn domains, swap address keys to mainland China address
+      // On .cn domains, swap address keys BEFORE translate so
+      // _translate() reads the correct key on first paint
       this._swapAddressCn();
+      this._translate();
       // Reveal translated content
       if (i18nFlashStyle && i18nFlashStyle.parentNode) {
         i18nFlashStyle.parentNode.removeChild(i18nFlashStyle);
@@ -213,8 +214,8 @@
         self.state.currentLang = lang;
         localStorage.setItem(self.config.storageKey, lang);
         document.documentElement.lang = lang;
-        self._translate();
         self._swapAddressCn();
+        self._translate();
         self._renderICP();
       }).catch(function (err) {
         console.warn('i18n: Failed to load language "' + lang + '": ' + err.message);
