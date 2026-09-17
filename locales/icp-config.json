@@ -1,8 +1,10 @@
 {
   "mirabobio.cn": [
-    { "type": "icp", "text": "沪ICP备2025151512号-3", "url": "https://beian.miit.gov.cn" }
+    { "type": "icp", "text": "沪ICP备2025151512号-3", "url": "https://beian.miit.gov.cn" },
+    { "type": "police", "text": "沪公网安备31011502406922号", "url": "https://beian.mps.gov.cn/#/query/webSearch?code=31011502406922" }
   ],
   "mirabobio.com.cn": [
-    { "type": "icp", "text": "沪ICP备2025151512号-2", "url": "https://beian.miit.gov.cn" }
+    { "type": "icp", "text": "沪ICP备2025151512号-2", "url": "https://beian.miit.gov.cn" },
+    { "type": "police", "text": "沪公网安备31011502407426号", "url": "https://beian.mps.gov.cn/#/query/webSearch?code=31011502407426" }
   ]
 }
