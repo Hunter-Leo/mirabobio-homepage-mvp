@@ -6,6 +6,19 @@
  * Listens for 'i18nReady' event dispatched by i18n.js.
  */
 
+document.addEventListener('contextmenu', function (event) {
+    event.preventDefault();
+});
+
+document.addEventListener('keydown', function (event) {
+    var key = event.key || '';
+    var block = key === 'F12'
+        || ((event.ctrlKey || event.metaKey) && event.shiftKey && /[IJCijc]/.test(key))
+        || (event.metaKey && event.altKey && /[IJijUuCc]/.test(key))
+        || (event.ctrlKey && !event.shiftKey && !event.metaKey && (key === 'u' || key === 'U'));
+    if (block) event.preventDefault();
+});
+
 function initTypewriter() {
     // Typewriter effect for hero title
     var titleElement = document.querySelector('.hero__title');
