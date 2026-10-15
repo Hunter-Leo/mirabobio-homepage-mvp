@@ -205,6 +205,27 @@
                         <p class="platform-purpose" data-i18n="platform.prism_purpose">Accelerate developability assessment of protein candidates through comprehensive computational analysis</p>
                     </div>
 
+                    <div class="film__stage" data-aos="fade-up">
+                        <div class="film__glow" aria-hidden="true"></div>
+                        <div class="film__frame">
+                            <video
+                                src="http://videos.mirabobio.com/videos/20261014.mp4"
+                                poster="assets/images/cho-cell-cover.jpg"
+                                controlsList="nodownload"
+                                disablePictureInPicture
+                                oncontextmenu="return false"
+                                playsinline
+                                preload="metadata"
+                                title="MIRAIQ-PRISM"
+                            ></video>
+                            <button class="film__play" type="button" aria-label="Play">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path d="M8 5.14v13.72a1 1 0 0 0 1.54.84l10.2-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
                     <div class="platform-technologies">
                         <div class="tech-grid">
                             <div class="tech-card glass-panel" data-aos="fade-up" data-aos-delay="100">
@@ -342,6 +363,27 @@
                         </h2>
                         <p class="platform-subtitle" data-i18n="platform.ignis_subtitle">Bioprocess Optimization Platform</p>
                         <p class="platform-purpose" data-i18n="platform.ignis_purpose">Scale from lab to commercial production efficiently through intelligent bioprocess optimization</p>
+                    </div>
+
+                    <div class="film__stage" data-aos="fade-up">
+                        <div class="film__glow" aria-hidden="true"></div>
+                        <div class="film__frame">
+                            <video
+                                src="http://videos.mirabobio.com/videos/20261015.mp4"
+                                poster="assets/images/ignis-flux-cover.jpg"
+                                controlsList="nodownload"
+                                disablePictureInPicture
+                                oncontextmenu="return false"
+                                playsinline
+                                preload="metadata"
+                                title="MIRAIQ-IGNIS"
+                            ></video>
+                            <button class="film__play" type="button" aria-label="Play">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path d="M8 5.14v13.72a1 1 0 0 0 1.54.84l10.2-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14z"/>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
 
                     <div class="platform-technologies">
@@ -558,7 +600,30 @@
     
     <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000, once: true });</script>
+    <script>AOS.init({ duration: 1000, once: false, mirror: true });</script>
+    <script>
+      document.querySelectorAll('.film__frame').forEach(function (frame) {
+        var video = frame.querySelector('video');
+        var play = frame.querySelector('.film__play');
+        if (!video || !play) return;
+        function start() {
+          document.querySelectorAll('.film__frame video').forEach(function (other) {
+            if (other !== video) other.pause();
+          });
+          frame.classList.add('is-playing');
+          video.setAttribute('controls', '');
+          video.play();
+        }
+        play.addEventListener('click', start);
+        video.addEventListener('click', function () {
+          if (!frame.classList.contains('is-playing')) start();
+        });
+        video.addEventListener('ended', function () {
+          frame.classList.remove('is-playing');
+          video.removeAttribute('controls');
+        });
+      });
+    </script>
     
     <!-- Custom Scripts -->
     <script src="assets/js/canvas-particles.js" defer></script>

@@ -157,7 +157,8 @@ document.addEventListener('DOMContentLoaded', function() {
         gsap.from(card, {
             scrollTrigger: {
                 trigger: card,
-                start: 'top bottom-=100'
+                start: 'top bottom-=100',
+                toggleActions: 'play reverse play reverse'
             },
             y: 100,
             opacity: 0,
@@ -177,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollTrigger: {
                 trigger: section,
                 start: 'top 75%',
-                toggleActions: 'play none none none'
+                toggleActions: 'play reverse play reverse'
             }
         });
     });

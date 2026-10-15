@@ -724,6 +724,72 @@ section {
   background-clip: text;
 }
 
+/* Cinema frame inside a platform section. The clip already has its own labels, so the page only stages it. */
+.film__stage {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto var(--space-16);
+}
+
+.film__glow {
+  position: absolute;
+  inset: 8% 6%;
+  background:
+    radial-gradient(circle at 30% 50%, rgba(0, 217, 255, 0.28), transparent 55%),
+    radial-gradient(circle at 72% 48%, rgba(255, 196, 64, 0.16), transparent 46%);
+  filter: blur(36px);
+  pointer-events: none;
+}
+
+.film__frame {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 0 0 1px rgba(0, 217, 255, 0.12),
+    0 40px 90px rgba(0, 20, 60, 0.55);
+}
+
+.film__frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  cursor: pointer;
+}
+
+.film__play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 4.75rem;
+  height: 4.75rem;
+  display: grid;
+  place-items: center;
+  padding-left: 0.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 999px;
+  background: rgba(5, 8, 15, 0.42);
+  color: #fff;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.film__play:hover {
+  transform: translate(-50%, -50%) scale(1.06);
+  background: rgba(0, 102, 255, 0.45);
+}
+
+.film__frame.is-playing .film__play {
+  display: none;
+}
+
 /* Company Overview Section */
 .section-overview {
   background: var(--bg-primary);
